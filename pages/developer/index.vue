@@ -63,4 +63,16 @@ const nav = [{
     max-width: 740px;
   }
 }
+
+@media screen and (max-width: #{$tablet-width - 1}) {
+  .chat-template {
+    &__aside {
+      display: none;
+    }
+    
+    &__content {
+      max-width: none;
+    }
+  }
+}
 </style>

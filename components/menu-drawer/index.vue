@@ -9,7 +9,8 @@
       class="menu-drawer__item"
       v-for="item in menu"
       :key="item.value"
-      :to="item.value">
+      :to="item.value"
+      @click="$emit('update:modelValue', false)">
       {{ item.label }}
     </router-link>
   </el-drawer>
