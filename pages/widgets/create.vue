@@ -65,7 +65,7 @@
                 </div>
                 
                 <div
-                  v-if="item.value !== 'comment'">
+                  v-if="item.value !== 'comment' || item.value !== 'tip'">
                   <el-popover
                     :ref="`${item.value}ModePopover`"
                     placement="bottom"
@@ -110,7 +110,7 @@
             prop="wallet_address">
             <el-input
               v-model="form.wallet_address"
-              placeholder="Enter your DID or ENS">
+              placeholder="Enter your .bit or .eth">
             </el-input>
             
             <div
@@ -156,8 +156,7 @@ const form = reactive({
   wallet_address: '',
   bio: '',
   like: 'normal',
-  dislike: 'normal',
-  tip: 'normal'
+  dislike: 'normal'
 })
 
 const rules = reactive({

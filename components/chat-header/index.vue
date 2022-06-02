@@ -48,11 +48,6 @@
               #reference>
               <div
                 class="chat-header__user">
-                <!-- <img
-                  class="chat-header__user-wallet-icon" 
-                  src="@/assets/metamask.svg" 
-                  alt="metamask"> -->
-                  
                 <span
                   class="chat-header__user-name">
                   {{ $ellipsisInMiddle('0x1243353533456') }}
@@ -89,7 +84,7 @@ const nav = [{
   label: 'FAQ',
   value: '/faq'
 }, {
-  label: 'Docs',
+  label: 'Developer',
   value: '/developer'
 }]
 
@@ -132,6 +127,7 @@ const userMenu = [{
   
   &__nav-item {
     position: relative;
+    padding: 0 5px;
     color: var(--text-color-primary);
     transition: all .3s ease;
     
@@ -142,15 +138,15 @@ const userMenu = [{
     &::after {
       content: '';
       position: absolute;
-      bottom: -4px;
-      left: calc(50% - 5px);
-      width: 10px;
-      height: 2px;
-      background: var(--color-primary);
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: var(--color-primary-light);
       opacity: 0;
       transform: scale3d(0, 1, 1);
       transition: all .3s ease;
-      z-index: 1;
+      z-index: -1;
     }
     
     &.router-link-active {
@@ -198,7 +194,7 @@ const userMenu = [{
   
   &__user-name {
     flex: 1;
-    margin: 0 6px 0 10px;
+    margin-right: 6px;
     font-size: 12px;
     color: var(--text-color-primary);
   }

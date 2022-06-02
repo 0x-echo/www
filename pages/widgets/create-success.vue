@@ -1,7 +1,7 @@
 <template>
   <template-doc
     icon="ri-open-arm-line"
-    title="Your widget is ready!">
+    title="The widget is ready!">
     <embed-code
       :code="code">
     </embed-code>

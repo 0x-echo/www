@@ -1,15 +1,15 @@
 <template>
   <section
-    class="landing-section">
+    class="landing-feature-item">
     <div
-      class="landing-section__container"
+      class="section-container landing-feature-item__container"
       :class="{
         'is-reverse': reverse
       }">
       <div
-        class="landing-section__content">
+        class="landing-feature-item__content">
         <h3
-          class="landing-section__title">
+          class="landing-feature-item__title">
           <strong>
             {{ strongTitle }}
           </strong>
@@ -17,7 +17,7 @@
         </h3>
         
         <div
-          class="landing-section__desc">
+          class="landing-feature-item__desc">
           <slot
             name="desc">
             {{ desc }}
@@ -25,12 +25,10 @@
         </div>
       </div>
       
-      <div
-        class="landing-section__visual"
-        :style="{
-          'background-image': `url('/assets/${image}.svg')`
-        }">
-      </div>
+      <img
+        class="landing-feature-item__visual" 
+        :src="`/assets/${image}.svg`" 
+        :alt="title">
     </div>
   </section>
 </template>
@@ -64,14 +62,14 @@ export default {
 </script>
 
 <style lang="scss">
-.landing-section {
+.landing-feature-item {
   margin-bottom: 120px;
   
+  &:last-of-type {
+    margin-bottom: 200px;
+  }
+  
   &__container {
-    width: 100%;
-    max-width: 1000px;
-    padding: 0 20px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -82,16 +80,14 @@ export default {
   }
   
   &__content {
-    width: 50%;
+    width: 52%;
   }
   
   &__title {
     font-size: 28px;
-    font-weight: 600;
     
     strong {
       position: relative;
-      font-weight: 600;
       color: var(--color-primary);
       
       &::before {
@@ -111,16 +107,39 @@ export default {
   &__desc {
     margin-top: 15px;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 2;
     color: var(--text-color-secondary);
   }
   
   &__visual {
-    width: 45%;
+    width: 48%;
     height: 250px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: #{$tablet-width - 1}) {
+  .landing-feature-item {
+    margin-bottom: 50px;
+    
+    &__container {
+      &,
+      &.is-reverse {
+        flex-direction: column-reverse; 
+        align-items: flex-start;
+      }
+    }
+    
+    &__content {
+      width: 100%;
+    }
+    
+    &__visual {
+      width: 50%;
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
   }
 }
 </style>

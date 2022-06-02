@@ -6,7 +6,7 @@
         class="container">
         <h1
           class="landing-hero__title">
-          Collect Comments and <br>Get Tips on Web3
+          Our <strong>Opinion</strong><br>Is a Part of Things
         </h1>
         
         <el-button
@@ -17,15 +17,12 @@
       </div>
     </section>
     
-    <landing-section
-      v-for="(item, index) in features"
-      :key="index"
-      :desc="item.desc"
-      :image="item.image"
-      :reverse="item.reverse"
-      :strong-title="item.strongTitle"
-      :title="item.title">
-    </landing-section>
+    <landing-demo>
+    </landing-demo>
+    
+    <landing-feature
+      :data="features">
+    </landing-feature>
   </div>
 </template>
 
@@ -53,13 +50,37 @@ const features = [{
 
 <style lang="scss">
 .landing-hero {
-  padding: 100px 0;
-  margin-bottom: 220px;
+  padding: 150px 0;
+  margin-bottom: 160px;
   text-align: center;
+  // background: linear-gradient(var(--border-color) 1px, transparent 0),
+  //       linear-gradient(90deg, var(--border-color) 1px, transparent 0);
+  // background-size: 30px 30px, 30px 30px;
+  // background-image: url('@/assets/hero-bg.svg');
+  // background-repeat: no-repeat;
+  // background-size: contain;
   
   &__title {
-    font-size: 50px;
-    line-height: 1.2;
+    font-size: 72px;
+    font-weight: 900;
+    
+    strong {
+      position: relative;
+      font-weight: 900;
+      color: var(--color-primary);
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;;
+        background: var(--color-primary-light);
+        z-index: -1;
+      }
+    }
   }
   
   &__action-button {
