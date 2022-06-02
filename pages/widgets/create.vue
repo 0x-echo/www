@@ -60,47 +60,45 @@
                 
                 <div
                   class="create-widget__mode-placeholder"
-                  v-if="item.value === 'comment'">
+                  v-if="item.value === 'comment' || item.value === 'tip'">
                   --
                 </div>
                 
-                <div
-                  v-if="item.value !== 'comment' || item.value !== 'tip'">
-                  <el-popover
-                    :ref="`${item.value}ModePopover`"
-                    placement="bottom"
-                    trigger="click"
-                    :width="120">
-                    <template 
-                      #reference>
-                      <div
-                        class="create-widget__mode-select"
-                        @click.stop.prevent>
-                        <span>
-                          {{ form[item.value] }}
-                        </span>
-                        
-                        <i
-                          class="ri-arrow-drop-down-line">
-                        </i>
-                      </div>
-                    </template>
-                    
-                    <template 
-                      #default>
-                      <div
-                        class="create-widget__mode-option"
-                        :class="{
-                          'active': form[item.value] === option.value
-                        }"
-                        v-for="option in modeOptions"
-                        :key="option.value"
-                        @click="selectMode(item.value, option.value)">
-                        {{ option.label }}
-                      </div>
-                    </template>
-                  </el-popover>
-                </div>
+                <el-popover
+                  :ref="`${item.value}ModePopover`"
+                  placement="bottom"
+                  trigger="click"
+                  :width="120">
+                  <template 
+                    #reference>
+                    <div
+                      class="create-widget__mode-select"
+                      v-if="item.value !== 'comment' && item.value !== 'tip'"
+                      @click.stop.prevent>
+                      <span>
+                        {{ form[item.value] }}
+                      </span>
+                      
+                      <i
+                        class="ri-arrow-drop-down-line">
+                      </i>
+                    </div>
+                  </template>
+                  
+                  <template 
+                    #default>
+                    <div
+                      class="create-widget__mode-option"
+                      :class="{
+                        'active': form[item.value] === option.value
+                      }"
+                      v-for="option in modeOptions"
+                      :key="option.value"
+                      @click="selectMode(item.value, option.value)">
+                      {{ option.label }}
+                    </div>
+                  </template>
+                </el-popover>
               </el-checkbox>
             </el-checkbox-group>
           </el-form-item>

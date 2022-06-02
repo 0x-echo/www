@@ -6,10 +6,21 @@
       :data="data"
       :columns="columns">
     </widget-table>
+    
+    <div
+      class="widgets-page__action-bar">
+      <el-button
+        size="large"
+        type="primary"
+        @click="$router.push('/widgets/create')">
+        Add New Widget
+      </el-button>
+    </div>
   </template-doc>
 </template>
 
 <script setup>
+import { ElButton } from 'element-plus'
 import WidgetTable from './components/widget-table'
 
 const data = [{
@@ -47,5 +58,10 @@ const columns = [{
 </script>
 
 <style lang="scss">
-
+.widgets-page {
+  &__action-bar {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
 </style>

@@ -4,7 +4,7 @@
     <div
       class="landing-demo__container">
       <h2
-        class="landing-demo__title">
+        class="landing-section__title">
         Live Demo
       </h2>
       
@@ -78,22 +78,18 @@ const nav = [{
     width: 100%;
   }
   
-  &__title {
-    font-size: 44px;
-    text-transform: uppercase;
-    text-align: center;
-  }
-  
   &__nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 15px 0 25px; 
+    flex-wrap: wrap;
+    margin: 10px 0 20px; 
   }
   
   &__nav-item {
     position: relative;
     padding: 0 4px;
+    margin: 5px 0;
     font-size: 16px;
     color: var(--text-color-secondary);
     cursor: pointer;
@@ -141,6 +137,15 @@ const nav = [{
     height: 502px;
     border: 1px solid var(--text-color-primary);
     background: white;
+  }
+}
+
+@media screen and (max-width: $small-mobile-width) {
+  .landing-demo {
+    &__widget {
+      height: 517px;
+      padding: 0 0 15px;
+    }
   }
 }
 </style>

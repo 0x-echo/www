@@ -80,4 +80,16 @@ const links = [{
     font-size: 16px;
   }
 }
+
+@media screen and (max-width: $mobile-width) {
+  .chat-footer {
+    &__container {
+      flex-direction: column-reverse;
+    }
+    
+    &__link-list {
+      margin-bottom: 10px;
+    }
+  }
+}
 </style>

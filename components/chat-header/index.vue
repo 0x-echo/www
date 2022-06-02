@@ -12,7 +12,7 @@
             class="chat-header__logo"
             title="Third.chat"
             to="/">
-            third.chat
+            Third.Chat
           </router-link>
         </div>
         
@@ -72,7 +72,16 @@
             </template>
           </el-popover>
         </div>
+        
+        <i
+          class="ri-menu-3-line chat-header__menu"
+          @click="menuDrawerVisible = true">
+        </i>
       </div>
+      
+      <menu-drawer
+        v-model="menuDrawerVisible">
+      </menu-drawer>
     </header>
   </el-affix>
 </template>
@@ -98,6 +107,8 @@ const userMenu = [{
   label: 'Logout',
   value: 'logout'
 }]
+
+const menuDrawerVisible = ref(false)
 </script>
 
 <style lang="scss">
@@ -116,6 +127,10 @@ const userMenu = [{
   &__nav,
   &__right {
     flex: 1;
+  }
+  
+  &__logo {
+    font-weight: 700;
   }
   
   &__nav {
@@ -201,6 +216,25 @@ const userMenu = [{
   
   &__user-arrow-icon {
     color: var(--text-color-muted);
+  }
+  
+  &__menu {
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: #{$tablet-width - 1}) {
+  .chat-header {
+    &__nav,
+    &__user {
+      display: none;
+    }
+    
+    &__menu {
+      display: block;
+    }
   }
 }
 </style>

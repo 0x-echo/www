@@ -6,7 +6,7 @@
       <div
         class="section-container">
         <h2
-          class="landing-feature__title">
+          class="landing-section__title">
           Key Features
         </h2>
         
