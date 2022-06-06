@@ -52,19 +52,10 @@
               class="chat-footer__menu-item"
               v-for="link in item.list"
               :key="link.value">
-              <router-link
-                class="chat-footer__menu-link"
-                v-if="!link.isExternal"
-                :title="link.label"
-                :to="link.value">
-                {{ link.label }}
-              </router-link>
-              
               <a 
                 class="chat-footer__menu-link"
-                v-if="link.isExternal"
                 :href="link.value"
-                target="_blank"
+                :target="link.isExternal ? '_blank' : ''"
                 :title="link.value">
                 {{ link.label }}
               </a>

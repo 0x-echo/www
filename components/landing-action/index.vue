@@ -28,9 +28,31 @@
         </el-button>
       </div>
       
-      <div>
-        <div>
+      <div
+        class="landing-action__link-list">
+        <div
+          class="landing-action__link-item"
+          v-for="(item, index) in links"
+          :key="index">
+          <i
+            class="landing-action__link-icon"
+            :class="item.icon">
+          </i>
           
+          <div>
+            <h4
+              class="landing-action__link-title">
+              {{ item.title }}
+            </h4>
+            
+            <a 
+              class="landing-action__link-label"
+              :href="item.link"
+              :target="item.isExternal ? '_blank' : ''"
+              title="Discord">
+              {{ item.link_label }}
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -41,8 +63,17 @@
 import { ElButton } from 'element-plus'
 
 const links = [{
-  title: '',
-  link: ''
+  icon: 'ri-code-s-slash-line',
+  title: 'Follow our guides to buidl things',
+  link: '/developer',
+  link_label: 'Check out Docs',
+  isExternal: false
+}, {
+  icon: 'ri-discord-line',
+  title: 'Join our Discord to keep updated',
+  link: '',
+  link_label: 'Jump in community',
+  isExternal: true
 }]
 </script>
 
@@ -61,6 +92,59 @@ const links = [{
   
   &__action-bar {
     margin-top: 40px;
+  }
+  
+  &__link-list {
+    display: flex;
+    margin-top: 60px;
+  }
+  
+  &__link-item {
+    flex: 1;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    background: linear-gradient(rgba(white, .03), transparent);
+    text-align: left;
+    
+    & + & {
+      margin-left: 30px;
+    }
+  }
+  
+  &__link-icon {
+    font-size: 48px;
+  }
+  
+  &__link-title {
+    margin: 20px 0 10px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  &__link-label {
+    position: relative;
+    font-weight: 500;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--color-primary);
+      opacity: 0;
+      transform: scale3d(0, 1, 1);
+      transform-origin: left center;
+      transition: all .3s;
+    }
+    
+    &:hover {
+      &::after {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
+    }
   }
 }
 </style>
