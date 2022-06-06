@@ -1,6 +1,7 @@
 <template>
   <div>
     <chat-header
+      theme="dark"
       @connect-wallet="connectDialogVisible = true">
     </chat-header>
     

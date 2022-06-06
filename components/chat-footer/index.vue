@@ -2,27 +2,84 @@
   <footer
     class="chat-footer">
     <div
-      class="chat-footer__container">
-      <p>
-        2022 © All rights reserved
-      </p>
+      class="section-container">
+      <div
+        class="chat-footer__top">
+        <div>
+          <router-link
+            class="chat-footer__logo"
+            title="Echo"
+            to="/">
+            <img 
+              class="chat-footer__logo-image"
+              src="@/assets/echo-logo-white.svg" 
+              alt="Echo">
+          </router-link>
+          
+          <p
+            class="chat-footer__slogan">
+            We are here to <br>connect and store opinion.
+          </p>
+          
+          <div
+            class="chat-footer__social-list">
+            <a 
+              class="chat-footer__social-item"
+              v-for="item in socials"
+              :key="item.value"
+              :href="item.value"
+              target="_blank"
+              :title="item.value">
+              <i
+                class="chat-footer__social-icon"
+                :class="item.icon">
+              </i>
+            </a>
+          </div>
+        </div>
+        
+        <div
+          class="chat-footer__menu"
+          v-for="(item, index) in links"
+          :key="index">
+          <h6
+            class="chat-footer__menu-title">
+            {{ item.label }}
+          </h6>
+          
+          <ul>
+            <li
+              class="chat-footer__menu-item"
+              v-for="link in item.list"
+              :key="link.value">
+              <router-link
+                class="chat-footer__menu-link"
+                v-if="!link.isExternal"
+                :title="link.label"
+                :to="link.value">
+                {{ link.label }}
+              </router-link>
+              
+              <a 
+                class="chat-footer__menu-link"
+                v-if="link.isExternal"
+                :href="link.value"
+                target="_blank"
+                :title="link.value">
+                {{ link.label }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
       
       <div
-        class="chat-footer__link-list">
-        <a 
-          class="chat-footer__link-item"
-          v-for="item in links"
-          :key="item.value"
-          :href="item.value"
-          :title="item.value">
-          <i
-            class="chat-footer__link-icon"
-            :class="item.icon">
-          </i>
-        </a>
-        
+        class="chat-footer__bottom">
+        <p>
+          © 2022 Echo
+        </p>
+      
         <router-link
-          class="chat-footer__link-item"
           title="Privacy Policy"
           to="privacy">
           Privacy Policy
@@ -33,7 +90,7 @@
 </template>
 
 <script setup>
-const links = [{
+const socials = [{
   icon: 'ri-twitter-fill',
   value: 'twitter'
 }, {
@@ -43,41 +100,124 @@ const links = [{
   icon: 'ri-github-fill',
   value: 'github'
 }]
+
+const links = [{
+  label: 'About',
+  list: [{
+    label: 'Vision',
+    value: '/vision'
+  }, {
+    label: 'Careers',
+    value: '/careers'
+  }, {
+    label: 'Blog',
+    value: '/blog'
+  }]
+}, {
+  label: 'Dev Center',
+  list: [{
+    label: 'Developer',
+    value: '/developer'
+  }, {
+    label: 'Github',
+    value: 'https://github.com',
+    isExternal: true
+  }]
+}, {
+  label: 'Support',
+  list: [{
+    label: 'Contact',
+    value: '/contact'
+  }, {
+    label: 'FAQ',
+    value: '/faq'
+  }]
+}]
 </script>
 
 <style lang="scss">
 .chat-footer {
-  padding: 36px 0;
-  background: var(--text-color-primary);
-  font-size: 15px;
-  color: rgba(white, .9);
+  background: var(--bg-color-dark);
+  color: white;
   
   &__container {
-    width: 100%;
-    max-width: 1064px;
-    padding: 0 20px;
-    margin: 0 auto;
+  }
+  
+  &__top {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    padding: 60px 0;
   }
   
-  &__link-list {
+  &__logo {
+    display: flex;
+  }
+  
+  &__logo-image {
+    width: 100px;
+  }
+  
+  &__slogan {
+    margin-top: 10px;
+  }
+  
+  &__social-list {
     display: flex;
     align-items: center;
+    margin-top: 20px;
   }
   
-  &__link-item {
+  &__social-item {
     display: flex;
-    color: rgba(white, .9);
+    color: white;
     
     & + & {
       margin-left: 20px;
     }
   }
   
-  &__link-icon {
-    font-size: 16px;
+  &__social-icon {
+    font-size: 24px;
+  }
+  
+  &__menu-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  &__menu-item {
+    & + & {
+      margin-top: 15px;
+    }
+  }
+  
+  &__menu-link {
+    color: rgba(white, .8);
+      
+    &:hover {
+      color: white;
+    }
+  }
+  
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-top: 1px solid rgba(white, .1);
+    font-size: 14px;
+    
+    &,
+    a {
+      color: rgba(white, .6);
+    }
+    
+    a {
+      &:hover {
+        color: white;
+      }
+    }
   }
 }
 

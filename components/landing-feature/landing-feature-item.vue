@@ -63,10 +63,8 @@ export default {
 
 <style lang="scss">
 .landing-feature-item {
-  margin-bottom: 120px;
-  
-  &:last-of-type {
-    margin-bottom: 200px;
+  & + & {
+    margin-top: 120px;
   }
   
   &__container {

@@ -3,16 +3,20 @@
     :offset="0"
     :z-index="101">
     <header
-      class="chat-header">
+      class="chat-header"
+      :class="theme ? `chat-header--${theme}` : ''">
       <div
         class="container chat-header__container">
         <div
           class="chat-header__left">
           <router-link
             class="chat-header__logo"
-            title="Third.chat"
+            title="Echo"
             to="/">
-            Third.Chat
+            <img 
+              class="chat-header__logo-image"
+              :src="theme === 'dark' ? LogoWhite : Logo" 
+              alt="Echo">
           </router-link>
         </div>
         
@@ -30,47 +34,11 @@
         
         <div
           class="chat-header__right">
-          <!-- <el-button
+          <el-button
             size="large"
-            type="primary"
-            @click="$emit('connect-wallet')">
-            Connect Wallet
-          </el-button> -->
-          
-          <el-popover
-            :offset="0"
-            placement="bottom"
-            popper-class="chat-header__user-popover"
-            :show-arrow="false"
-            trigger="click"
-            :width="140">
-            <template 
-              #reference>
-              <div
-                class="chat-header__user">
-                <span
-                  class="chat-header__user-name">
-                  {{ $ellipsisInMiddle('0x1243353533456') }}
-                </span>
-                
-                <i
-                  class="ri-arrow-drop-down-line chat-header__user-arrow-icon">
-                </i>
-              </div>
-            </template>
-            
-            <template 
-              #default>
-              <menu-item
-                v-for="item in userMenu"
-                :key="item.value"
-                :icon="item.icon"
-                :is-link="item.isLink"
-                :label="item.label"
-                :link="item.value">
-              </menu-item>
-            </template>
-          </el-popover>
+            type="primary">
+            Get Your Widget
+          </el-button>
         </div>
         
         <i
@@ -88,6 +56,14 @@
 
 <script setup>
 import { ElAffix, ElButton, ElPopover } from 'element-plus'
+import Logo from '/assets/echo-logo.svg'
+import LogoWhite from '/assets/echo-logo-white.svg'
+
+const props = defineProps({
+  theme: {
+    type: String
+  }
+})
 
 const nav = [{
   label: 'FAQ',
@@ -117,6 +93,14 @@ const menuDrawerVisible = ref(false)
   background: rgba(white, .8);
   backdrop-filter: blur(10px);
   
+  &--dark {
+    background: var(--bg-color-dark);
+    
+    .chat-header__nav-item {
+      color: white;
+    }
+  }
+  
   &__container {
     display: flex;
     align-items: center;
@@ -130,7 +114,11 @@ const menuDrawerVisible = ref(false)
   }
   
   &__logo {
-    font-weight: 700;
+    display: flex;
+  }
+  
+  &__logo-image {
+    width: 40px;
   }
   
   &__nav {
@@ -150,28 +138,28 @@ const menuDrawerVisible = ref(false)
       color: var(--color-primary);
     }
     
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 50%;
-      background: var(--color-primary-light);
-      opacity: 0;
-      transform: scale3d(0, 1, 1);
-      transition: all .3s ease;
-      z-index: -1;
-    }
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 50%;
+    //   background: var(--color-primary-light);
+    //   opacity: 0;
+    //   transform: scale3d(0, 1, 1);
+    //   transition: all .3s ease;
+    //   z-index: -1;
+    // }
     
-    &.router-link-active {
-      color: var(--color-primary);
+    // &.router-link-active {
+    //   color: var(--color-primary);
       
-      &::after {
-        opacity: 1;
-        transform: scale3d(1, 1, 1);
-      }
-    }
+    //   &::after {
+    //     opacity: 1;
+    //     transform: scale3d(1, 1, 1);
+    //   }
+    // }
     
     & + & {
       margin-left: 40px;

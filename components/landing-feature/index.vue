@@ -30,6 +30,8 @@
 </template>
 
 <script setup>
+import LandingFeatureItem from './landing-feature-item'
+
 const props = defineProps({
   data: {
     type: Array,
@@ -40,6 +42,8 @@ const props = defineProps({
 
 <style lang="scss">
 .landing-feature {
+  padding: 80px 0 160px;
+  
   &__header {
     margin-bottom: 80px;
     text-align: center;

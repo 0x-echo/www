@@ -2,7 +2,7 @@
   <section
     class="landing-demo">
     <div
-      class="landing-demo__container">
+      class="section-container">
       <h2
         class="landing-section__title">
         Live Demo
@@ -69,14 +69,7 @@ const nav = [{
 
 <style lang="scss">
 .landing-demo {
-  margin-bottom: 160px;
-  
-  &__container {
-    margin: 0 auto;
-    max-width: 1000px;
-    padding: 0 20px;
-    width: 100%;
-  }
+  padding: 160px 0 80px;
   
   &__nav {
     display: flex;
@@ -128,14 +121,14 @@ const nav = [{
   &__widget {
     position: relative;
     height: 502px;
-    padding: 0 15px;
-    background: repeating-linear-gradient(135deg, var(--color-primary), var(--color-primary) 1px, white 0, white 10px);
+    // padding: 0 15px;
+    // background: repeating-linear-gradient(135deg, var(--color-primary), var(--color-primary) 1px, white 0, white 10px);
   }
   
   &__iframe {
     width: 100%;
     height: 502px;
-    border: 1px solid var(--text-color-primary);
+    border: 1px solid var(--bg-color-dark);
     background: white;
   }
 }
