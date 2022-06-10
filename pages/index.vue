@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <landing-hero>
     </landing-hero>
     
@@ -18,7 +18,7 @@
     
     <landing-action>
     </landing-action>
-  </div>
+  </main>
 </template>
 
 <script setup>

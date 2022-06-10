@@ -3,10 +3,11 @@
     class="landing-hero"
     ref="landingHero"
     data-color-theme="dark">
-    <div
+    <canvas
+      ref="heroBackground"
       id="heroBackground"
       class="landing-hero__background">
-    </div>
+    </canvas>
     
     <div
       class="section-container landing-hero__container">
@@ -36,14 +37,17 @@
 
 <script setup>
 import { ElButton } from 'element-plus'
-import particles from '../../packages/particles'
 import Typewriter from 'typewriter-effect/dist/core'
+import * as THREE from 'three'
 
+let heroBackground = ref(null)
 let typewriter = ref(null)
 const titleKeyword = ref(null)
 
 onMounted(() => {
   initHeroBackground()
+  animateHeroBackground()
+  
   typewriter = new Typewriter(titleKeyword.value, {
     strings: ['Things', 'NFT', 'Article', 'Transation', 'Address', 'Opinion', 'Dweb File'],
     loop: true,
@@ -57,35 +61,79 @@ onUnmounted(() => {
   typewriter.stop()
 })
 
+// https://codepen.io/vadymhimself/details/mNVdVE
+let camera, scene, renderer, group, geometry, material, raycaster
+let dirs = []
 const initHeroBackground = () => {
-  particlesJS('heroBackground', {
-    particles: {
-      color: {
-        value: ['#4E75F6', '#83BF1C', '#FFAA02', '#FF4838']
-      },
-      line_linked: {
-        enable: false
-      },
-      number: {
-        value: 50
-      },
-      size: {
-        value: 3,
-        random: true
-      }
-    },
-    interactivity: {
-      events: {
-        onhover: {
-          enable: false
-        },
-        onclick: {
-          enable: false
-        },
-        resize: false
-      }
-    }
-  }) 
+  camera = new THREE.PerspectiveCamera(45, heroBackground.value.clientWidth / heroBackground.value.clientHeight, 1, 10000) 
+  camera.position.z = 1000
+  
+  scene = new THREE.Scene()
+  scene.background = new THREE.Color(0x16171c)
+  scene.add(new THREE.AmbientLight(0x16171c))
+  scene.add(new THREE.DirectionalLight(0xffffff, 0.5))
+  
+  geometry = new THREE.BoxBufferGeometry(8, 8, 8);
+  material = new THREE.MeshPhongMaterial({
+    color: 0xeeeeee, specular: 0xffffff, shininess: 250
+  })
+  
+  raycaster = new THREE.Raycaster()
+  
+  group = new THREE.Group()
+  for (let i = 0; i < 750; i++) {
+    const mesh = new THREE.Mesh(geometry, material)
+    const dX = Math.random() * 2000 - 1000
+    const dY = Math.random() * 2000 - 1000
+    const dZ = Math.random() * 2000 - 1000
+    
+    dirs.push({
+      x: dX,
+      y: dY,
+      z: dZ
+    })
+    
+    mesh.position.x = 0
+    mesh.position.y = 0
+    mesh.position.z = 0
+    
+    mesh.rotation.x = Math.random() * 2 * Math.PI
+    mesh.rotation.y = Math.random() * 2 * Math.PI
+    
+    mesh.matrixAutoUpdate = false
+    mesh.updateMatrix()
+    
+    group.add(mesh)
+  }
+  
+  scene.add(group)
+  
+  const canvas = document.querySelector('#heroBackground')
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true })
+  renderer.setPixelRatio(window.devicePixelRatio)
+  renderer.setSize(heroBackground.value.clientWidth, heroBackground.value.clientHeight)
+}
+
+const lerp = (start, end, amt) => {
+  return (1 - amt) * start + amt * end
+}
+
+const animateHeroBackground = () => {
+  requestAnimationFrame(animateHeroBackground)
+  let mouse = new THREE.Vector2(-5, -5)
+  group.rotation.y += 0.005
+  camera.position.x += (mouse.x - camera.position.x) * 0.02
+  camera.position.y += (mouse.y - camera.position.y) * 0.02
+  
+  group.children.forEach((el, i) => {
+    el.position.x = lerp(el.position.x, dirs[i].x, 0.008)
+    el.position.y = lerp(el.position.y, dirs[i].y, 0.008)
+    el.position.z = lerp(el.position.z, dirs[i].z, 0.008)
+    el.rotateX(0.02)
+    el.updateMatrix()
+  })
+  camera.lookAt( scene.position )
+  renderer.render(scene, camera)
 }
 
 const anchorClick = (id) => {
@@ -106,9 +154,9 @@ const anchorClick = (id) => {
   &__background {
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     pointer-events: none;
   }

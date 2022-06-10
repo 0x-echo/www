@@ -14,6 +14,7 @@
     "element-plus": "2.1.11",
     "particles.js": "^2.0.0",
     "remixicon": "^2.5.0",
+    "three": "^0.141.0",
     "typewriter-effect": "^2.18.2"
   }
 }
