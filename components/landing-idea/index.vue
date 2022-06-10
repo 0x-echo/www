@@ -7,20 +7,22 @@
       <!-- <landing-cube>
       </landing-cube> -->
       
-      <div
-        class="landing-idea__slogan">
-        We help to <br>collect opinions
+      <div>
+        <div
+          class="landing-idea__slogan">
+          We help to <br>collect opinions
+        </div>
+        
+        <!-- <div
+          class="landing-idea__slogan">
+          We help to <br>permanently store opinions
+        </div>
+        
+        <div
+          class="landing-idea__slogan">
+          We help to <br>aggregate opinions
+        </div> -->
       </div>
-      
-      <!-- <div
-        class="landing-idea__slogan">
-        We help to <br>permanently store opinions
-      </div>
-      
-      <div
-        class="landing-idea__slogan">
-        We help to <br>aggregate opinions
-      </div> -->
     </div>
   </section>
 </template>

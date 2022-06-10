@@ -12,7 +12,7 @@
       class="section-container landing-hero__container">
       <h1
         class="landing-hero__title">
-        Our <strong>Opinion</strong><br>Is a Part of Things
+        Our <strong>Opinion</strong><br> Is a Part of <span class="landing-hero__title-keyword" ref="titleKeyword"></span>
       </h1>
       
       <div
@@ -37,13 +37,24 @@
 <script setup>
 import { ElButton } from 'element-plus'
 import particles from '../../packages/particles'
+import Typewriter from 'typewriter-effect/dist/core'
 
-const anchorClick = (id) => {
-  document.querySelector(`#${id}`).scrollIntoView()
-}
+let typewriter = ref(null)
+const titleKeyword = ref(null)
 
 onMounted(() => {
   initHeroBackground()
+  typewriter = new Typewriter(titleKeyword.value, {
+    strings: ['Things', 'NFT', 'Article', 'Transation', 'Address', 'Opinion', 'Dweb File'],
+    loop: true,
+    autoStart: true,
+    pauseFor: 800,
+    deleteSpeed: 50
+  })
+})
+
+onUnmounted(() => {
+  typewriter.stop()
 })
 
 const initHeroBackground = () => {
@@ -76,6 +87,10 @@ const initHeroBackground = () => {
     }
   }) 
 }
+
+const anchorClick = (id) => {
+  document.querySelector(`#${id}`).scrollIntoView()
+}
 </script>
 
 <style lang="scss">
@@ -104,8 +119,11 @@ const initHeroBackground = () => {
     
     strong {
       font-weight: 900;
-      color: var(--color-primary);
     }
+  }
+  
+  &__title-keyword {
+    color: #ffeb3b;
   }
   
   &__action-bar {
