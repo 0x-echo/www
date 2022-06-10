@@ -3,6 +3,9 @@
     <landing-hero>
     </landing-hero>
     
+    <landing-idea>
+    </landing-idea>
+    
     <landing-demo>
     </landing-demo>
     

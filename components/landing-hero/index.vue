@@ -1,9 +1,15 @@
 <template>
   <section
     class="landing-hero"
+    ref="landingHero"
     data-color-theme="dark">
     <div
-      class="container landing-hero__container">
+      id="heroBackground"
+      class="landing-hero__background">
+    </div>
+    
+    <div
+      class="section-container landing-hero__container">
       <h1
         class="landing-hero__title">
         Our <strong>Opinion</strong><br>Is a Part of Things
@@ -13,29 +19,16 @@
         class="landing-hero__action-bar">
         <el-button
           class="el-button--xlarge"
-          type="primary">
+          type="primary"
+          @click="anchorClick('landing-form')">
           Get It for Free
         </el-button>
         
         <el-button
-          class="el-button--xlarge landing-section__demo-button">
+          class="el-button--xlarge landing-section__demo-button"
+          @click="anchorClick('landing-demo')">
           Check Demo
         </el-button>
-      </div>
-      
-      <div
-        class="landing-hero__slogan">
-        We help to collect opinions
-      </div>
-      
-      <div
-        class="landing-hero__slogan">
-        We help to permanently store opinions
-      </div>
-      
-      <div
-        class="landing-hero__slogan">
-        We help to aggregate opinions
       </div>
     </div>
   </section>
@@ -43,17 +36,66 @@
 
 <script setup>
 import { ElButton } from 'element-plus'
+import particles from '../../packages/particles'
+
+const anchorClick = (id) => {
+  document.querySelector(`#${id}`).scrollIntoView()
+}
+
+onMounted(() => {
+  initHeroBackground()
+})
+
+const initHeroBackground = () => {
+  particlesJS('heroBackground', {
+    particles: {
+      color: {
+        value: ['#4E75F6', '#83BF1C', '#FFAA02', '#FF4838']
+      },
+      line_linked: {
+        enable: false
+      },
+      number: {
+        value: 50
+      },
+      size: {
+        value: 3,
+        random: true
+      }
+    },
+    interactivity: {
+      events: {
+        onhover: {
+          enable: false
+        },
+        onclick: {
+          enable: false
+        },
+        resize: false
+      }
+    }
+  }) 
+}
 </script>
 
 <style lang="scss">
+// https://codepen.io/edmundojr/details/xOYJGw
+
 .landing-hero {
   position: relative;
+  min-height: calc(100vh - 84px);
   padding: 150px 0;
   text-align: center;
+  z-index: 1;
   
-  &__container {
-    padding-top: 20px;
-    padding-bottom: 40px;
+  &__background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    pointer-events: none;
   }
   
   &__title {
@@ -61,31 +103,13 @@ import { ElButton } from 'element-plus'
     font-weight: 900;
     
     strong {
-      position: relative;
       font-weight: 900;
       color: var(--color-primary);
-      
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 2px;;
-        background: var(--color-primary-light);
-        z-index: -1;
-      }
     }
   }
   
   &__action-bar {
     margin-top: 50px;
-  }
-  
-  &__slogan {
-    font-size: 48px;
-    font-weight: bold;
   }
 }
 

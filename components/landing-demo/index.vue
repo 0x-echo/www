@@ -1,6 +1,7 @@
 <template>
   <section
-    class="landing-demo">
+    class="landing-demo"
+    id="landing-demo">
     <div
       class="section-container">
       <h2
@@ -69,7 +70,7 @@ const nav = [{
 
 <style lang="scss">
 .landing-demo {
-  padding: 160px 0 80px;
+  padding: 160px 0 0;
   
   &__nav {
     display: flex;

@@ -64,7 +64,7 @@ import { ElButton } from 'element-plus'
 
 const links = [{
   icon: 'ri-code-s-slash-line',
-  title: 'Follow our guides to buidl things',
+  title: 'Buidl things with our simple guides',
   link: '/developer',
   link_label: 'Check out Docs',
   isExternal: false

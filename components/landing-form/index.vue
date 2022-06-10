@@ -1,11 +1,12 @@
 <template>
   <section
-    class="landing-form">
+    class="landing-form"
+    id="landing-form">
     <div
       class="section-container">
       <h2
         class="landing-section__title">
-        Create Your Own Widget
+        Generate Your Own Widget
       </h2>
       
       <el-form
@@ -57,41 +58,43 @@
                   --
                 </div>
                 
-                <el-popover
-                  :ref="`${item.value}ModePopover`"
-                  placement="bottom"
-                  trigger="click"
-                  :width="120">
-                  <template 
-                    #reference>
-                    <div
-                      class="landing-form__mode-select"
-                      v-if="item.value !== 'comment' && item.value !== 'tip'"
-                      @click.stop.prevent>
-                      <span>
-                        {{ form[item.value] }}
-                      </span>
-                      
-                      <i
-                        class="ri-arrow-drop-down-line">
-                      </i>
-                    </div>
-                  </template>
-                  
-                  <template 
-                    #default>
-                    <div
-                      class="landing-form__mode-option"
-                      :class="{
-                        'active': form[item.value] === option.value
-                      }"
-                      v-for="option in modeOptions"
-                      :key="option.value"
-                      @click="selectMode(item.value, option.value)">
-                      {{ option.label }}
-                    </div>
-                  </template>
-                </el-popover>
+                <div
+                  v-if="item.value !== 'comment' && item.value !== 'tip'">
+                  <el-popover
+                    :ref="`${item.value}ModePopover`"
+                    placement="bottom"
+                    trigger="click"
+                    :width="120">
+                    <template 
+                      #reference>
+                      <div
+                        class="landing-form__mode-select"
+                        @click.stop.prevent>
+                        <span>
+                          {{ form[item.value] }}
+                        </span>
+                        
+                        <i
+                          class="ri-arrow-drop-down-line">
+                        </i>
+                      </div>
+                    </template>
+                    
+                    <template 
+                      #default>
+                      <div
+                        class="landing-form__mode-option"
+                        :class="{
+                          'active': form[item.value] === option.value
+                        }"
+                        v-for="option in modeOptions"
+                        :key="option.value"
+                        @click="selectMode(item.value, option.value)">
+                        {{ option.label }}
+                      </div>
+                    </template>
+                  </el-popover>
+                </div>
               </el-checkbox>
             </el-checkbox-group>
           </el-form-item>
@@ -123,16 +126,18 @@
               size="large"
               type="primary"
               @click="submit">
-              Create
+              Generate
             </el-button>
           </div>
         </div>
       </el-form>
       
-      <embed-code
-        class="landing-form__result"
-        :code="code">
-      </embed-code>
+      <div
+        class="landing-form__result">
+        <embed-code
+          :code="code">
+        </embed-code>
+      </div>
     </div>
   </section>
 </template>
@@ -230,7 +235,7 @@ const code = 'hello world'
 
 <style lang="scss">
 .landing-form {
-  padding: 80px 0;
+  padding: 160px 0 0;
   
   &__form {
     display: flex;
@@ -350,9 +355,8 @@ const code = 'hello world'
   }
   
   &__result {
-    margin-top: 60px;
-    padding: 30px;
-    border: 1px solid var(--bg-color-dark);
+    width: 800px;
+    margin: 60px auto 0;
   }
 }
 </style>

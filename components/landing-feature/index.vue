@@ -1,31 +1,26 @@
 <template>
   <section
     class="landing-feature">
-    <section
-      class="landing-feature__header">
-      <div
-        class="section-container">
+    <div
+      class="section-container landing-feature__container">
+      <section
+        class="landing-feature__header">
         <h2
           class="landing-section__title">
           Key Features
         </h2>
-        
-        <div
-          class="landing-feature__subtitle">
-          ///
-        </div>
-      </div>
-    </section>
-    
-    <landing-feature-item
-      v-for="(item, index) in data"
-      :key="index"
-      :desc="item.desc"
-      :image="item.image"
-      :reverse="item.reverse"
-      :strong-title="item.strongTitle"
-      :title="item.title">
-    </landing-feature-item>
+      </section>
+      
+      <landing-feature-item
+        v-for="(item, index) in data"
+        :key="index"
+        :desc="item.desc"
+        :image="item.image"
+        :reverse="item.reverse"
+        :strong-title="item.strongTitle"
+        :title="item.title">
+      </landing-feature-item>
+    </div>
   </section>
 </template>
 
@@ -42,7 +37,11 @@ const props = defineProps({
 
 <style lang="scss">
 .landing-feature {
-  padding: 80px 0 160px;
+  padding: 160px 0;
+  
+  &__container {
+    max-width: 1000px;
+  }
   
   &__header {
     margin-bottom: 80px;

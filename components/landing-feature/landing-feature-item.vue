@@ -1,35 +1,32 @@
 <template>
   <section
-    class="landing-feature-item">
+    class="landing-feature-item"
+    :class="{
+      'is-reverse': reverse
+    }">
     <div
-      class="section-container landing-feature-item__container"
-      :class="{
-        'is-reverse': reverse
-      }">
-      <div
-        class="landing-feature-item__content">
-        <h3
-          class="landing-feature-item__title">
-          <strong>
-            {{ strongTitle }}
-          </strong>
-          {{ title }}
-        </h3>
-        
-        <div
-          class="landing-feature-item__desc">
-          <slot
-            name="desc">
-            {{ desc }}
-          </slot>
-        </div>
-      </div>
+      class="landing-feature-item__content">
+      <h3
+        class="landing-feature-item__title">
+        <strong>
+          {{ strongTitle }}
+        </strong>
+        {{ title }}
+      </h3>
       
-      <img
-        class="landing-feature-item__visual" 
-        :src="`/assets/${image}.svg`" 
-        :alt="title">
+      <div
+        class="landing-feature-item__desc">
+        <slot
+          name="desc">
+          {{ desc }}
+        </slot>
+      </div>
     </div>
+    
+    <img
+      class="landing-feature-item__visual" 
+      :src="`/assets/${image}.svg`" 
+      :alt="title">
   </section>
 </template>
 
@@ -63,18 +60,16 @@ export default {
 
 <style lang="scss">
 .landing-feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  &.is-reverse {
+    flex-direction: row-reverse;
+  }
+    
   & + & {
     margin-top: 120px;
-  }
-  
-  &__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-    &.is-reverse {
-      flex-direction: row-reverse;
-    }
   }
   
   &__content {
