@@ -3,11 +3,13 @@
     class="landing-hero"
     ref="landingHero"
     data-color-theme="dark">
-    <canvas
-      ref="heroBackground"
-      id="heroBackground"
-      class="landing-hero__background">
-    </canvas>
+    <div
+      class="landing-hero__background"
+      ref="heroBackground">
+      <canvas
+        id="heroBackground">
+      </canvas>
+    </div>
     
     <div
       class="section-container landing-hero__container">
@@ -55,10 +57,14 @@ onMounted(() => {
     pauseFor: 800,
     deleteSpeed: 50
   })
+  
+  window.addEventListener('resize', onResize)
 })
 
 onUnmounted(() => {
   typewriter.stop()
+  
+  window.removeEventListener('resize', onResize)
 })
 
 // https://codepen.io/vadymhimself/details/mNVdVE
@@ -134,6 +140,13 @@ const animateHeroBackground = () => {
   })
   camera.lookAt( scene.position )
   renderer.render(scene, camera)
+}
+
+const onResize = () => {
+  camera.aspect = heroBackground.value.clientWidth / heroBackground.value.clientHeight
+  camera.updateProjectionMatrix()
+  
+  renderer.setSize(heroBackground.value.clientWidth, heroBackground.value.clientHeight)
 }
 
 const anchorClick = (id) => {
