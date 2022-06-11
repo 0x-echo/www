@@ -41,15 +41,15 @@
 import { ElButton } from 'element-plus'
 import Typewriter from 'typewriter-effect/dist/core'
 import * as THREE from 'three'
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 let heroBackground = ref(null)
 let typewriter = ref(null)
 const titleKeyword = ref(null)
 
 onMounted(() => {
-  initHeroBackground()
-  animateHeroBackground()
-  
   typewriter = new Typewriter(titleKeyword.value, {
     strings: ['Things', 'NFT', 'Article', 'Transation', 'Address', 'Opinion', 'Dweb File'],
     loop: true,
@@ -57,6 +57,17 @@ onMounted(() => {
     pauseFor: 800,
     deleteSpeed: 50
   })
+  
+  // background
+  initHeroBackground()
+  animateHeroBackground()
+  
+  // gsap.to(group.rotation, {
+  //   y: 100,
+  //   scrollTrigger: {
+  //     trigger: '.landing-idea'
+  //   }
+  // })
   
   window.addEventListener('resize', onResize)
 })
@@ -138,7 +149,7 @@ const animateHeroBackground = () => {
     el.rotateX(0.02)
     el.updateMatrix()
   })
-  camera.lookAt( scene.position )
+  camera.lookAt(scene.position)
   renderer.render(scene, camera)
 }
 
