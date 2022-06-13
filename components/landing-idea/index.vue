@@ -22,17 +22,17 @@
         class="landing-idea__bottom">
         <div
           class="landing-idea__slogan first">
-          We help to <br><strong>aggregate</strong> opinions
+          We help to<br><strong>aggregate</strong> opinions
         </div>
         
         <div
           class="landing-idea__slogan second">
-          We help to <br><strong>connect</strong> opinions
+          We help to<br>ignite <strong>talking vibe</strong>
         </div>
         
         <div
           class="landing-idea__slogan third">
-          We help to <br><strong>permanently store</strong> opinions
+          We help to<br>store opinions forever <strong>with Arweave</strong>
         </div>
       </div>
     </div>
