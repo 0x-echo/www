@@ -27,12 +27,12 @@
         
         <div
           class="landing-idea__slogan second">
-          We help to <br><strong>permanently store</strong> opinions
+          We help to <br><strong>connect</strong> opinions
         </div>
         
         <div
           class="landing-idea__slogan third">
-          We help to <br><strong>connect</strong> opinions
+          We help to <br><strong>permanently store</strong> opinions
         </div>
       </div>
     </div>
@@ -68,44 +68,46 @@ onMounted(() => {
     autoAlpha: 0,
     y: '-100%',
     duration: 1,
-    ease: 'power2'
+    ease: 'power1'
   }, 'a').from('.first', {
     autoAlpha: 0,
     y: '100%',
     duration: 1,
-    ease: 'power2'
+    ease: 'power1'
   }, 'a').to('.first', {
     autoAlpha: 0,
     y: '100%',
     duration: 1,
-    ease: 'power2'
+    ease: 'power1'
   }, '+=10').to('.idea-line', {
     autoAlpha: 0,
     duration: 1,
-    ease: 'power2'
-  }).set('.idea-cube', {
-    className: 'idea-cube spin'
+    ease: 'power1'
+  }).to('.idea-echo', {
+    autoAlpha: 1,
+    duration: 1,
+    ease: 'power1'
   }).from('.second', {
     autoAlpha: 0,
     y: '100%',
     duration: 1,
-    ease: 'power2'
-  }, '+=1').to('.second', {
+    ease: 'power1'
+  }).to('.second', {
     autoAlpha: 0,
     y: '100%',
     duration: 1,
-    ease: 'power2'
-  }, '+=10').set('.idea-cube', {
-    className: 'idea-cube'
-  }).to('.idea-echo', {
-    autoAlpha: 1,
+    ease: 'power1'
+  }, '+=10').to('.idea-echo', {
+    autoAlpha: 0,
     duration: 1,
-    ease: 'power2'
+    ease: 'power1'
+  }).set('.idea-cube', {
+    className: 'idea-cube spin'
   }).from('.third', {
     autoAlpha: 0,
     y: '100%',
     duration: 1,
-    ease: 'power2'
+    ease: 'power1'
   }, '+=1').add(() => {
   }, '+=10')
 })

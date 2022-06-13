@@ -58,27 +58,27 @@ const props = defineProps({
 
 @keyframes echo {
   0% {
-    transform: translateX(50%) translateY(35%);
+    transform: translateX(40%) translateY(35%);
   }
   50% {
     transform: translateX(-50%);
     opacity: 0;
   }
   100% {
-    transform: translateX(50%) translateY(35%);
+    transform: translateX(40%) translateY(35%);
   }
 }
 
 @keyframes echoReverse {
   0% {
-    transform: translateX(-50%) translateY(-35%);
+    transform: translateX(-40%) translateY(-35%);
   }
   50% {
     transform: translateX(50%);
     opacity: 0;
   }
   100% {
-    transform: translateX(-50%) translateY(-35%);
+    transform: translateX(-40%) translateY(-35%);
   }
 }
 </style>

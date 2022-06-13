@@ -44,7 +44,7 @@ $box-size: 160px;
   transform: rotateY(-45deg) rotateX(60deg);
   
   &.spin {
-    animation : spin 5s infinite linear;
+    animation: spin 5s infinite linear;
   }
   
   &__square {
@@ -83,10 +83,10 @@ $box-size: 160px;
 
 @keyframes spin {
   from { 
-    transform: rotateY(0) rotateX(0); 
+    transform: rotateY(-45deg) rotateX(60deg); 
   }
   to { 
-    transform: rotateY(-360deg) rotateX(360deg); 
+    transform: rotateY(-405deg) rotateX(420deg); 
   }
 }
 </style>
