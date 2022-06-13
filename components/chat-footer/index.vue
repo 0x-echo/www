@@ -5,7 +5,8 @@
       class="section-container">
       <div
         class="chat-footer__top">
-        <div>
+        <div
+          class="chat-footer__info">
           <router-link
             class="chat-footer__logo"
             title="Echo"
@@ -15,6 +16,11 @@
               src="@/assets/echo-logo-white.svg" 
               alt="Echo">
           </router-link>
+          
+          <h3
+            class="chat-footer__name">
+            ECHO
+          </h3>
           
           <p
             class="chat-footer__slogan">
@@ -136,6 +142,7 @@ const links = [{
   
   &__top {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 60px 0;
   }
@@ -146,6 +153,11 @@ const links = [{
   
   &__logo-image {
     width: 100px;
+  }
+  
+  &__name {
+    margin-top: 10px;
+    font-size: 20px;
   }
   
   &__slogan {
@@ -212,14 +224,26 @@ const links = [{
   }
 }
 
-@media screen and (max-width: $mobile-width) {
+@media screen and (max-width: #{$tablet-width - 1}) {
   .chat-footer {
-    &__container {
-      flex-direction: column-reverse;
+    &__info {
+      width: 100%;
     }
     
-    &__link-list {
-      margin-bottom: 10px;
+    &__menu {
+      margin-top: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .chat-footer {
+    &__info {
+      flex-direction: column;
+    }
+    
+    &__menu {
+      width: 50%;
     }
   }
 }

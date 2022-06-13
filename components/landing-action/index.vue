@@ -147,4 +147,42 @@ const links = [{
     }
   }
 }
+
+@media screen and (max-width: #{$tablet-width - 1}) {
+  .landing-action {
+    &__action-bar {
+      display: flex;
+      flex-direction: column;
+      
+      .el-button {
+        + .el-button {
+          margin: 15px 0 0;
+        }
+      }
+    }
+    
+    &__link-list {
+      flex-direction: column;
+    }
+    
+    &__link-item {
+      width: 100%;
+      padding: 20px;
+      
+      & + & {
+        margin: 30px 0 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .landing-action {
+    &__title {
+      margin-top: 10px;
+      font-size: 12vw;
+      line-height: 1.2;
+    }
+  }
+}
 </style>

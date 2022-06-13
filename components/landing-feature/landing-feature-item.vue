@@ -115,12 +115,10 @@ export default {
   .landing-feature-item {
     margin-bottom: 50px;
     
-    &__container {
-      &,
-      &.is-reverse {
-        flex-direction: column-reverse; 
-        align-items: flex-start;
-      }
+    &,
+    &.is-reverse {
+      flex-direction: column-reverse; 
+      align-items: flex-start;
     }
     
     &__content {

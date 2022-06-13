@@ -17,6 +17,11 @@
               class="chat-header__logo-image"
               :src="theme === 'dark' ? LogoWhite : Logo" 
               alt="Echo">
+              
+            <span
+              class="chat-header__logo-label">
+              ECHO
+            </span>
           </router-link>
         </div>
         
@@ -115,10 +120,17 @@ const menuDrawerVisible = ref(false)
   
   &__logo {
     display: flex;
+    align-items: center;
   }
   
   &__logo-image {
     width: 40px;
+  }
+  
+  &__logo-label {
+    margin-left: 10px;
+    font-weight: bold;
+    color: white;
   }
   
   &__nav {

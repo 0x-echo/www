@@ -12,7 +12,7 @@
       class="section-container landing-hero__container">
       <h1
         class="landing-hero__title">
-        Our <strong>Opinion</strong><br> Is a Part of <span class="landing-hero__title-keyword" ref="titleKeyword"></span>
+        Our Opinion<br> Is a Part of <span class="landing-hero__title-keyword" ref="titleKeyword"></span>
       </h1>
       
       <div
@@ -202,18 +202,34 @@ const anchorClick = (id) => {
   }
 }
 
-@media screen and (max-width: $mobile-width) {
+@media screen and (max-width: 900px) {
   .landing-hero {
     &__title {
-      font-size: 60px;
+      display: flex;
+      flex-direction: column;
     }
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: #{$tablet-width - 1}) {
+  .landing-hero {  
+    &__action-bar {
+      display: flex;
+      flex-direction: column;
+      
+      .el-button {
+        + .el-button {
+          margin: 15px 0 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
   .landing-hero {
     &__title {
-      font-size: 44px;
+      font-size: 13vw;
     }
   }
 }
