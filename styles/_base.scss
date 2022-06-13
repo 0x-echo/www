@@ -41,3 +41,7 @@ section[data-color-theme=dark] {
   background-color: var(--bg-color-dark);
   color: white;
 }
+
+section[data-color-theme=light] {
+  background-color: white;
+}

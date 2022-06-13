@@ -1,7 +1,8 @@
 <template>
   <section
     class="landing-form"
-    id="landing-form">
+    id="landing-form"
+    data-color-theme="light">
     <div
       class="section-container">
       <h2

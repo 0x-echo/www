@@ -1,7 +1,8 @@
 <template>
   <section
     class="landing-demo"
-    id="landing-demo">
+    id="landing-demo"
+    data-color-theme="light">
     <div
       class="section-container">
       <h2

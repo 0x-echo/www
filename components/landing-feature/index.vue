@@ -1,6 +1,7 @@
 <template>
   <section
-    class="landing-feature">
+    class="landing-feature"
+    data-color-theme="light">
     <div
       class="section-container landing-feature__container">
       <section

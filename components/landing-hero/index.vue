@@ -3,13 +3,10 @@
     class="landing-hero"
     ref="landingHero"
     data-color-theme="dark">
-    <div
-      class="landing-hero__background"
-      ref="heroBackground">
-      <canvas
-        id="heroBackground">
-      </canvas>
-    </div>
+    <canvas
+      class="landing-hero__canvas"
+      id="heroCanvas">
+    </canvas>
     
     <div
       class="section-container landing-hero__container">
@@ -41,11 +38,8 @@
 import { ElButton } from 'element-plus'
 import Typewriter from 'typewriter-effect/dist/core'
 import * as THREE from 'three'
-import { gsap } from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
 
-let heroBackground = ref(null)
+let landingHero = ref(null)
 let typewriter = ref(null)
 const titleKeyword = ref(null)
 
@@ -59,15 +53,8 @@ onMounted(() => {
   })
   
   // background
-  initHeroBackground()
-  animateHeroBackground()
-  
-  // gsap.to(group.rotation, {
-  //   y: 100,
-  //   scrollTrigger: {
-  //     trigger: '.landing-idea'
-  //   }
-  // })
+  initCanvas()
+  animateCanvas()
   
   window.addEventListener('resize', onResize)
 })
@@ -81,16 +68,19 @@ onUnmounted(() => {
 // https://codepen.io/vadymhimself/details/mNVdVE
 let camera, scene, renderer, group, geometry, material, raycaster
 let dirs = []
-const initHeroBackground = () => {
-  camera = new THREE.PerspectiveCamera(45, heroBackground.value.clientWidth / heroBackground.value.clientHeight, 1, 10000) 
+const initCanvas = () => {
+  // camera
+  camera = new THREE.PerspectiveCamera(45, landingHero.value.clientWidth / landingHero.value.clientHeight, 1, 10000) 
   camera.position.z = 1000
   
+  // scene
   scene = new THREE.Scene()
   scene.background = new THREE.Color(0x16171c)
   scene.add(new THREE.AmbientLight(0x16171c))
   scene.add(new THREE.DirectionalLight(0xffffff, 0.5))
   
-  geometry = new THREE.BoxBufferGeometry(8, 8, 8);
+  // cubes
+  geometry = new THREE.BoxBufferGeometry(8, 8, 8)
   material = new THREE.MeshPhongMaterial({
     color: 0xeeeeee, specular: 0xffffff, shininess: 250
   })
@@ -125,38 +115,49 @@ const initHeroBackground = () => {
   
   scene.add(group)
   
-  const canvas = document.querySelector('#heroBackground')
+  // renderer
+  const canvas = document.querySelector('#heroCanvas')
   renderer = new THREE.WebGLRenderer({ canvas, antialias: true })
   renderer.setPixelRatio(window.devicePixelRatio)
-  renderer.setSize(heroBackground.value.clientWidth, heroBackground.value.clientHeight)
+  renderer.setSize(landingHero.value.clientWidth, landingHero.value.clientHeight)
 }
 
 const lerp = (start, end, amt) => {
   return (1 - amt) * start + amt * end
 }
 
-const animateHeroBackground = () => {
-  requestAnimationFrame(animateHeroBackground)
+const animateCanvas = () => {
+  // animate meshes
   let mouse = new THREE.Vector2(-5, -5)
-  group.rotation.y += 0.005
+  group.rotation.y += 0.001
+
+  // animate camera
   camera.position.x += (mouse.x - camera.position.x) * 0.02
   camera.position.y += (mouse.y - camera.position.y) * 0.02
-  
+
   group.children.forEach((el, i) => {
     el.position.x = lerp(el.position.x, dirs[i].x, 0.008)
     el.position.y = lerp(el.position.y, dirs[i].y, 0.008)
     el.position.z = lerp(el.position.z, dirs[i].z, 0.008)
     el.rotateX(0.02)
     el.updateMatrix()
-  })
+  }) 
+  
   camera.lookAt(scene.position)
+  
+  // renderer
   renderer.render(scene, camera)
+  
+  // call again on next frame
+  requestAnimationFrame(animateCanvas)
 }
 
 const onResize = () => {
+  // update camera
   camera.aspect = heroBackground.value.clientWidth / heroBackground.value.clientHeight
   camera.updateProjectionMatrix()
   
+  // update renderer
   renderer.setSize(heroBackground.value.clientWidth, heroBackground.value.clientHeight)
 }
 
@@ -175,12 +176,10 @@ const anchorClick = (id) => {
   text-align: center;
   z-index: 1;
   
-  &__background {
+  &__canvas {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     z-index: -1;
     pointer-events: none;
   }
