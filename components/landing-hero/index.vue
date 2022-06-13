@@ -154,11 +154,11 @@ const animateCanvas = () => {
 
 const onResize = () => {
   // update camera
-  camera.aspect = heroBackground.value.clientWidth / heroBackground.value.clientHeight
+  camera.aspect = landingHero.value.clientWidth / landingHero.value.clientHeight
   camera.updateProjectionMatrix()
   
   // update renderer
-  renderer.setSize(heroBackground.value.clientWidth, heroBackground.value.clientHeight)
+  renderer.setSize(landingHero.value.clientWidth, landingHero.value.clientHeight)
 }
 
 const anchorClick = (id) => {

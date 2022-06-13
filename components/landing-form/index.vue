@@ -356,8 +356,16 @@ const code = 'hello world'
   }
   
   &__result {
-    width: 800px;
+    width: 100%;
     margin: 60px auto 0;
+  }
+}
+
+@media screen and (max-width: #{$tablet-width - 1}) {
+  .landing-form {
+    &__preview {
+      display: none;
+    }
   }
 }
 </style>

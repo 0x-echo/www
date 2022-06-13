@@ -34,11 +34,11 @@ import ideaLine from './line'
 
 <style lang="scss">
 // https://codepen.io/rauldronca/pen/qNPPXr
-$box-size: 160px;
 
 .idea-cube {
-  height: $box-size;
-  width: $box-size;
+  --box-size: 160px;
+  height: var(--box-size);
+  width: var(--box-size);
   transform-style: preserve-3d;
   will-change: transform;
   transform: rotateY(-45deg) rotateX(60deg);
@@ -49,35 +49,35 @@ $box-size: 160px;
   
   &__square {
     position: absolute;
-    height: $box-size;
-    width: $box-size;
+    height: 100%;
+    width: 100%;
     border: 3px solid white;
     background: var(--bg-color-dark);
     overflow: hidden;
   }
   
   &__one { 
-    transform: rotateX(90deg) translateZ(80px); 
+    transform: rotateX(90deg) translateZ(calc(var(--box-size) / 2)); 
   }
 
   &__two { 
-    transform: translateZ(80px); 
+    transform: translateZ(calc(var(--box-size) / 2)); 
   }
 
   &__three { 
-    transform: rotateY(90deg) translateZ(80px); 
+    transform: rotateY(90deg) translateZ(calc(var(--box-size) / 2)); 
   }
 
   &__four { 
-    transform: rotateY(180deg) translateZ(80px); 
+    transform: rotateY(180deg) translateZ(calc(var(--box-size) / 2)); 
   }
 
   &__five { 
-    transform: rotateY(-90deg) translateZ(80px); 
+    transform: rotateY(-90deg) translateZ(calc(var(--box-size) / 2)); 
   }
 
   &__six { 
-    transform: rotateX(-90deg) translateZ(80px);
+    transform: rotateX(-90deg) translateZ(calc(var(--box-size) / 2));
   }
 }
 
@@ -87,6 +87,12 @@ $box-size: 160px;
   }
   to { 
     transform: rotateY(-405deg) rotateX(420deg); 
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .idea-cube {
+    --box-size: 80px;
   }
 }
 </style>

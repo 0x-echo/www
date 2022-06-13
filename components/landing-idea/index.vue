@@ -32,7 +32,7 @@
         
         <div
           class="landing-idea__slogan third">
-          We help to<br>store opinions forever <strong>with Arweave</strong>
+          We help to<br>store opinions <strong>forever</strong>
         </div>
       </div>
     </div>
@@ -141,9 +141,18 @@ onMounted(() => {
     width: 100%;
     font-size: 60px;
     font-weight: bold;
+    line-height: 1.2;
     
     strong {
       color: var(--color-primary);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .landing-idea {
+    &__slogan {
+      font-size: 10vw;
     }
   }
 }

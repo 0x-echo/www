@@ -24,8 +24,9 @@ const props = defineProps({
 
 <style lang="scss">
 .idea-echo {
-  width: 60px;
-  height: 60px;
+  --echo-size: 60px;
+  width: var(--echo-size);
+  height: var(--echo-size);
   animation: echo 3s infinite;
   opacity: 0;
   
@@ -79,6 +80,12 @@ const props = defineProps({
   }
   100% {
     transform: translateX(-40%) translateY(-35%);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .idea-echo {
+    --echo-size: 30px;
   }
 }
 </style>

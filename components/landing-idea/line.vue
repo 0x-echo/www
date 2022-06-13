@@ -46,4 +46,14 @@
     transform: scaleX(1);
   }
 }
+
+@media screen and (max-width: 600px) {
+  .idea-line {
+    &__line {
+      & + & {
+        margin-top: 12px;
+      }
+    }
+  }
+}
 </style>
