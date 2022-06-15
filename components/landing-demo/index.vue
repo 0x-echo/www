@@ -125,9 +125,9 @@ const nav = [{
   
   &__widget {
     position: relative;
-    height: 502px;
-    // padding: 0 15px;
-    // background: repeating-linear-gradient(135deg, var(--color-primary), var(--color-primary) 1px, white 0, white 10px);
+    height: 517px;
+    padding: 0 15px;
+    background: repeating-linear-gradient(135deg, var(--color-primary), var(--color-primary) 1px, white 0, white 10px);
   }
   
   &__iframe {
