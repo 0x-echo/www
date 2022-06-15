@@ -4,7 +4,7 @@
     id="landing-demo"
     data-color-theme="light">
     <div
-      class="section-container landing-demo__container">
+      class="container landing-demo__container">
       <landing-section-header
         class="landing-demo__headder"
         title="Live Demo">
@@ -70,10 +70,6 @@ const nav = [{
 
 <style lang="scss">
 .landing-demo {
-  &__container {
-    padding-top: 160px;
-  }
-  
   &__headder {
     margin-bottom: 40px;
   }

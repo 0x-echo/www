@@ -2,7 +2,7 @@
   <footer
     class="chat-footer">
     <div
-      class="section-container">
+      class="container">
       <div
         class="chat-footer__top">
         <div

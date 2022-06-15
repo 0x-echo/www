@@ -1,34 +1,37 @@
 <template>
   <div
-    class="template-doc"
-    :style="{
-      maxWidth: maxWidth
-    }">
+    class="template-doc">
     <div
-      class="template-doc__header"
-      v-if="title">
-      <i
-        class="template-doc__header-icon"
-        :class="icon"
-        v-if="icon">
-      </i>
+      class="container"
+      :style="{
+        maxWidth: maxWidth
+      }">
+      <div
+        class="template-doc__header"
+        v-if="title">
+        <i
+          class="template-doc__header-icon"
+          :class="icon"
+          v-if="icon">
+        </i>
+        
+        <h1
+          class="template-doc__title">
+          {{ title }}
+        </h1>
+        
+        <p
+          class="template-doc__subtitle"
+          v-if="subtitle">
+          {{ subtitle }}
+        </p>
+      </div>
       
-      <h1
-        class="template-doc__title">
-        {{ title }}
-      </h1>
-      
-      <p
-        class="template-doc__subtitle"
-        v-if="subtitle">
-        {{ subtitle }}
-      </p>
-    </div>
-    
-    <div
-      class="template-doc__content">
-      <slot>
-      </slot>
+      <div
+        class="template-doc__content">
+        <slot>
+        </slot>
+      </div>
     </div>
   </div>
 </template>
@@ -40,7 +43,7 @@ const props = defineProps({
   },
   maxWidth: {
     type: String,
-    default: '780px'
+    default: '800px'
   },
   subtitle: {
     type: String
@@ -53,10 +56,7 @@ const props = defineProps({
 
 <style lang="scss">
 .template-doc {
-  width: 100%;
-  min-height: calc(100vh - 84px - 96px);
-  padding: 100px 20px 200px;
-  margin: 0 auto;
+  padding: 100px 0 160px;
   
   &__header {
     text-align: center;
@@ -73,7 +73,6 @@ const props = defineProps({
  
   &__subtitle {
     margin-top: 10px;
-    font-size: 14px;
     color: var(--text-color-muted);
   }
   

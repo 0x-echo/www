@@ -4,7 +4,7 @@
     id="landing-form"
     data-color-theme="light">
     <div
-      class="section-container">
+      class="container">
       <landing-section-header
         subtitle="Easy step to make it work"
         title="Get Your Widget">
@@ -312,8 +312,6 @@ const submit = async () => {
 
 <style lang="scss">
 .landing-form {
-  padding: 160px 0 0;
-  
   &__content {
     display: flex;
     min-height: 714px;

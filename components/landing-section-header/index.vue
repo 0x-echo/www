@@ -45,4 +45,12 @@ const props = defineProps({
     color: var(--text-color-muted);
   }
 }
+
+@media screen and (max-width: 425px) {
+  .landing-section-header {
+    &__title {
+      font-size: 36px;
+    }
+  }
+}
 </style>

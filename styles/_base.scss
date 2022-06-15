@@ -1,21 +1,7 @@
 .container {
   width: 100%;
-  max-width: 1064px;
-  padding: 0 20px;
-  margin: 0 auto;
-}
-
-.page-container {
-  width: 100%;
-  max-width: 1064px;
-  padding: 100px 20px 200px;
-  margin: 0 auto;
-}
-
-.section-container {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 20px;
+  max-width: 1280px;
+  padding: 0 40px;
   margin: 0 auto;
 }
 
@@ -44,4 +30,10 @@ section[data-color-theme=dark] {
 
 section[data-color-theme=light] {
   background-color: white;
+}
+
+@media screen and (max-width: $tablet-width) {
+  .container {
+    padding: 0 20px;
+  }
 }

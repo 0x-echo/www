@@ -3,7 +3,7 @@
     class="landing-action"
     data-color-theme="dark">
     <div
-      class="section-container">
+      class="container">
       <div
         class="landing-action__subtitle">
         Start it now 
@@ -24,7 +24,7 @@
         </el-button>
         
         <el-button
-          class="el-button--xlarge landing-section__demo-button"
+          class="el-button--xlarge landing-page__demo-button"
           @click="jumpTo('landing-demo')">
           Check Demo
         </el-button>

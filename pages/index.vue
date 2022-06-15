@@ -1,5 +1,6 @@
 <template>
-  <main>
+  <main
+    class="landing-page">
     <landing-hero>
     </landing-hero>
     
@@ -46,13 +47,7 @@ const features = [{
 </script>
 
 <style lang="scss">
-.landing-section {
-  &__title {
-    font-size: 44px;
-    text-transform: uppercase;
-    text-align: center;
-  }
-  
+.landing-page {    
   &__demo-button {
     &,
     &:focus:not(.el-button:hover) {
@@ -66,13 +61,13 @@ const features = [{
       background: white;
     }
   }
+  
+  section[data-color-theme=light] {
+    padding-top: 160px;
+  }
 }
 
-@media screen and (max-width: 425px) {
-  .landing-section {
-    &__title {
-      font-size: 36px;
-    }
-  }
+.landing-feature {
+  padding-bottom: 160px;
 }
 </style>

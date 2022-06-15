@@ -37,7 +37,8 @@ const props = defineProps({
 
 <style lang="scss">
 .error-page {
-  padding-bottom: 150px;
+  padding-top: 80px;
+  padding-bottom: 160px;
   
   &__content {
     display: flex;
@@ -47,8 +48,8 @@ const props = defineProps({
   }
   
   &__image {
-    width: 100%;
-    max-width: 512px;
+    width: 80%;
+    max-width: 400px;
   }
   
   &__title {

@@ -3,7 +3,7 @@
     class="chat-header"
     :class="theme ? `chat-header--${theme}` : ''">
     <div
-      class="section-container chat-header__container">
+      class="container chat-header__container">
       <div
         class="chat-header__left">
         <router-link

@@ -3,7 +3,7 @@
     class="landing-feature"
     data-color-theme="light">
     <div
-      class="section-container landing-feature__container">
+      class="container landing-feature__container">
       <landing-section-header
         subtitle="A smart solution for your need"
         title="Key Features">
@@ -35,8 +35,6 @@ const props = defineProps({
 
 <style lang="scss">
 .landing-feature {
-  padding: 160px 0;
-  
   &__container {
     max-width: 1000px;
   }

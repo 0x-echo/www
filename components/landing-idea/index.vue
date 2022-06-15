@@ -3,7 +3,7 @@
     class="landing-idea"
     data-color-theme="dark">
     <div
-      class="section-container landing-idea__container">
+      class="container landing-idea__container">
       <div
         class="landing-idea__top">
         <idea-echo>

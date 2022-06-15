@@ -9,7 +9,7 @@
     </canvas>
     
     <div
-      class="section-container landing-hero__container">
+      class="container landing-hero__container">
       <h1
         class="landing-hero__title">
         Our Opinion<br> Is a Part of <span class="landing-hero__title-keyword" ref="titleKeyword"></span>
@@ -25,7 +25,7 @@
         </el-button>
         
         <el-button
-          class="el-button--xlarge landing-section__demo-button"
+          class="el-button--xlarge landing-page__demo-button"
           @click="jumpTo('landing-demo')">
           Check Demo
         </el-button>
