@@ -13,6 +13,7 @@
   "dependencies": {
     "element-plus": "2.1.11",
     "gsap": "^3.10.4",
+    "jump.js": "^1.0.2",
     "particles.js": "^2.0.0",
     "remixicon": "^2.5.0",
     "three": "^0.141.0",

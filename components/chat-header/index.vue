@@ -38,7 +38,8 @@
         class="chat-header__right">
         <el-button
           size="large"
-          type="primary">
+          type="primary"
+          @click="getWidget">
           Get Your Widget
         </el-button>
       </div>
@@ -62,6 +63,7 @@ import LogoWhite from '/assets/echo-logo-white.svg'
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+import jump from 'jump.js'
 
 const props = defineProps({
   theme: {
@@ -113,6 +115,19 @@ onMounted(() => {
     })
   // })
 })
+
+const route = useRoute()
+const router = useRouter()
+
+const getWidget = () => {
+  if (route.path === '/') {
+    jump('#landing-form', {
+      offset: 0
+    })
+  } else {
+    router.push('/widget')
+  }
+}
 </script>
 
 <style lang="scss">

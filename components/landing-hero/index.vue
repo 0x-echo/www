@@ -20,13 +20,13 @@
         <el-button
           class="el-button--xlarge"
           type="primary"
-          @click="anchorClick('landing-form')">
+          @click="jumpTo('landing-form')">
           Get It for Free
         </el-button>
         
         <el-button
           class="el-button--xlarge landing-section__demo-button"
-          @click="anchorClick('landing-demo')">
+          @click="jumpTo('landing-demo')">
           Check Demo
         </el-button>
       </div>
@@ -38,6 +38,7 @@
 import { ElButton } from 'element-plus'
 import Typewriter from 'typewriter-effect/dist/core'
 import * as THREE from 'three'
+import jump from 'jump.js'
 
 let typewriter = ref(null)
 const titleKeyword = ref(null)
@@ -163,8 +164,10 @@ const onResize = () => {
   renderer.setSize(landingHero.value.clientWidth, landingHero.value.clientHeight)
 }
 
-const anchorClick = (id) => {
-  document.querySelector(`#${id}`).scrollIntoView()
+const jumpTo = (id) => {
+  jump(`#${id}`, {
+    offset: -85
+  })
 }
 </script>
 
