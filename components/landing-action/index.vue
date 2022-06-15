@@ -51,7 +51,7 @@
               class="landing-action__link-label"
               :href="item.link"
               :target="item.isExternal ? '_blank' : ''"
-              title="Discord">
+              :title="item.link_label">
               {{ item.link_label }}
             </a>
           </div>
@@ -74,7 +74,7 @@ const links = [{
 }, {
   icon: 'ri-discord-line',
   title: 'Join our Discord to keep updated',
-  link: '',
+  link: 'https://github.com',
   link_label: 'Jump in community',
   isExternal: true
 }]
@@ -131,29 +131,7 @@ const jumpTo = (id) => {
   }
   
   &__link-label {
-    position: relative;
     font-weight: 500;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 1px;
-      background: var(--color-primary);
-      opacity: 0;
-      transform: scale3d(0, 1, 1);
-      transform-origin: left center;
-      transition: all .3s;
-    }
-    
-    &:hover {
-      &::after {
-        opacity: 1;
-        transform: scale3d(1, 1, 1);
-      }
-    }
   }
 }
 
