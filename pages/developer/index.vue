@@ -50,7 +50,7 @@ const nav = [{
 .chat-template {
   display: flex;
   justify-content: space-between;
-  padding-top: 50px;
+  padding-top: 200px;
   padding-bottom: 100px;
   
   &__aside {

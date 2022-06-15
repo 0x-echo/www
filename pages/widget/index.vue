@@ -18,6 +18,6 @@ export default {
 
 <style lang="scss">
 .widget-page {
-  padding: 100px 0 160px;
+  padding: 180px 0 160px;
 }
 </style>

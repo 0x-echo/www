@@ -56,7 +56,7 @@ const props = defineProps({
 
 <style lang="scss">
 .template-doc {
-  padding: 100px 0 160px;
+  padding: 180px 0 160px;
   
   &__header {
     text-align: center;

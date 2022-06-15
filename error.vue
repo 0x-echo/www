@@ -37,7 +37,7 @@ const props = defineProps({
 
 <style lang="scss">
 .error-page {
-  padding-top: 80px;
+  padding-top: 160px;
   padding-bottom: 160px;
   
   &__content {
