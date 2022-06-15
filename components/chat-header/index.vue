@@ -106,13 +106,13 @@ onMounted(() => {
   // const sectionDark = document.querySelectorAll('[data-color-theme=dark]')
   // console.log(sectionDark)
   // sectionDark.forEach(el => {
-    ScrollTrigger.create({
-      trigger: '.landing-feature',
-      toggleClass: {
-        target: '.chat-header',
-        className: 'chat-header--hello'
-      }
-    })
+    // ScrollTrigger.create({
+    //   trigger: '.landing-feature',
+    //   toggleClass: {
+    //     target: '.chat-header',
+    //     className: 'chat-header--hello'
+    //   }
+    // })
   // })
 })
 
@@ -161,7 +161,6 @@ const getWidget = () => {
   }
   
   &__left,
-  &__nav,
   &__right {
     flex: 1;
   }
@@ -169,7 +168,11 @@ const getWidget = () => {
   &__logo {
     display: flex;
     align-items: center;
-    color: var(--text-color-primary);
+    
+    &,
+    &:hover {
+      color: var(--text-color-primary);
+    }
   }
   
   &__logo-image {
@@ -182,6 +185,7 @@ const getWidget = () => {
   }
   
   &__nav {
+    flex: 2;
     display: flex;
     align-items: center;
     justify-content: center;
