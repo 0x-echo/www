@@ -161,7 +161,7 @@ const links = [{
   }
   
   &__slogan {
-    margin-top: 10px;
+    margin-top: 5px;
   }
   
   &__social-list {

@@ -176,35 +176,15 @@ onMounted(() => {
   &__nav-item {
     position: relative;
     padding: 0 5px;
+    line-height: 32px;
     color: var(--text-color-primary);
+    opacity: .6;
     transition: all .3s ease;
     
-    &:hover {
-      color: var(--color-primary);
+    &:hover,
+    &.router-link-active {
+      opacity: 1;
     }
-    
-    // &::after {
-    //   content: '';
-    //   position: absolute;
-    //   bottom: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 50%;
-    //   background: var(--color-primary-light);
-    //   opacity: 0;
-    //   transform: scale3d(0, 1, 1);
-    //   transition: all .3s ease;
-    //   z-index: -1;
-    // }
-    
-    // &.router-link-active {
-    //   color: var(--color-primary);
-      
-    //   &::after {
-    //     opacity: 1;
-    //     transform: scale3d(1, 1, 1);
-    //   }
-    // }
     
     & + & {
       margin-left: 40px;
