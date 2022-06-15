@@ -47,8 +47,12 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
-  const slogans = gsap.utils.toArray('.landing-idea__slogan')
-  
+  setTimeout(() => {
+    animate()
+  }, 10)
+})
+
+const animate = () => {
   const timeline = gsap.timeline({
     scrollTrigger: {
       trigger: '.landing-idea',
@@ -59,10 +63,6 @@ onMounted(() => {
       toggleActions: 'play pause play reset'
     }
   })
-  
-  // timeline.set(slogans, {
-  //   autoAlpha: 0
-  // })
   
   timeline.from('.landing-idea__top', {
     autoAlpha: 0,
@@ -110,7 +110,7 @@ onMounted(() => {
     ease: 'power1'
   }, '+=1').add(() => {
   }, '+=10')
-})
+}
 </script>
 
 <style lang="scss">

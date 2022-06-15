@@ -24,7 +24,7 @@
           
           <p
             class="chat-footer__slogan">
-            We are here to <br>connect and store opinion.
+            We value your opinions.
           </p>
           
           <div

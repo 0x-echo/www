@@ -1,6 +1,7 @@
 <template>
   <div>
-    <chat-header>
+    <chat-header
+      theme="dark">
     </chat-header>
     
     <slot />

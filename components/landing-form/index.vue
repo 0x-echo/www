@@ -5,10 +5,10 @@
     data-color-theme="light">
     <div
       class="section-container">
-      <h2
-        class="landing-section__title">
-        Generate Your Own Widget
-      </h2>
+      <landing-section-header
+        subtitle="Easy step to make it work"
+        title="Get Your Widget">
+      </landing-section-header>
       
       <el-form
         class="landing-form__form"

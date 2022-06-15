@@ -20,6 +20,10 @@
 import { ElDrawer } from 'element-plus' 
 
 const menu = [{
+  icon: 'ri-home-line',
+  label: 'Home',
+  value: '/'
+}, {
   icon: 'ri-question-line',
   label: 'FAQ',
   value: '/faq'
@@ -27,14 +31,6 @@ const menu = [{
   icon: 'ri-code-s-slash-line',
   label: 'Developer',
   value: '/developer'
-}, {
-  icon: 'ri-apps-line',
-  label: 'Widgets',
-  value: '/widgets'
-}, {
-  icon: 'ri-logout-circle-r-line',
-  label: 'Logout',
-  value: 'logout'
 }]
 </script>
 

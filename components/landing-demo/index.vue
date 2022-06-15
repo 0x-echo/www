@@ -5,35 +5,34 @@
     data-color-theme="light">
     <div
       class="section-container">
-      <h2
-        class="landing-section__title">
-        Live Demo
-      </h2>
-      
-      <div
-        class="landing-demo__nav">
-        <template
-          v-for="(item, index) in nav"
-          :key="item.value">
-          <div
-            class="landing-demo__nav-item"
-            :class="{
-              'active': item.value === activeNav
-            }"
-            @click="activeNav = item.value">
-            <span
-              class="landing-demo__nav-label">
-              {{ item.label }}
-            </span>
-          </div>
-          
-          <div
-            class="landing-demo__nav-divider"
-            v-if="index < nav.length - 1">
-            /
-          </div>
-        </template>
-      </div>
+      <landing-section-header
+        class="landing-demo__headder"
+        title="Live Demo">
+        <div
+          class="landing-demo__nav">
+          <template
+            v-for="(item, index) in nav"
+            :key="item.value">
+            <div
+              class="landing-demo__nav-item"
+              :class="{
+                'active': item.value === activeNav
+              }"
+              @click="activeNav = item.value">
+              <span
+                class="landing-demo__nav-label">
+                {{ item.label }}
+              </span>
+            </div>
+            
+            <div
+              class="landing-demo__nav-divider"
+              v-if="index < nav.length - 1">
+              /
+            </div>
+          </template>
+        </div>
+      </landing-section-header>
       
       <div
         class="landing-demo__widget">
@@ -73,21 +72,27 @@ const nav = [{
 .landing-demo {
   padding: 160px 0 0;
   
+  &__headder {
+    margin-bottom: 40px;
+  }
+  
   &__nav {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 10px 0 20px; 
+    margin-top: 5px; 
   }
   
   &__nav-item {
+    flex-shrink: 0;
     position: relative;
     padding: 0 4px;
     margin: 5px 0;
     font-size: 16px;
     color: var(--text-color-secondary);
     cursor: pointer;
+    z-index: 0;
     transition: all .3s ease;
     
     &.active {
@@ -132,6 +137,14 @@ const nav = [{
     height: 502px;
     border: 1px solid var(--bg-color-dark);
     background: white;
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .landing-demo {
+    &__nav-divider {
+      margin: 0 10px;
+    }
   }
 }
 

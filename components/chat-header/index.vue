@@ -1,68 +1,67 @@
 <template>
-  <el-affix 
-    :offset="0"
-    :z-index="101">
-    <header
-      class="chat-header"
-      :class="theme ? `chat-header--${theme}` : ''">
+  <header
+    class="chat-header"
+    :class="theme ? `chat-header--${theme}` : ''">
+    <div
+      class="section-container chat-header__container">
       <div
-        class="container chat-header__container">
-        <div
-          class="chat-header__left">
-          <router-link
-            class="chat-header__logo"
-            title="Echo"
-            to="/">
-            <img 
-              class="chat-header__logo-image"
-              :src="theme === 'dark' ? LogoWhite : Logo" 
-              alt="Echo">
-              
-            <span
-              class="chat-header__logo-label">
-              ECHO
-            </span>
-          </router-link>
-        </div>
-        
-        <nav
-          class="chat-header__nav">
-          <router-link
-            class="chat-header__nav-item"
-            v-for="item in nav"
-            :key="item.value"
-            :title="item.label"
-            :to="item.value">
-            {{ item.label }}
-          </router-link>
-        </nav>
-        
-        <div
-          class="chat-header__right">
-          <el-button
-            size="large"
-            type="primary">
-            Get Your Widget
-          </el-button>
-        </div>
-        
-        <i
-          class="ri-menu-3-line chat-header__menu"
-          @click="menuDrawerVisible = true">
-        </i>
+        class="chat-header__left">
+        <router-link
+          class="chat-header__logo"
+          title="Echo"
+          to="/">
+          <img 
+            class="chat-header__logo-image"
+            :src="theme === 'dark' ? LogoWhite : Logo" 
+            alt="Echo">
+            
+          <span
+            class="chat-header__logo-label">
+            ECHO
+          </span>
+        </router-link>
       </div>
       
-      <menu-drawer
-        v-model="menuDrawerVisible">
-      </menu-drawer>
-    </header>
-  </el-affix>
+      <nav
+        class="chat-header__nav">
+        <router-link
+          class="chat-header__nav-item"
+          v-for="item in nav"
+          :key="item.value"
+          :title="item.label"
+          :to="item.value">
+          {{ item.label }}
+        </router-link>
+      </nav>
+      
+      <div
+        class="chat-header__right">
+        <el-button
+          size="large"
+          type="primary">
+          Get Your Widget
+        </el-button>
+      </div>
+      
+      <i
+        class="ri-menu-line chat-header__menu"
+        @click="menuDrawerVisible = true">
+      </i>
+    </div>
+    
+    <menu-drawer
+      v-model="menuDrawerVisible">
+    </menu-drawer>
+  </header>
 </template>
 
 <script setup>
-import { ElAffix, ElButton, ElPopover } from 'element-plus'
+import { ElButton } from 'element-plus'
 import Logo from '/assets/echo-logo.svg'
 import LogoWhite from '/assets/echo-logo-white.svg'
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 const props = defineProps({
   theme: {
@@ -71,6 +70,9 @@ const props = defineProps({
 })
 
 const nav = [{
+  label: 'Home',
+  value: '/'
+}, {
   label: 'FAQ',
   value: '/faq'
 }, {
@@ -90,18 +92,49 @@ const userMenu = [{
 }]
 
 const menuDrawerVisible = ref(false)
+
+onMounted(() => {
+  ScrollTrigger.create({
+    trigger: '.chat-header',
+    start: 0,
+    end: 99999,
+    toggleClass: 'chat-header--fixed'
+  })
+  
+  // const sectionDark = document.querySelectorAll('[data-color-theme=dark]')
+  // console.log(sectionDark)
+  // sectionDark.forEach(el => {
+    ScrollTrigger.create({
+      trigger: '.landing-feature',
+      toggleClass: {
+        target: '.chat-header',
+        className: 'chat-header--hello'
+      }
+    })
+  // })
+})
 </script>
 
 <style lang="scss">
 .chat-header {
+  width: 100%;
   height: 84px;
   background: rgba(white, .8);
   backdrop-filter: blur(10px);
   
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+  }
+  
   &--dark {
     background: var(--bg-color-dark);
     
-    .chat-header__nav-item {
+    .chat-header__logo-label,
+    .chat-header__nav-item,
+    .chat-header__menu {
       color: white;
     }
   }
@@ -121,6 +154,7 @@ const menuDrawerVisible = ref(false)
   &__logo {
     display: flex;
     align-items: center;
+    color: var(--text-color-primary);
   }
   
   &__logo-image {
@@ -130,7 +164,6 @@ const menuDrawerVisible = ref(false)
   &__logo-label {
     margin-left: 10px;
     font-weight: bold;
-    color: white;
   }
   
   &__nav {
@@ -183,44 +216,10 @@ const menuDrawerVisible = ref(false)
     justify-content: flex-end;
   }
   
-  &__user-popover {
-    &.el-popper {
-      box-shadow: var(--popover-box-shadow);
-      border: 0;
-    }
-  }
-  
-  &__user {
-    display: flex;
-    align-items: center;
-    width: 140px;
-    height: 40px;
-    padding: 0 8px 0 12px;
-    border-radius: var(--border-radius);
-    background: var(--bg-color);
-    cursor: pointer;
-  }
-  
-  &__user-wallet-icon {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-  }
-  
-  &__user-name {
-    flex: 1;
-    margin-right: 6px;
-    font-size: 12px;
-    color: var(--text-color-primary);
-  }
-  
-  &__user-arrow-icon {
-    color: var(--text-color-muted);
-  }
-  
   &__menu {
     display: none;
-    font-size: 20px;
+    font-size: 24px;
+    line-height: 1;
     cursor: pointer;
   }
 }
@@ -228,7 +227,7 @@ const menuDrawerVisible = ref(false)
 @media screen and (max-width: #{$tablet-width - 1}) {
   .chat-header {
     &__nav,
-    &__user {
+    &__right {
       display: none;
     }
     

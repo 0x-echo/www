@@ -39,9 +39,9 @@ import { ElButton } from 'element-plus'
 import Typewriter from 'typewriter-effect/dist/core'
 import * as THREE from 'three'
 
-let landingHero = ref(null)
 let typewriter = ref(null)
 const titleKeyword = ref(null)
+let landingHero = ref(null)
 
 onMounted(() => {
   typewriter = new Typewriter(titleKeyword.value, {
@@ -53,8 +53,10 @@ onMounted(() => {
   })
   
   // background
-  initCanvas()
-  animateCanvas()
+  setTimeout(() => {
+    initCanvas()
+    animateCanvas()
+  }, 10)
   
   window.addEventListener('resize', onResize)
 })
@@ -180,6 +182,8 @@ const anchorClick = (id) => {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     pointer-events: none;
   }

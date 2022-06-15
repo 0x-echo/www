@@ -22,6 +22,10 @@
 </template>
 
 <script setup>
+definePageMeta({
+  layout: 'dark',
+})
+
 const features = [{
   strongTitle: 'Omni chain',
   title: ' login and tip',

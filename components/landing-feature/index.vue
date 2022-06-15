@@ -4,13 +4,10 @@
     data-color-theme="light">
     <div
       class="section-container landing-feature__container">
-      <section
-        class="landing-feature__header">
-        <h2
-          class="landing-section__title">
-          Key Features
-        </h2>
-      </section>
+      <landing-section-header
+        subtitle="A smart solution for your need"
+        title="Key Features">
+      </landing-section-header>
       
       <landing-feature-item
         v-for="(item, index) in data"
@@ -42,22 +39,6 @@ const props = defineProps({
   
   &__container {
     max-width: 1000px;
-  }
-  
-  &__header {
-    margin-bottom: 80px;
-    text-align: center;
-  }
-  
-  &__title {
-    font-size: 44px;
-    text-transform: uppercase;
-  }
-  
-  &__subtitle {
-    margin-top: 15px;
-    font-size: 12px;
-    color: var(--text-color-muted);
   }
 }
 </style>
