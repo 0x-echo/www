@@ -71,7 +71,7 @@ const nav = [{
 <style lang="scss">
 .landing-demo {
   &__headder {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   &__nav {

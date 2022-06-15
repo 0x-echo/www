@@ -14,7 +14,25 @@
         class="landing-form__content">
         <div
           class="landing-form__preview">
+          <div
+            class="landing-form__preview-placeholder"
+            v-if="!form.modules.length">
+            <img 
+              src="@/assets/preview.svg" 
+              alt="Preview"> 
+            
+            <div>
+              It's Preview
+            </div>
+          </div>
           
+          
+          <iframe
+            class="landing-form__preview-iframe"
+            v-if="form.modules.length"
+            :src="`https://thirdchat-fe-deploy.vercel.app/?show-comment-dislike=true&has-v-padding=true&has-h-padding=true&modules=${form.modules.join(',')}&color-theme=light&target_uri=https%3A%2F%2Fmirror.xyz%2Fthirdchat.eth%2F8cCUKVDKXGco4-O6JRSlX5_zZkmb7C0YwCurcIVyZ2g&rpc_url=https%3A%2F%2Flocal-dev.third.chat%2F&dark-theme-color=%23141414&width=720&display=iframe`" 
+            frameborder="0">
+          </iframe>
         </div>
         
         <div
@@ -318,12 +336,34 @@ const submit = async () => {
   }
   
   &__preview {
-    width: 50%;
-    max-width: 400px;
+    width: 45%;
+    max-width: 480px;
     height: 500px;
-    margin-right: 50px;
+    margin-right: 40px;
     border-radius: var(--border-radius);
-    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  &__preview-placeholder {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--text-color-muted);
+    text-transform: uppercase;
+    
+    img {
+      width: 30%;
+    }
+  }
+  
+  &__preview-iframe {
+    width: 100%;
+    height: 100%;
   }
   
   &__right {
@@ -494,16 +534,12 @@ const submit = async () => {
     display: flex;
     align-items: center;
     font-size: 14px;
-    color: var(--text-color-secondary);
+    color: var(--text-color-muted);
   }
 }
 
-@media screen and (max-width: 1060px) {
+@media screen and (max-width: 1170px) {
   .landing-form {
-    &__preview {
-      margin-right: 20px;
-    }
-    
     &__widget-checkbox {
       width: calc(50% - 20px);
       margin: 10px;
@@ -513,6 +549,10 @@ const submit = async () => {
 
 @media screen and (max-width: $small-desktop-width) {
   .landing-form {
+    &__preview {
+      margin-right: 20px;
+    }
+    
     &__dark-color {
       width: 100%;
       margin: 10px 0 0;
