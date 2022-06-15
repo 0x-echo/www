@@ -95,27 +95,6 @@ const userMenu = [{
 
 const menuDrawerVisible = ref(false)
 
-onMounted(() => {
-  ScrollTrigger.create({
-    trigger: '.chat-header',
-    start: 0,
-    end: 99999,
-    toggleClass: 'chat-header--fixed'
-  })
-  
-  // const sectionDark = document.querySelectorAll('[data-color-theme=dark]')
-  // console.log(sectionDark)
-  // sectionDark.forEach(el => {
-    // ScrollTrigger.create({
-    //   trigger: '.landing-feature',
-    //   toggleClass: {
-    //     target: '.chat-header',
-    //     className: 'chat-header--hello'
-    //   }
-    // })
-  // })
-})
-
 const route = useRoute()
 const router = useRouter()
 
@@ -132,17 +111,14 @@ const getWidget = () => {
 
 <style lang="scss">
 .chat-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
   width: 100%;
   height: 84px;
   background: rgba(white, .8);
   backdrop-filter: blur(10px);
-  
-  &--fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
-  }
   
   &--dark {
     background: var(--bg-color-dark);

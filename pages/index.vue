@@ -24,7 +24,7 @@
 
 <script setup>
 definePageMeta({
-  layout: 'dark',
+  layout: 'dark'
 })
 
 const features = [{
@@ -44,6 +44,14 @@ const features = [{
   desc: 'Beacons allow smart contract developers to connect Web3 applications to continuously updated streams of off-chain data, such as the latest cryptocurrency, stock and commodities prices. ',
   image: 'feature-decentralized'
 }]
+
+onMounted(() => {
+  document.body.classList.add('dark')
+})
+
+onUnmounted(() => {
+  document.body.classList.remove('dark')
+})
 </script>
 
 <style lang="scss">

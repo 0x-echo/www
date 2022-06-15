@@ -47,16 +47,14 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
-  setTimeout(() => {
-    animate()
-  }, 10)
+  animate()
 })
 
 const animate = () => {
   const timeline = gsap.timeline({
     scrollTrigger: {
       trigger: '.landing-idea',
-      start: 'bottom bottom',
+      start: 'top top',
       end: '+=2000',
       scrub: true,
       pin: true,
@@ -64,17 +62,7 @@ const animate = () => {
     }
   })
   
-  timeline.from('.landing-idea__top', {
-    autoAlpha: 0,
-    y: '-100%',
-    duration: 1,
-    ease: 'power1'
-  }, 'a').from('.first', {
-    autoAlpha: 0,
-    y: '100%',
-    duration: 1,
-    ease: 'power1'
-  }, 'a').to('.first', {
+  timeline.to('.first', {
     autoAlpha: 0,
     y: '100%',
     duration: 1,
@@ -115,17 +103,15 @@ const animate = () => {
 
 <style lang="scss">
 .landing-idea {
-  min-height: calc(100vh - 84px);
-  padding: 150px 0;
+  min-height: 100vh;
+  padding: 200px 0 150px;
   text-align: center;
-  
-  &__container {
-  }
   
   &__top {
     display: flex;
     justify-content: center;
-    margin-bottom: 100px;
+    padding: 50px 0;
+    margin-bottom: 60px;
   }
   
   &__echo-right {
@@ -137,11 +123,17 @@ const animate = () => {
   }
   
   &__slogan {
-    position: absolute;
     width: 100%;
     font-size: 60px;
     font-weight: bold;
     line-height: 1.2;
+    
+    &.second,
+    &.third {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
     
     strong {
       color: var(--color-primary);

@@ -53,11 +53,8 @@ onMounted(() => {
     deleteSpeed: 50
   })
   
-  // background
-  setTimeout(() => {
-    initCanvas()
-    animateCanvas()
-  }, 10)
+  initCanvas()
+  animateCanvas()
   
   window.addEventListener('resize', onResize)
 })
@@ -176,8 +173,8 @@ const jumpTo = (id) => {
 
 .landing-hero {
   position: relative;
-  min-height: calc(100vh - 84px);
-  padding: 150px 0;
+  min-height: 100vh;
+  padding: 250px 0 150px;
   text-align: center;
   z-index: 1;
   
