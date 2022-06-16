@@ -66,6 +66,9 @@ import ideaLine from './line'
   }
 
   &__two { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transform: translateZ(calc(var(--box-size) / 2)); 
   }
 
