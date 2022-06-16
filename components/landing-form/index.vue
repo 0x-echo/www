@@ -7,7 +7,7 @@
       class="container">
       <landing-section-header
         subtitle="Easy step to make it work"
-        title="Get Your Widget">
+        title="Get My Widget">
       </landing-section-header>
       
       <div

@@ -40,7 +40,7 @@
           size="large"
           type="primary"
           @click="getWidget">
-          Get Your Widget
+          Get My Widget
         </el-button>
       </div>
       

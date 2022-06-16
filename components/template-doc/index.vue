@@ -60,7 +60,7 @@ const props = defineProps({
   
   &__header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
   }
   
   &__header-icon {
@@ -68,7 +68,7 @@ const props = defineProps({
   }
   
   &__title {
-    font-weight: 600;
+    font-size: 44px;
   }
  
   &__subtitle {
@@ -79,6 +79,14 @@ const props = defineProps({
   &__content {
     color: var(--text-color-secondary);
     line-height: 1.7;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .template-doc {
+    &__title {
+      font-size: 36px;
+    }
   }
 }
 </style>

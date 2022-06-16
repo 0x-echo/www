@@ -44,7 +44,7 @@
           class="el-button--xlarge menu-drawer__action-button"
           type="primary"
           @click="getWidget">
-          Get Your Widget
+          Get My Widget
         </el-button>
       </div>
     </div>

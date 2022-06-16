@@ -20,7 +20,7 @@
           class="el-button--xlarge"
           type="primary"
           @click="$jumpTo('#landing-form', -40)">
-          Get Your Widget
+          Get My Widget
         </el-button>
         
         <el-button

@@ -81,7 +81,7 @@ const initCanvas = () => {
   // cubes
   geometry = new THREE.BoxBufferGeometry(8, 8, 8)
   material = new THREE.MeshPhongMaterial({
-    color: 0xeeeeee, specular: 0xffffff, shininess: 250
+    color: 0xd1d2d7
   })
   
   raycaster = new THREE.Raycaster()

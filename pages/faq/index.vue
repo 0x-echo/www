@@ -1,7 +1,7 @@
 <template>
   <template-doc
     subtitle="Have questions? We are here to help."
-    title="Frequently Asked Questions">
+    title="FAQ">
     <faq-item
       v-for="(item, index) in faqs"
       :key="index"

@@ -38,7 +38,7 @@ const props = defineProps({
   padding: 160px 0;
   
   &__container {
-    max-width: 1000px;
+    max-width: 1024px;
   }
 }
 </style>
