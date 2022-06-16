@@ -149,8 +149,8 @@ const nav = [{
 @media screen and (max-width: $small-mobile-width) {
   .landing-demo {
     &__widget {
-      height: 517px;
-      padding: 0 0 15px;
+      height: 502px;
+      padding: 0;
     }
   }
 }
