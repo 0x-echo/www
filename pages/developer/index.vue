@@ -33,7 +33,7 @@ import DeveloperAside from './components/developer-aside'
 import DeveloperSection from './components/developer-section'
 
 useHead({
-  title: 'Developer | ECHO'
+  title: 'Developer | ECHO | We value your opinions'
 })
 
 const nav = [{

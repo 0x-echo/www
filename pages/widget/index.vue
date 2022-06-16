@@ -8,7 +8,7 @@
 
 <script setup>
 useHead({
-  title: 'Get My Widget | ECHO'
+  title: 'Get My Widget | ECHO | We value your opinions'
 })
 </script>
 

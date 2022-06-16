@@ -31,7 +31,7 @@ import DefaultLayout from './layouts/default'
 import { ElButton } from 'element-plus'
 
 useHead({
-  title: 'Something is wrong | ECHO'
+  title: 'Something is wrong | ECHO | We value your opinions'
 })
 
 const props = defineProps({

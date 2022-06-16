@@ -28,7 +28,7 @@ definePageMeta({
 })
 
 useHead({
-  title: 'We value your opinions | ECHO'
+  title: 'ECHO | We value your opinions'
 })
 
 const features = [{

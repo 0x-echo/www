@@ -16,7 +16,7 @@ import FaqItem from './components/faq-item'
 import faqs from './components/faq'
 
 useHead({
-  title: 'FAQ | ECHO'
+  title: 'FAQ | ECHO | We value your opinions'
 })
 </script>
 
