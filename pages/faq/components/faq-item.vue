@@ -9,7 +9,7 @@
     <div
       class="faq-item__content">
       <slot>
-        {{ content }}
+        <div v-html="content"></div>
       </slot>
     </div>
   </section>
