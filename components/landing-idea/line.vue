@@ -3,17 +3,31 @@
     class="idea-line">
     <div
       class="idea-line__line"
+      :class="{
+        'stretch': show,
+        'fade': !show,
+        'last': index === 5
+      }"
       v-for="(item, index) in 6"
       :key="index"
-      :style="{
-        'animation-delay': `${index * .5}s`,
-      }">
+      :style="show ? `animation-delay: ${index * .5}s` : ''">
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
+let show = ref(true)
 
+onMounted(() => {
+  const line = document.querySelector('.idea-line__line.last')
+  line.addEventListener('animationend', (e) => {
+    if (e.animationName === 'stretch') {
+      show.value = false
+    } else if (e.animationName === 'fade') {
+      show.value = true
+    }
+  })
+})
 </script>
 
 <style lang="scss">
@@ -25,12 +39,20 @@
     width: 100%;
     height: 3px;
     background: white;
-    animation-name: stretch;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(.2, .68, .18, 1.08);
-    animation-fill-mode: both;
-    transform-origin: left;
+    
+    &.stretch {
+      transform: scaleX(0);
+      transform-origin: left;
+      animation-name: stretch;
+      animation-fill-mode: forwards;
+      animation-duration: 2s;
+    }
+    
+    &.fade {
+      animation-name: fade;
+      animation-duration: .5s;
+    }
     
     & + & {
       margin-top: 30px;
@@ -44,6 +66,15 @@
   }
   100% { 
     transform: scaleX(1);
+  }
+}
+
+@keyframes fade {
+  from { 
+    opacity: 1;
+  }
+  to { 
+    opacity: 0;
   }
 }
 
