@@ -73,7 +73,7 @@ const links = [{
 }, {
   icon: 'ri-discord-line',
   title: 'Join our Discord to keep updated',
-  link: 'https://github.com',
+  link: 'https://discord.gg/KFxyaw9Wdj',
   link_label: 'Jump in community',
   isExternal: true
 }]

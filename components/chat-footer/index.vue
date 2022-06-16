@@ -90,13 +90,13 @@
 <script setup>
 const socials = [{
   icon: 'ri-twitter-fill',
-  value: 'twitter'
+  value: 'https://twitter.com/0x_ECHO'
 }, {
   icon: 'ri-discord-fill',
-  value: 'discord'
+  value: 'https://discord.gg/KFxyaw9Wdj'
 }, {
   icon: 'ri-github-fill',
-  value: 'github'
+  value: 'https://github.com/0x-echo'
 }]
 
 const links = [{
@@ -118,7 +118,7 @@ const links = [{
     value: '/developer'
   }, {
     label: 'Github',
-    value: 'https://github.com',
+    value: 'https://github.com/0x-echo',
     isExternal: true
   }, {
     label: 'Credits',
