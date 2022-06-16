@@ -6,7 +6,7 @@
     <div
       class="container">
       <landing-section-header
-        subtitle="Easy step to make it work"
+        subtitle="easy and hassle-free"
         title="Get My Widget">
       </landing-section-header>
       
@@ -30,7 +30,7 @@
           <iframe
             class="landing-form__preview-iframe"
             v-if="form.modules.length"
-            :src="`https://thirdchat-fe-deploy.vercel.app/?show-comment-dislike=true&has-v-padding=true&has-h-padding=true&modules=${form.modules.join(',')}&color-theme=light&target_uri=https%3A%2F%2Fmirror.xyz%2Fthirdchat.eth%2F8cCUKVDKXGco4-O6JRSlX5_zZkmb7C0YwCurcIVyZ2g&rpc_url=https%3A%2F%2Flocal-dev.third.chat%2F&dark-theme-color=%23141414&width=720&display=iframe`" 
+            :src="formGenURL" 
             frameborder="0">
           </iframe>
         </div>
@@ -69,7 +69,7 @@
               
               <div
                 class="landing-form__tip">
-                I am tip
+                {{ formTip }}
               </div>
             </el-form-item>
             
@@ -217,6 +217,7 @@
 <script setup>
 import { ElButton, ElCheckbox, ElCheckboxGroup, ElForm, ElFormItem, ElMessage, ElInput, ElPopover, ElOption, ElRadio, ElRadioGroup, ElSelect } from 'element-plus'
 import ActionBar from './action-bar'
+import qs from 'query-string'
 
 const showResult = ref(false)
 
@@ -227,7 +228,7 @@ const form = reactive({
   uri: '',
   modules: [],
   theme: 'light',
-  dark_bg_color: '16171C',
+  dark_bg_color: '',
   wallet_address: '',
   like: 'normal',
   dislike: 'normal'
@@ -259,14 +260,47 @@ const rules = reactive({
 
 // options
 const uriTypeOptions = [{
-  value: 'Mirror Post'
+  value: 'Mirror entry',
+  tip: 'Copy your Mirror entry Permalink after publishing or saving draft.',
+  settings: {
+    'dark-theme-color': '#141414',
+    'height': 800,
+    'display': 'iframe'
+  }
 }, {
-  value: 'NFT'
+  value: 'NFT Item',
+  tip: 'nft/{{chainName}}/{{chainId}}/{{contractAddress}}/{{tokenId}}'
 }, {
-  value: 'Address'
+  value: 'Address',
+  tip: 'address/{{chainName}}/{{chainId}}/{{address}}'
 }, {
-  value: 'Contract'
+  value: 'Contract',
+  tip: 'contract/{{chainName}}/{{chainId}}/{{contract address}}'
+}, {
+  value: 'Transaction',
+  tip: 'tx/{{chainName}}/{{chainId}}/{{txId}}'
+}, {
+  value: 'IPFS file',
+  tip: 'file/ipfs/{{CID}}/{{path}}'
+}, {
+  value: 'IPNS file',
+  tip: 'file/ipns/{{ipns}}/{{path}}'
+}, {
+  value: 'URL',
+  tip: 'A URL should starts with https://'
 }]
+
+const formTip = computed(() => {
+  if (!form.uri_type) {
+    return ''
+  }
+  const one = uriTypeOptions.find(item => item.value === form.uri_type)
+  if (one && one.tip) {
+    return one.tip
+  }
+
+  return ''
+})
 
 const moduleOptions = [{
   icon: 'ri-chat-3-line',
@@ -285,6 +319,38 @@ const moduleOptions = [{
   label: 'Tip',
   value: 'tip'
 }]
+
+const formGenURL = computed(() => {
+  let modules = form.modules
+  const allModules = []
+  for (const module of modules) {
+    if (module === 'like') {
+      if (form.like === 'lite') {
+        allModules.push('like-lite')
+      } else {
+        allModules.push('like')
+      }
+    } else if (module === 'dislike') {
+       if (form.dislike === 'lite') {
+          allModules.push('dislike-lite')
+        } else {
+          allModules.push('dislike')
+        }
+    } else {
+      allModules.push(module)
+    }
+  }
+
+  return `https://thirdchat-fe-deploy.vercel.app/?` + qs.stringify({
+    'has-v-padding': 'true',
+    'has-h-padding': 'true',
+    modules: allModules.join(','),
+    'target_uri': form.uri || 'preview-demo',
+    'color-theme': form.theme
+  })
+  
+  // `show-comment-dislike=true&has-v-padding=true&has-h-padding=true&modules=${form.modules.join(',')}&color-theme=light&target_uri=https%3A%2F%2Fmirror.xyz%2Fthirdchat.eth%2F8cCUKVDKXGco4-O6JRSlX5_zZkmb7C0YwCurcIVyZ2g&rpc_url=https%3A%2F%2Flocal-dev.third.chat%2F&dark-theme-color=%23141414&width=720&display=iframe`
+})
 
 const modeOptions = [{
   label: 'Normal',

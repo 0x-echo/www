@@ -22,17 +22,17 @@
         class="landing-idea__bottom">
         <div
           class="landing-idea__slogan first">
-          We help to<br><strong>aggregate</strong> opinions
+          We dedicate to<br><strong>aggregating</strong> opinions
         </div>
         
         <div
           class="landing-idea__slogan second">
-          We help to<br>ignite <strong>talking vibe</strong>
+          We dedicate to<br>igniting <strong>talking vibe</strong>
         </div>
         
         <div
           class="landing-idea__slogan third">
-          We help to<br>store opinions <strong>forever</strong>
+          We dedicate to<br>storing opinions <strong>forever</strong>
         </div>
       </div>
     </div>

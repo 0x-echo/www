@@ -14,28 +14,37 @@ Yes and No.
 You can delete your comment before it is saved to Arweave. 
 
 If someone comments on your comment, you cannot delete it(to protect the discussion context).
+
+#Will ECHO possibly delete comments?
+We don't judge on comments.
+But we use algorithm to detect spam comments and will no save them to Arweave.
+
+#Will you delete accounts?
+User logins with wallet, and we cannot delete user's wallet.
+But if a wallet continuously post spam comments, our server node may refuse to save its data.
+
 #Anyone can comment?
 Currently only wallets with balance more than 0 can comment.
 
-#If there is any service fee to tip?
-Tipping is completely free. And as you know, sending transaction will consume some gas fee.
+#Is there any service fee when tipping?
+Tipping is completely free. But as you know, sending transaction will consume some gas fee.
 
 #Supported chains?
-For login, you can use any chain that MetaMask supported and Phantom(SOL).
-For tip, you can use eth/polygon. And more chains will be supported.
+For login, you can use any chain that MetaMask supported and Phantom(Solana).
+For tipping, you can use eth/polygon. And more chains will be supported soon.
 
 #How to set my screen name?
 Screen name is synchronized from your address' reverse records.
 Currently we support the following DID: .bit and ens.
-You can set your reverse record on .bit or ens, and then update by clicking the dropdown menu: Refresh my profile.
+You can set your wallet's reverse record on .bit or ens, and then update profile by clicking the dropdown menu: Refresh my profile.
 
 #How to set my avatar?
 Like screen name, it's synchronized from your did's records.
 If you are using ens, it will cost gas fee to set or update avatar.
 
 #How is spam filtered?
-We are building a built-in spam filter. It’s being improved as data grows. 
-You can report comments to help us handle spams.
+We have a built-in spam filter. It’s being improved as data grows. 
+You can report comments to help us dealing with spams.
 
 #How do I get help?
 If you cannot find answers on our websites. Join our discord or feel free to mail us: we@0xecho.com
