@@ -9,14 +9,14 @@ export default defineNuxtConfig({
     }, {
       hid: 'keywords',
       name: 'keywords',
-      content: 'chat, web3',
+      content: 'comment, like, unlike, tip, upvote, downvote, widget, arweave, decentralized, decentralized comment protocol, chat, web3',
     }, {
       hid: 'description',
       name: 'description',
       content: 'ECHO',
     }],
     link: [{
-      ref: 'icon',
+      rel: 'icon',
       href: '/favicon.ico',
       type: 'image/x-icon'
     }, {

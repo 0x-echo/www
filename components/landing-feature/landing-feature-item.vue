@@ -82,6 +82,7 @@ export default {
     strong {
       position: relative;
       color: var(--color-primary);
+      z-index: 0;
       
       &::before {
         content: '';
