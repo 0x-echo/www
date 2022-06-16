@@ -73,7 +73,7 @@
       <div
         class="chat-footer__bottom">
         <p>
-          © 2022 ECHO
+          © 2022 ECHO All rights reserved.
         </p>
       
         <router-link
