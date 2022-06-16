@@ -69,13 +69,5 @@ onUnmounted(() => {
       background: white;
     }
   }
-  
-  section[data-color-theme=light] {
-    padding-top: 160px;
-  }
-}
-
-.landing-feature {
-  padding-bottom: 160px;
 }
 </style>

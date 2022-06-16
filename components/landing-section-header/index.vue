@@ -1,18 +1,21 @@
 <template>
   <div
     class="landing-section-header">
+    <slot>
+    </slot>
+    
     <h2
       class="landing-section-header__title">
       {{ title }}
     </h2>
     
-    <p
-      class="landing-section-header__subtitle"
-      v-if="subtitle">
-      {{ subtitle }}
-    </p>
-    
-    <slot>
+    <slot
+      name="subtitle">
+      <p
+        class="landing-section-header__subtitle"
+        v-if="subtitle">
+        {{ subtitle }}
+      </p>
     </slot>
   </div>
 </template>

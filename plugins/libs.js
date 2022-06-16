@@ -1,3 +1,5 @@
+import jump from 'jump.js'
+
 export default defineNuxtPlugin(() => {
   return {
     provide: {
@@ -10,6 +12,11 @@ export default defineNuxtPlugin(() => {
         }
         
         return str
+      },
+      jumpTo: (id, offset = 0) => {
+        jump(id, {
+          offset
+        })
       }
     }
   }

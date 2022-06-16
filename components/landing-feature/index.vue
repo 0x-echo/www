@@ -35,6 +35,8 @@ const props = defineProps({
 
 <style lang="scss">
 .landing-feature {
+  padding: 160px 0;
+  
   &__container {
     max-width: 1000px;
   }

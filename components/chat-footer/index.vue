@@ -9,12 +9,12 @@
           class="chat-footer__info">
           <router-link
             class="chat-footer__logo"
-            title="Echo"
+            title="ECHO"
             to="/">
             <img 
               class="chat-footer__logo-image"
               src="@/assets/echo-logo-white.svg" 
-              alt="Echo">
+              alt="ECHO">
           </router-link>
           
           <h3
@@ -73,7 +73,7 @@
       <div
         class="chat-footer__bottom">
         <p>
-          © 2022 Echo
+          © 2022 ECHO
         </p>
       
         <router-link

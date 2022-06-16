@@ -8,12 +8,12 @@
         class="chat-header__left">
         <router-link
           class="chat-header__logo"
-          title="Echo"
+          title="ECHO"
           to="/">
           <img 
             class="chat-header__logo-image"
             :src="theme === 'dark' ? LogoWhite : Logo" 
-            alt="Echo">
+            alt="ECHO">
             
           <span
             class="chat-header__logo-label">
@@ -65,7 +65,6 @@ import MenuDrawer from './menu-drawer'
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
-import jump from 'jump.js'
 
 const props = defineProps({
   theme: {
@@ -102,9 +101,7 @@ const router = useRouter()
 
 const getWidget = () => {
   if (route.path === '/') {
-    jump('#landing-form', {
-      offset: 0
-    })
+    jumpTo('#landing-form', -40)
   } else {
     router.push('/widget')
   }

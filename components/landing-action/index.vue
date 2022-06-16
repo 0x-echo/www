@@ -19,13 +19,13 @@
         <el-button
           class="el-button--xlarge"
           type="primary"
-          @click="jumpTo('landing-form')">
+          @click="$jumpTo('#landing-form', -40)">
           Get Your Widget
         </el-button>
         
         <el-button
           class="el-button--xlarge landing-page__demo-button"
-          @click="jumpTo('landing-demo')">
+          @click="$jumpTo('#landing-demo')">
           Check Demo
         </el-button>
       </div>
@@ -63,7 +63,6 @@
 
 <script setup>
 import { ElButton } from 'element-plus'
-import jump from 'jump.js'
 
 const links = [{
   icon: 'ri-code-s-slash-line',
@@ -78,12 +77,6 @@ const links = [{
   link_label: 'Jump in community',
   isExternal: true
 }]
-
-const jumpTo = (id) => {
-  jump(`#${id}`, {
-    offset: 0
-  })
-}
 </script>
 
 <style lang="scss">

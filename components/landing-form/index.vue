@@ -330,6 +330,8 @@ const submit = async () => {
 
 <style lang="scss">
 .landing-form {
+  padding-top: 120px;
+  
   &__content {
     display: flex;
     min-height: 714px;

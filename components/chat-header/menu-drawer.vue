@@ -12,7 +12,7 @@
       <img 
         class="menu-drawer__logo"
         src="@/assets/echo-logo-white.svg" 
-        alt="Echo">
+        alt="ECHO">
       
       <div
         class="menu-drawer__close-button"

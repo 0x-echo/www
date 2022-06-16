@@ -2,43 +2,52 @@
   <section
     class="landing-demo"
     id="landing-demo"
-    data-color-theme="light">
+    :data-color-theme="darkTheme ? 'dark' : 'light'">
     <div
       class="container landing-demo__container">
       <landing-section-header
-        class="landing-demo__headder"
+        class="landing-demo__header"
         title="Live Demo">
-        <div
-          class="landing-demo__nav">
-          <template
-            v-for="(item, index) in nav"
-            :key="item.value">
-            <div
-              class="landing-demo__nav-item"
-              :class="{
-                'active': item.value === activeNav
-              }"
-              @click="activeNav = item.value">
-              <span
-                class="landing-demo__nav-label">
-                {{ item.label }}
-              </span>
-            </div>
-            
-            <div
-              class="landing-demo__nav-divider"
-              v-if="index < nav.length - 1">
-              /
-            </div>
-          </template>
-        </div>
+        <el-switch
+          class="landing-demo__theme-switch"
+          v-model="darkTheme"
+          style="--el-switch-on-color: #ffffff; --el-switch-off-color: #16171C">
+        </el-switch>
+        
+        <template
+          #subtitle>
+          <div
+            class="landing-demo__nav">
+            <template
+              v-for="(item, index) in nav"
+              :key="item.value">
+              <div
+                class="landing-demo__nav-item"
+                :class="{
+                  'active': item.value === activeNav
+                }"
+                @click="activeNav = item.value">
+                <span
+                  class="landing-demo__nav-label">
+                  {{ item.label }}
+                </span>
+              </div>
+              
+              <div
+                class="landing-demo__nav-divider"
+                v-if="index < nav.length - 1">
+                /
+              </div>
+            </template>
+          </div>
+        </template>
       </landing-section-header>
       
       <div
         class="landing-demo__widget">
         <iframe
           class="landing-demo__iframe" 
-          :src="`https://thirdchat-fe-deploy.vercel.app/?show-comment-dislike=true&has-v-padding=true&has-h-padding=true&modules=${activeNav}&color-theme=light&target_uri=https%3A%2F%2Fmirror.xyz%2Fthirdchat.eth%2F8cCUKVDKXGco4-O6JRSlX5_zZkmb7C0YwCurcIVyZ2g&rpc_url=https%3A%2F%2Flocal-dev.third.chat%2F&dark-theme-color=%23141414&width=720&display=iframe`" 
+          :src="`https://thirdchat-fe-deploy.vercel.app/?show-comment-dislike=true&has-v-padding=true&has-h-padding=true&modules=${activeNav}&color-theme=${darkTheme ? 'dark' : 'light'}&target_uri=https%3A%2F%2Fmirror.xyz%2Fthirdchat.eth%2F8cCUKVDKXGco4-O6JRSlX5_zZkmb7C0YwCurcIVyZ2g&rpc_url=https%3A%2F%2Flocal-dev.third.chat%2F&dark-theme-color=%23141414&width=720&display=iframe`" 
           frameborder="0">
         </iframe>
       </div>
@@ -47,6 +56,10 @@
 </template>
 
 <script setup>
+import { ElSwitch } from 'element-plus'
+
+let darkTheme = ref(false)
+
 let activeNav = ref('comment,like,dislike,tip')
 
 const nav = [{
@@ -70,7 +83,33 @@ const nav = [{
 
 <style lang="scss">
 .landing-demo {
-  &__headder {
+  padding: 160px 0 100px;
+  
+  &[data-color-theme=dark] {
+    .landing-demo__theme-switch {
+      .el-switch__action {
+        background: var(--bg-color-dark);
+      }
+    }
+    
+    .landing-demo__nav-item {
+      color: white;
+      
+      &:after {
+        background: var(--color-primary);
+      }
+    }
+    
+    .landing-demo__widget {
+      background: repeating-linear-gradient(135deg, var(--color-primary), var(--color-primary) 1px, var(--bg-color-dark) 0, var(--bg-color-dark) 10px);
+    }
+    
+    .landing-demo__iframe {
+      border-color: #373946;
+    }
+  }
+  
+  &__header {
     margin-bottom: 20px;
   }
   
