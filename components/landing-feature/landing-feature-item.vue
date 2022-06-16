@@ -25,7 +25,7 @@
     
     <img
       class="landing-feature-item__visual" 
-      :src="`/assets/${image}.svg`" 
+      :src="`/${image}.svg`" 
       :alt="title">
   </section>
 </template>
