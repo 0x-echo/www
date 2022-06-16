@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-definePageMeta({
+useHead({
   title: 'Get My Widget | ECHO'
 })
 </script>

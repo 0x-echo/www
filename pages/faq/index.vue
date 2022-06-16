@@ -15,7 +15,7 @@
 import FaqItem from './components/faq-item'
 import faqs from './components/faq'
 
-definePageMeta({
+useHead({
   title: 'FAQ | ECHO'
 })
 </script>

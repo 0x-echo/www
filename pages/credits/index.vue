@@ -13,7 +13,7 @@
 <script setup>
 import CreditItem from './components/credit-item'
 
-definePageMeta({
+useHead({
   title: 'Credits | ECHO'
 })
 

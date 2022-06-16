@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-definePageMeta({
+useHead({
   title: 'Privacy Policy | ECHO'
 })
 </script>

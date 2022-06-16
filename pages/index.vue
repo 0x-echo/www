@@ -24,7 +24,10 @@
 
 <script setup>
 definePageMeta({
-  layout: 'dark',
+  layout: 'dark'
+})
+
+useHead({
   title: 'We value your opinions | ECHO'
 })
 
