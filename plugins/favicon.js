@@ -3,11 +3,7 @@ import { defineNuxtPlugin } from '#app'
 export default defineNuxtPlugin((nuxtApp) => {
   setTimeout(() => {
     try {
-      var element = document.querySelector('link')
-
-      if (!element || element.getAttribute('rel') !== 'icon') {
-        return
-      }
+      var element = document.querySelector('link[rel="icon"]')
       const darkModeListener = (event) => {
         if (event.matches) {
           element.setAttribute('href', '/favicon-white.ico')
