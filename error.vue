@@ -30,7 +30,7 @@
 import DefaultLayout from './layouts/default'
 import { ElButton } from 'element-plus'
 
-definePageMeta({
+useHead({
   title: 'Something is wrong | ECHO'
 })
 
