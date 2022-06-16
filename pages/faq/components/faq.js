@@ -3,7 +3,7 @@ export default `
 ECHO is guaranteed to be decentralized. Comments and reactions are saved on the Arweave blockchain.
 
 #Is it free to embed to my website?
-yes, ECHO is free to use.
+Yes. ECHO is free to use.
 
 #Does ECHO support embeding into mobile pages?
 Definitely!
