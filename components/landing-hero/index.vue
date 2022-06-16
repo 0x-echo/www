@@ -65,7 +65,7 @@ onUnmounted(() => {
 })
 
 // https://codepen.io/vadymhimself/details/mNVdVE
-let camera, scene, renderer, group, geometry, material, raycaster
+let camera, scene, renderer, group
 let dirs = []
 const initCanvas = () => {
   // camera
@@ -79,13 +79,10 @@ const initCanvas = () => {
   scene.add(new THREE.DirectionalLight(0xffffff, 0.5))
   
   // cubes
-  geometry = new THREE.BoxBufferGeometry(8, 8, 8)
-  material = new THREE.MeshPhongMaterial({
+  const geometry = new THREE.BoxBufferGeometry(8, 8, 8)
+  const material = new THREE.MeshPhongMaterial({
     color: 0xd1d2d7
   })
-  
-  raycaster = new THREE.Raycaster()
-  
   group = new THREE.Group()
   for (let i = 0; i < 750; i++) {
     const mesh = new THREE.Mesh(geometry, material)
