@@ -34,18 +34,18 @@ useHead({
 const features = [{
   strongTitle: 'Omni chain',
   title: ' login and tip',
-  desc: 'Beacons allow smart contract developers to connect Web3 applications to continuously updated streams of off-chain data, such as the latest cryptocurrency, stock and commodities prices. ',
+  desc: 'ECHO supports EVM chains and Solana. And will support most of the main chains in the future.',
   image: 'feature-wallet'
 }, {
   strongTitle: 'Permanent storage',
   title: ' with Arweave',
-  desc: 'Beacons allow smart contract developers to connect Web3 applications to continuously updated streams of off-chain data, such as the latest cryptocurrency, stock and commodities prices. ',
+  desc: 'ECHO stores comments and reactions to Arweave.',
   image: 'feature-storage',
   reverse: true
 }, {
   strongTitle: 'Decentralized',
   title: ' comment protocol',
-  desc: 'Beacons allow smart contract developers to connect Web3 applications to continuously updated streams of off-chain data, such as the latest cryptocurrency, stock and commodities prices. ',
+  desc: 'Besides ECHO official gateway, users can use any other gateway to post comments. Our indexer will continuously aggregate data from Arweave.',
   image: 'feature-decentralized'
 }]
 
