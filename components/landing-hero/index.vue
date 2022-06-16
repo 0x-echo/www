@@ -45,7 +45,7 @@ let landingHero = ref(null)
 
 onMounted(() => {
   typewriter = new Typewriter(titleKeyword.value, {
-    strings: ['Things', 'NFT', 'Article', 'Transation', 'Address', 'Opinion', 'Dweb File'],
+    strings: ['Things', 'NFT', 'Article', 'Transation', 'Address', 'Opinion', 'Contract'],
     loop: true,
     autoStart: true,
     pauseFor: 800,
