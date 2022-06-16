@@ -119,6 +119,9 @@ const links = [{
     label: 'Github',
     value: 'https://github.com',
     isExternal: true
+  }, {
+    label: 'Credits',
+    value: '/credits'
   }]
 }, {
   label: 'Support',

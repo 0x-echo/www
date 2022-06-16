@@ -51,7 +51,8 @@
     </div>
     
     <menu-drawer
-      v-model="menuDrawerVisible">
+      v-model="menuDrawerVisible"
+      @get-widget="getWidget">
     </menu-drawer>
   </header>
 </template>
@@ -60,6 +61,7 @@
 import { ElButton } from 'element-plus'
 import Logo from '/assets/echo-logo.svg'
 import LogoWhite from '/assets/echo-logo-white.svg'
+import MenuDrawer from './menu-drawer'
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)

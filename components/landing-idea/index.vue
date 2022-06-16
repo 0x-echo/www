@@ -91,6 +91,10 @@ const animate = () => {
     ease: 'power1'
   }).set('.idea-cube', {
     className: 'idea-cube spin'
+  }).from('.idea-cube__arweave-logo', {
+    autoAlpha: 1,
+    duration: 1,
+    ease: 'power1'
   }).from('.third', {
     autoAlpha: 0,
     y: '100%',

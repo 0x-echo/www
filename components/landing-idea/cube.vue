@@ -7,6 +7,10 @@
     
     <div
       class="idea-cube__square idea-cube__two">
+      <img 
+        class="idea-cube__arweave-logo"
+        src="@/assets/arweave.svg" 
+        alt="Arweave">
     </div>
     
     <div
@@ -19,6 +23,7 @@
     
     <div
       class="idea-cube__square idea-cube__five">
+      
     </div>
     
     <div
@@ -78,6 +83,10 @@ import ideaLine from './line'
 
   &__six { 
     transform: rotateX(-90deg) translateZ(calc(var(--box-size) / 2));
+  }
+  
+  &__arweave-logo {
+    width: 60%;
   }
 }
 
