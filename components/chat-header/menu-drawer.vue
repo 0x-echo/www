@@ -43,7 +43,7 @@
         <el-button
           class="el-button--xlarge menu-drawer__action-button"
           type="primary"
-          @click="$emit('get-widget')">
+          @click="getWidget">
           Get Your Widget
         </el-button>
       </div>
@@ -72,6 +72,11 @@ const menu = [{
   label: 'Developer',
   value: '/developer'
 }]
+
+const getWidget = () => {
+  emits('update:modelValue', false)
+  emits('get-widget')
+}
 </script>
 
 <style lang="scss">
