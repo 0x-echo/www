@@ -6,14 +6,10 @@
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      
-    }
-  }
-}
+<script setup>
+definePageMeta({
+  title: 'Get My Widget | ECHO'
+})
 </script>
 
 <style lang="scss">

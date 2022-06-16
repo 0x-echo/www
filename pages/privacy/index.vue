@@ -6,14 +6,10 @@
   </template-doc>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      
-    }
-  }
-}
+<script setup>
+definePageMeta({
+  title: 'Privacy Policy | ECHO'
+})
 </script>
 
 <style lang="scss">

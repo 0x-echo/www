@@ -13,6 +13,10 @@
 <script setup>
 import CreditItem from './components/credit-item'
 
+definePageMeta({
+  title: 'Credits | ECHO'
+})
+
 const list = [{
   title: 'Vuejs',
   license: 'MIT License',

@@ -14,6 +14,10 @@
 <script setup>
 import FaqItem from './components/faq-item'
 import faqs from './components/faq'
+
+definePageMeta({
+  title: 'FAQ | ECHO'
+})
 </script>
 
 <style lang="scss">

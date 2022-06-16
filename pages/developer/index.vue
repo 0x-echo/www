@@ -32,6 +32,10 @@ import { ElAffix, ElBacktop } from 'element-plus'
 import DeveloperAside from './components/developer-aside'
 import DeveloperSection from './components/developer-section'
 
+definePageMeta({
+  title: 'Developer | ECHO'
+})
+
 const nav = [{
   title: 'Introduction',
   list: [{

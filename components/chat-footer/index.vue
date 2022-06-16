@@ -72,7 +72,8 @@
       
       <div
         class="chat-footer__bottom">
-        <p>
+        <p
+          class="chat-footer__copyright">
           © 2022 ECHO All rights reserved.
         </p>
       
@@ -247,6 +248,16 @@ const links = [{
     
     &__menu {
       width: 50%;
+    }
+    
+    &__bottom {
+      flex-direction: column-reverse;
+    }
+    
+    &__copyright {
+      margin-top: 6px;
+      font-size: 12px;
+      opacity: .7;
     }
   }
 }

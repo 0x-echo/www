@@ -24,7 +24,8 @@
 
 <script setup>
 definePageMeta({
-  layout: 'dark'
+  layout: 'dark',
+  title: 'We value your opinions | ECHO'
 })
 
 const features = [{
