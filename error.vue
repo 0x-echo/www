@@ -30,6 +30,10 @@
 import DefaultLayout from './layouts/default'
 import { ElButton } from 'element-plus'
 
+definePageMeta({
+  title: 'Something is wrong | ECHO'
+})
+
 const props = defineProps({
   error: Object
 })
