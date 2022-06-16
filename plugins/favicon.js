@@ -5,7 +5,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     try {
       var element = document.querySelector('link')
 
-      if (!element || element.getAttribute('ref') !== 'icon') {
+      if (!element || element.getAttribute('rel') !== 'icon') {
         return
       }
       const darkModeListener = (event) => {
