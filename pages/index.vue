@@ -39,7 +39,7 @@ const features = [{
 }, {
   strongTitle: 'Permanent storage',
   title: ' with Arweave',
-  desc: 'ECHO stores comments and reactions to Arweave. No one can delete or rewrite.',
+  desc: 'ECHO stores comments and reactions to Arweave. No one can delete or rewrite the archive.',
   image: 'feature-storage',
   reverse: true
 }, {
