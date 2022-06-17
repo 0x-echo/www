@@ -406,7 +406,7 @@ const submit = async () => {
   &__preview {
     width: 45%;
     max-width: 480px;
-    height: 500px;
+    height: 515px;
     margin-right: 40px;
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);

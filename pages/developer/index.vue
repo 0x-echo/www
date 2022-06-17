@@ -36,17 +36,22 @@ useHead({
   title: 'Developer | ECHO | We value your opinions'
 })
 
-const nav = [{
-  title: 'Introduction',
+const nav = [
+// {
+//   title: 'Introduction',
+//   list: [{
+//     label: 'Overview',
+//     value: 'overview'
+//   }, {
+//     label: 'Hello',
+//     value: 'hello'
+//   }]
+// },
+{
+  title: 'Iframe params',
   list: [{
-    label: 'Overview',
-    value: 'overview'
-  }, {
-    label: 'Hello',
-    value: 'hello'
+    
   }]
-}, {
-  title: 'Payments'
 }]
 </script>
 
