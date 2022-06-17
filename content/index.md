@@ -1,7 +1,15 @@
-## Iframe 
+## Introduction
+
+### What is ECHO
+
+ECHO is a product to help collecting comments, reactions and receiving tips. The data willbe permanently stored on Arweave.
+
+Websites owners and authors can easily embed ECHO widget into their pages.
+
+## Widget
 
 
-We use `iframe` to embed an ECHO widget.
+We use `iframe` to embed ECHO widget.
 
 ### Query parameters
 
@@ -12,7 +20,7 @@ We use `iframe` to embed an ECHO widget.
 | has_v_padding | boolean | whether show vertical padding  |  |false |   
 | has_h_padding  | boolean  | whether show horizonal padding  |  | false  |   
 | show_comment_dislike | boolean | whether show comment dislike button |  | true | 
-| did | string | the did whose records contains screen name, avatar and address(for tipping) |  | |
+| did | string | the did whose records contains screen name, avatar and address(for receiving tips) |  | |
 | rpc_url | string | ECHO gateway url | | |
 
 ### For Mirror entry
@@ -24,3 +32,12 @@ Mirror supports embedding a iframe block. It simply requires to append `&display
 If you want to set the block size, you can use `height` and `width`. For example, `height=1533&width=2300`.
 
 For more details, please refer to [Editor](https://mirror.xyz/dashboard/guide/editor).
+
+
+## Comment Protocol
+
+### schema
+
+ECHO implementes a decentralized comment protocol to save data on Arweave. Anyone can follow the protocol to post comments.
+
+[WIP]
