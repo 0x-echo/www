@@ -51,10 +51,11 @@ const nav = [
   padding-bottom: 160px;
   
   &__aside {
+    position: sticky;
+    top: 124px;
     flex-shrink: 0;
     width: 240px;
     height: 300px;
-    background: red;
     margin-right: 40px;
   }
   
