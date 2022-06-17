@@ -3,24 +3,24 @@
     class="developer-aside__section"
     v-for="(item, index) in data"
     :key="index">
-    <a
-      class="developer-aside__section-title"
-      :href="`#${item.id}`">
+    <div
+      class="developer-aside__link developer-aside__section-title"
+      @click="$jumpTo(`#${item.id}`, -100)">
       {{ item.text }}
-    </a>
+    </div>
     
     <div
       class="developer-aside__section-content">
-      <a
+      <div
         class="developer-aside__link"
         :class="{
           'active': $route.hash === `#${link.value}`
         }"
         v-for="link in item.children"
         :key="link.id"
-        :href="`#${link.id}`">
+        @click="$jumpTo(`#${link.id}`, -100)">
         {{ link.text }}
-      </a>
+      </div>
     </div>
   </section>
 </template>
@@ -40,19 +40,23 @@ const props = defineProps({
     margin-bottom: 30px;
   }
   
-  &__section-title {
-    display: block;
-    padding: 6px 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-color-primary);
-  }
-  
   &__link {
     display: block;
     font-size: 14px;
     padding: 6px 0;
     color: var(--text-color-secondary);
+    cursor: pointer;
+    transition: color .3s ease;
+    
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+  
+  &__section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color-primary);
   }
 }
 </style>

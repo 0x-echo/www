@@ -71,12 +71,14 @@ const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
     
     h2 {
       font-size: 36px;
+      
+      + p {
+        margin-top: 30px;
+      }
     }
     
     h3 {
-      padding-top: 40px;
-      margin: 80px 0 30px;
-      border-top: 1px solid var(--border-color);
+      margin: 30px 0;
       font-size: 24px;
     }
     
@@ -87,6 +89,12 @@ const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
     
     p {
       color: var(--text-color-secondary);
+      
+      + h2 {
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid var(--border-color);
+      }
     }
     
     code {
@@ -106,6 +114,10 @@ const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
     .table-wrapper {
       width: 100%;
       overflow-x: auto;
+      
+      + h3 {
+        margin-top: 80px;
+      }
     }
     
     table {
