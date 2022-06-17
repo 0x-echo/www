@@ -3,9 +3,9 @@
     class="container developer-page">
     <aside
       class="developer-page__aside">
-      <developer-aside
+      <developer-nav
         :data="data.body.toc.links">
-      </developer-aside>
+      </developer-nav>
     </aside>
     
     <main
@@ -13,7 +13,8 @@
       <div
         class="developer-page__nav">
         <div
-          class="developer-page__nav-content">
+          class="developer-page__nav-content"
+          @click="developerDrawerVisible = true">
           <i
             class="ri-menu-2-line developer-page__menu"> 
           </i>
@@ -27,17 +28,34 @@
       <content-renderer 
         :value="data" />
     </main>
+    
+    <el-drawer
+      v-model="developerDrawerVisible"
+      append-to-body
+      custom-class="developer-page__drawer"
+      direction="ltr"
+      :show-close="false"
+      size="70%"
+      :with-header="false">
+      <developer-nav
+        :data="data.body.toc.links"
+        @on-click="developerDrawerVisible = false">
+      </developer-nav>
+    </el-drawer>
   </div>
 </template>
 
 <script setup>
-import DeveloperAside from './components/developer-aside'
+import { ElDrawer } from 'element-plus'
+import DeveloperNav from './components/developer-nav'
 
 useHead({
   title: 'Developer | ECHO | We value your opinions'
 })
 
 const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
+
+let developerDrawerVisible = ref(false)
 </script>
 
 <style lang="scss">
@@ -176,6 +194,13 @@ const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
   &__menu {
     margin-right: 10px;
     font-size: 16px;
+  }
+  
+  &__drawer {
+    .el-drawer__body  {
+      padding-top: 84px;
+      padding-right: 50px;
+    }
   }
 }
 

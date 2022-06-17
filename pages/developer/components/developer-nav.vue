@@ -1,24 +1,24 @@
 <template>
   <section
-    class="developer-aside__section"
+    class="developer-nav__section"
     v-for="(item, index) in data"
     :key="index">
     <div
-      class="developer-aside__link developer-aside__section-title"
-      @click="$jumpTo(`#${item.id}`, -100)">
+      class="developer-nav__link developer-nav__section-title"
+      @click="onClick(item.id)">
       {{ item.text }}
     </div>
     
     <div
-      class="developer-aside__section-content">
+      class="developer-nav__section-content">
       <div
-        class="developer-aside__link"
+        class="developer-nav__link"
         :class="{
           'active': $route.hash === `#${link.value}`
         }"
         v-for="link in item.children"
         :key="link.id"
-        @click="$jumpTo(`#${link.id}`, -100)">
+        @click="onClick(link.id)">
         {{ link.text }}
       </div>
     </div>
@@ -26,16 +26,27 @@
 </template>
 
 <script setup>
+const { $jumpTo } = useNuxtApp()
+
 const props = defineProps({
   data: {
     type: Array,
     required: true
   }
 })
+
+const emits = defineEmits([
+  'on-click'
+])
+
+const onClick = (id) => {
+  $jumpTo(`#${id}`, -100)
+  emits('on-click')
+}
 </script>
 
 <style lang="scss">
-.developer-aside {
+.developer-nav {
   &__section {
     margin-bottom: 30px;
   }
