@@ -3,10 +3,11 @@
     class="developer-aside__section"
     v-for="(item, index) in data"
     :key="index">
-    <div
-      class="developer-aside__section-title">
+    <a
+      class="developer-aside__section-title"
+      :href="`#${item.id}`">
       {{ item.text }}
-    </div>
+    </a>
     
     <div
       class="developer-aside__section-content">
@@ -18,7 +19,7 @@
         v-for="link in item.children"
         :key="link.id"
         :href="`#${link.id}`">
-        - {{ link.text }}
+        {{ link.text }}
       </a>
     </div>
   </section>
@@ -35,39 +36,23 @@ const props = defineProps({
 
 <style lang="scss">
 .developer-aside {
-  
-  
   &__section {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
   
   &__section-title {
-    margin-bottom: 10px;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  
-  &__section-content {
-    padding-left: 10px;
+    display: block;
+    padding: 6px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color-primary);
   }
   
   &__link {
     display: block;
-    padding: 0 5px;
     font-size: 14px;
-    line-height: 30px;
+    padding: 6px 0;
     color: var(--text-color-secondary);
-    
-    &:hover {
-      color: var(--text-color-primary);  
-    }
-    
-    &.active {
-      &,
-      &:hover {
-        color: var(--color-primary); 
-      }
-    }
   }
 }
 </style>

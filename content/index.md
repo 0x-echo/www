@@ -15,7 +15,7 @@ We use `iframe` to embed an ECHO widget.
 | did | string | the did whose records contains screen name, avatar and address(for tipping) |  | |
 | rpc_url | string | ECHO gateway url | | |
 
-### Embedding iframe into Mirror entry
+### For Mirror entry
 
 You can get a permanent like after publishing or saving draft, and it's the `target_uri` widget requires.
 

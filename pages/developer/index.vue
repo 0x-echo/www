@@ -8,16 +8,29 @@
       </developer-aside>
     </aside>
     
-    
     <main
       class="developer-page__content">
-      <ContentRenderer :value="data" />
+      <div
+        class="developer-page__nav">
+        <div
+          class="developer-page__nav-content">
+          <i
+            class="ri-menu-2-line developer-page__menu"> 
+          </i>
+          
+          <span>
+            Table of Content
+          </span>
+        </div>
+      </div>
+    
+      <content-renderer 
+        :value="data" />
     </main>
   </div>
 </template>
 
 <script setup>
-import { ElAffix } from 'element-plus'
 import DeveloperAside from './components/developer-aside'
 
 useHead({
@@ -25,38 +38,21 @@ useHead({
 })
 
 const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
-
-const nav = [
-// {
-//   title: 'Introduction',
-//   list: [{
-//     label: 'Overview',
-//     value: 'overview'
-//   }, {
-//     label: 'Hello',
-//     value: 'hello'
-//   }]
-// },
-{
-  title: 'Iframe params',
-  list: [{
-    
-  }]
-}]
 </script>
 
 <style lang="scss">
 .developer-page {
   display: flex;
-  max-width: 1100px;
+  max-width: 1160px;
   padding-top: 180px;
   padding-bottom: 160px;
+  font-family: 'Inter', sans-serif;
   
   &__aside {
     position: sticky;
     top: 124px;
     flex-shrink: 0;
-    width: 240px;
+    width: 260px;
     height: 300px;
     margin-right: 40px;
   }
@@ -112,12 +108,14 @@ const nav = [
       width: 100%;
       font-size: 14px;
       text-align: left;
+      overflow-x: auto;
     }
     
     th,
     td {
       padding: 10px 15px;
       border-bottom: 1px solid var(--bg-color);
+      min-width: 100px;
     }
     
     th:first-of-type,
@@ -138,9 +136,33 @@ const nav = [
       font-weight: 600;
     }
   }
+  
+  &__nav {
+    position: sticky;
+    top: 84px;
+    display: none;
+    padding-bottom: 20px;
+    background: white;
+  }
+  
+  &__nav-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    font-size: 12px;
+    color: var(--text-color-secondary);
+    background: var(--bg-color);
+  }
+  
+  &__menu {
+    margin-right: 10px;
+    font-size: 16px;
+  }
 }
 
-@media screen and (max-width: #{$tablet-width - 1}) {
+@media screen and (max-width: 960px) {
   .developer-page {
     &__aside {
       display: none;
@@ -148,6 +170,10 @@ const nav = [
     
     &__content {
       max-width: none;
+    }
+    
+    &__nav {
+      display: flex;
     }
   }
 }
