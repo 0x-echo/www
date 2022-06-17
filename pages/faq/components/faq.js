@@ -50,7 +50,7 @@ You can report comments to help us dealing with spams.
 If you cannot find answers on our websites. Join our discord or feel free to mail us: we@0xecho.com
 
 #Is ECHO opensource?
-Yes. We will opensource all our codebase.
+Yes. We will opensource our codebase.
 `.split('#').map(one => {
   const [title, ...content] = one.split('\n')
   return {
