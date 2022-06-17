@@ -4,14 +4,14 @@
     <aside
       class="developer-page__aside">
       <developer-aside
-        :data="nav">
+        :data="data.body.toc.links">
       </developer-aside>
     </aside>
     
+    
     <main
       class="developer-page__content">
-      <content-doc 
-        path="/" />
+      <ContentRenderer :value="data" />
     </main>
   </div>
 </template>
@@ -23,6 +23,8 @@ import DeveloperAside from './components/developer-aside'
 useHead({
   title: 'Developer | ECHO | We value your opinions'
 })
+
+const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
 
 const nav = [
 // {

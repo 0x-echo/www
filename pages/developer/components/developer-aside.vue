@@ -5,7 +5,7 @@
     :key="index">
     <div
       class="developer-aside__section-title">
-      {{ item.title }}
+      {{ item.text }}
     </div>
     
     <div
@@ -15,10 +15,10 @@
         :class="{
           'active': $route.hash === `#${link.value}`
         }"
-        v-for="link in item.list"
-        :key="link.value"
-        :href="`#${link.value}`">
-        - {{ link.label }}
+        v-for="link in item.children"
+        :key="link.id"
+        :href="`#${link.id}`">
+        - {{ link.text }}
       </a>
     </div>
   </section>
