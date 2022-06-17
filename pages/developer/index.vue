@@ -70,7 +70,6 @@ const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
     }
     
     h2 {
-      margin-bottom: 30px;
       font-size: 36px;
     }
     
@@ -104,18 +103,22 @@ const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
       background: var(--bg-color);
     }
     
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+    }
+    
     table {
       width: 100%;
       font-size: 14px;
       text-align: left;
-      overflow-x: auto;
     }
     
     th,
     td {
       padding: 10px 15px;
       border-bottom: 1px solid var(--bg-color);
-      min-width: 100px;
+      min-width: 120px;
     }
     
     th:first-of-type,
@@ -130,6 +133,7 @@ const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
     
     td:nth-child(3) {
       max-width: 250px;
+      min-width: 200px;
     }
     
     th {
@@ -154,6 +158,7 @@ const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
     font-size: 12px;
     color: var(--text-color-secondary);
     background: var(--bg-color);
+    cursor: pointer;
   }
   
   &__menu {
@@ -169,7 +174,7 @@ const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
     }
     
     &__content {
-      max-width: none;
+      width: 100%;
     }
     
     &__nav {
