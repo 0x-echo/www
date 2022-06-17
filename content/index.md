@@ -17,7 +17,7 @@ We use `iframe` to embed an ECHO widget.
 
 ### For Mirror entry
 
-You can get a permanent like after publishing or saving draft, and it's the `target_uri` widget requires.
+You can get a permanent link after publishing or saving draft, and it's the `target_uri` widget requires.
 
 Mirror supports embedding a iframe block. It simply requires to append `&display=iframe` to ECHO's query parameter.
 
