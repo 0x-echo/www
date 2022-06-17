@@ -1,21 +1,21 @@
-# Iframe 
+## Iframe 
 
 
 We use `iframe` to embed an ECHO widget.
 
-## query parameters
+### Query parameters
 
 | name  |  type | desc | required?  | default  |  
 |---|---|---|---|---|
 | target_uri  | string  | the URI that receives comments and reactions. | required  |   |   |
 | modules | string | the modules you need, splitting by `,`. option ['comment', 'like', 'like-lite', 'dislike', 'dislike-lite', 'tip'] | required | | |
-| has_v_padding | string(boolean) | whether show vertical padding  |  |false |   
-| has_h_padding  | string(boolean)  | whether show horizonal padding  |  | false  |   
-| show_comment_dislike | string(boolean) | whether show comment dislike button |  | true | 
+| has_v_padding | boolean | whether show vertical padding  |  |false |   
+| has_h_padding  | boolean  | whether show horizonal padding  |  | false  |   
+| show_comment_dislike | boolean | whether show comment dislike button |  | true | 
 | did | string | the did whose records contains screen name, avatar and address(for tipping) |  | |
 | rpc_url | string | ECHO gateway url | | |
 
-## embedding iframe into Mirror entry
+### Embedding iframe into Mirror entry
 
 You can get a permanent like after publishing or saving draft, and it's the `target_uri` widget requires.
 

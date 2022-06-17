@@ -1,36 +1,24 @@
 <template>
   <div
-    class="container chat-template">
-    <el-affix
-      :offset="134">
-      <aside
-        class="chat-template__aside">
-        <developer-aside
-          :data="nav">
-        </developer-aside>
-      </aside>
-    </el-affix>
+    class="container developer-page">
+    <aside
+      class="developer-page__aside">
+      <developer-aside
+        :data="nav">
+      </developer-aside>
+    </aside>
     
     <main
-      class="chat-template__content">
-      <developer-section>
-      </developer-section>
+      class="developer-page__content">
+      <content-doc 
+        path="/" />
     </main>
-    
-    <el-backtop 
-      :right="80" 
-      :bottom="160">
-      <i
-        class="ri-arrow-up-line">
-      </i>
-    </el-backtop>
   </div>
 </template>
 
 <script setup>
-import { ElAffix, ElBacktop } from 'element-plus'
+import { ElAffix } from 'element-plus'
 import DeveloperAside from './components/developer-aside'
-import DeveloperSection from './components/developer-section'
 
 useHead({
   title: 'Developer | ECHO | We value your opinions'
@@ -56,25 +44,101 @@ const nav = [
 </script>
 
 <style lang="scss">
-.chat-template {
+.developer-page {
   display: flex;
-  justify-content: space-between;
-  padding-top: 200px;
-  padding-bottom: 100px;
+  max-width: 1100px;
+  padding-top: 180px;
+  padding-bottom: 160px;
   
   &__aside {
     flex-shrink: 0;
     width: 240px;
+    height: 300px;
+    background: red;
+    margin-right: 40px;
   }
   
   &__content {
-    width: 100%;
-    max-width: 740px;
+    flex: 1;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    
+    h2,
+    h3 {
+      a {
+        color: var(--text-color-primary);
+      }
+    }
+    
+    h2 {
+      margin-bottom: 30px;
+      font-size: 36px;
+    }
+    
+    h3 {
+      padding-top: 40px;
+      margin: 80px 0 30px;
+      border-top: 1px solid var(--border-color);
+      font-size: 24px;
+    }
+    
+    p,
+    pre {
+      margin-bottom: 20px;
+    }
+    
+    p {
+      color: var(--text-color-secondary);
+    }
+    
+    code {
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color-secondary);
+    }
+
+    pre {
+      border-radius: var(--border-radius);
+      background: var(--bg-color);
+    }
+    
+    table {
+      width: 100%;
+      font-size: 14px;
+      text-align: left;
+    }
+    
+    th,
+    td {
+      padding: 10px 15px;
+      border-bottom: 1px solid var(--bg-color);
+    }
+    
+    th:first-of-type,
+    td:first-of-type {
+      padding-left: 0;
+    }
+    
+    th:last-of-type,
+    td:last-of-type {
+      padding-right: 0;
+    }
+    
+    td:nth-child(3) {
+      max-width: 250px;
+    }
+    
+    th {
+      font-weight: 600;
+    }
   }
 }
 
 @media screen and (max-width: #{$tablet-width - 1}) {
-  .chat-template {
+  .developer-page {
     &__aside {
       display: none;
     }
