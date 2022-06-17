@@ -48,13 +48,10 @@
 <script setup>
 import { ElDrawer } from 'element-plus'
 import DeveloperNav from './components/developer-nav'
-
 useHead({
   title: 'Developer | ECHO | We value your opinions'
 })
-
 const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
-
 let developerDrawerVisible = ref(false)
 </script>
 
@@ -123,7 +120,6 @@ let developerDrawerVisible = ref(false)
       background: var(--bg-color);
       color: var(--text-color-secondary);
     }
-
     pre {
       border-radius: var(--border-radius);
       background: var(--bg-color);
@@ -203,7 +199,6 @@ let developerDrawerVisible = ref(false)
     }
   }
 }
-
 @media screen and (max-width: 960px) {
   .developer-page {
     &__aside {
