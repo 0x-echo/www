@@ -65,6 +65,7 @@ import MenuDrawer from './menu-drawer'
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+const { $jumpTo } = useNuxtApp()
 
 const props = defineProps({
   theme: {
@@ -101,7 +102,7 @@ const router = useRouter()
 
 const getWidget = () => {
   if (route.path === '/') {
-    jumpTo('#landing-form', -40)
+    $jumpTo('#landing-form', -40)
   } else {
     router.push('/widget')
   }
