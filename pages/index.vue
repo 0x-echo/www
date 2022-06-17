@@ -39,13 +39,13 @@ const features = [{
 }, {
   strongTitle: 'Permanent storage',
   title: ' with Arweave',
-  desc: 'ECHO stores comments and reactions to Arweave.',
+  desc: 'ECHO stores comments and reactions to Arweave. No one can delete or rewrite.',
   image: 'feature-storage',
   reverse: true
 }, {
   strongTitle: 'Decentralized',
   title: ' comment protocol',
-  desc: 'Besides ECHO official gateway, users can use any other gateway to post comments. Our indexer will continuously aggregate data from Arweave.',
+  desc: 'Besides ECHO official gateway, users can use any other gateway to read and post comments. Our indexer will continuously aggregate data from Arweave.',
   image: 'feature-decentralized'
 }]
 
