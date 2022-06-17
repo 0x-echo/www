@@ -49,6 +49,7 @@ const onClick = (id) => {
 .developer-nav {
   &__section {
     margin-bottom: 30px;
+    font-family: 'Inter', sans-serif;
   }
   
   &__link {
