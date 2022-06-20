@@ -198,7 +198,7 @@
             
             <div
               class="landing-form__code-block">
-              hello world
+              {{ formCode }}
             </div>
           </div>
           
@@ -261,12 +261,7 @@ const rules = reactive({
 // options
 const uriTypeOptions = [{
   value: 'Mirror entry',
-  tip: 'Copy your Mirror entry Permalink after publishing or saving draft.',
-  settings: {
-    'dark-theme-color': '#141414',
-    'height': 800,
-    'display': 'iframe'
-  }
+  tip: 'Copy your Mirror entry Permalink after publishing or saving draft.'
 }, {
   value: 'NFT Item',
   tip: 'nft/{{chainName}}/{{chainId}}/{{contractAddress}}/{{tokenId}}'
@@ -341,15 +336,32 @@ const formGenURL = computed(() => {
     }
   }
 
-  return `https://thirdchat-fe-deploy.vercel.app/?` + qs.stringify({
+  const params = {
     'has-v-padding': 'true',
     'has-h-padding': 'true',
     modules: allModules.join(','),
     'target_uri': form.uri || 'preview-demo',
     'color-theme': form.theme
-  })
+  }
+  if (form.uri_type === 'Mirror entry') {
+    Object.assign(params, {
+      'dark-theme-color': '#141414',
+      'height': 800,
+      'display': 'iframe'
+    })
+  }
+
+  return `https://thirdchat-fe-deploy.vercel.app/?` + qs.stringify(params)
   
   // `show-comment-dislike=true&has-v-padding=true&has-h-padding=true&modules=${form.modules.join(',')}&color-theme=light&target_uri=https%3A%2F%2Fmirror.xyz%2Fthirdchat.eth%2F8cCUKVDKXGco4-O6JRSlX5_zZkmb7C0YwCurcIVyZ2g&rpc_url=https%3A%2F%2Flocal-dev.third.chat%2F&dark-theme-color=%23141414&width=720&display=iframe`
+})
+
+const formCode = computed(() => {
+  if (form.uri_type === 'Mirror entry') {
+    return formGenURL.value
+  } else {
+    return `<iframe class="landing-form__preview-iframe" src="${formGenURL.value}" frameborder="0"></iframe>`
+  }
 })
 
 const modeOptions = [{
