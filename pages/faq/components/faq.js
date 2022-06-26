@@ -3,7 +3,11 @@ export default `
 ECHO is guaranteed to be decentralized. Comments and reactions are saved on the Arweave blockchain.
 
 #Is it free to embed to my website?
-Yes. ECHO is free to use.
+Yes. ECHO is free to embed.
+
+#Is it free to send comments and reactions?
+Yes. 
+Currently ECHO has a global rate limit. You can send at most 100 creating requests(comments, like and dislike) per day to our official gateway.
 
 #Does ECHO support embeding into mobile pages?
 Definitely!
@@ -13,7 +17,7 @@ Yes and No.
 
 You can delete your comment before it is saved to Arweave. 
 
-If someone comments on your comment, you cannot delete it(to protect the discussion context).
+If someone comments on your comment, you cannot delete it(to preserve the discussion context).
 
 #Will ECHO possibly delete comments?
 We don't judge on comments.
