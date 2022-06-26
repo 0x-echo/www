@@ -54,10 +54,6 @@ const nav = [{
   value: 'comment,like,dislike,tip',
   desc: 'ECHO supports EVM chains and Solana. And will support most of the main chains in the future.'
 }, {
-  label: 'Comment',
-  value: 'comment',
-  desc: 'ECHO supports EVM chains and Solana. And will support most of the main chains in the future.'
-}, {
   label: 'Like',
   value: 'like',
   desc: 'ECHO supports EVM chains and Solana. And will support most of the main chains in the future.'
