@@ -6,50 +6,39 @@
     <div
       class="container landing-demo__container">
       <landing-section-header
-        class="landing-demo__header"
         title="Live Demo">
         <el-switch
           class="landing-demo__theme-switch"
           v-model="darkTheme"
           style="--el-switch-on-color: #ffffff; --el-switch-off-color: #16171C">
         </el-switch>
-        
-        <template
-          #subtitle>
-          <div
-            class="landing-demo__nav">
-            <template
-              v-for="(item, index) in nav"
-              :key="item.value">
-              <div
-                class="landing-demo__nav-item"
-                :class="{
-                  'active': item.value === activeNav
-                }"
-                @click="activeNav = item.value">
-                <span
-                  class="landing-demo__nav-label">
-                  {{ item.label }}
-                </span>
-              </div>
-              
-              <div
-                class="landing-demo__nav-divider"
-                v-if="index < nav.length - 1">
-                /
-              </div>
-            </template>
-          </div>
-        </template>
       </landing-section-header>
       
       <div
-        class="landing-demo__widget">
-        <iframe
-          class="landing-demo__iframe" 
-          :src="`https://thirdchat-fe-deploy.vercel.app/?show-comment-dislike=true&has-v-padding=true&has-h-padding=true&modules=${activeNav}&color-theme=${darkTheme ? 'dark' : 'light'}&target_uri=https%3A%2F%2Fmirror.xyz%2Fthirdchat.eth%2F8cCUKVDKXGco4-O6JRSlX5_zZkmb7C0YwCurcIVyZ2g&rpc_url=https%3A%2F%2Flocal-dev.third.chat%2F&dark-theme-color=%23141414&width=720&display=iframe`" 
-          frameborder="0">
-        </iframe>
+        class="landing-demo__section"
+        v-for="item in nav"
+        :key="item.value"> 
+        <div
+          class="landing-demo__section-info">
+          <h3
+            class="landing-demo__section-title">
+            <span>#</span>{{ item.label }}
+          </h3>
+          
+          <div
+            class="landing-demo__section-desc">
+            {{ item.desc }}
+          </div>
+        </div>
+        
+        <div
+          class="landing-demo__widget">
+          <iframe
+            class="landing-demo__iframe" 
+            :src="`https://thirdchat-fe-deploy.vercel.app/?show-comment-dislike=true&has-v-padding=true&has-h-padding=true&modules=${item.value}&color-theme=${darkTheme ? 'dark' : 'light'}&target_uri=https%3A%2F%2Fmirror.xyz%2Fthirdchat.eth%2F8cCUKVDKXGco4-O6JRSlX5_zZkmb7C0YwCurcIVyZ2g&rpc_url=https%3A%2F%2Flocal-dev.third.chat%2F&dark-theme-color=%23141414&width=720&display=iframe`" 
+            frameborder="0">
+          </iframe>
+        </div>
       </div>
     </div>
   </section>
@@ -60,24 +49,22 @@ import { ElSwitch } from 'element-plus'
 
 let darkTheme = ref(false)
 
-let activeNav = ref('comment,like,dislike,tip')
-
 const nav = [{
-  icon: 'ri-apps-line',
   label: 'Full Version',
-  value: 'comment,like,dislike,tip'
+  value: 'comment,like,dislike,tip',
+  desc: 'ECHO supports EVM chains and Solana. And will support most of the main chains in the future.'
 }, {
-  icon: 'ri-chat-3-line',
   label: 'Comment',
-  value: 'comment'
+  value: 'comment',
+  desc: 'ECHO supports EVM chains and Solana. And will support most of the main chains in the future.'
 }, {
-  icon: 'ri-thumb-up-line',
   label: 'Like',
-  value: 'like'
+  value: 'like',
+  desc: 'ECHO supports EVM chains and Solana. And will support most of the main chains in the future.'
 }, {
-  icon: 'ri-money-dollar-circle-line',
   label: 'Tip',
-  value: 'tip'
+  value: 'tip',
+  desc: 'ECHO supports EVM chains and Solana. And will support most of the main chains in the future.'
 }]
 </script>
 
@@ -92,12 +79,8 @@ const nav = [{
       }
     }
     
-    .landing-demo__nav-item {
+    .landing-demo__section-desc {
       color: white;
-      
-      &:after {
-        background: var(--color-primary);
-      }
     }
     
     .landing-demo__widget {
@@ -109,60 +92,36 @@ const nav = [{
     }
   }
   
-  &__header {
-    margin-bottom: 20px;
-  }
-  
-  &__nav {
+  &__section {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 5px; 
+    
+    & + & {
+      margin-top: 60px;
+    }
   }
   
-  &__nav-item {
-    flex-shrink: 0;
-    position: relative;
-    padding: 0 4px;
-    margin: 5px 0;
-    font-size: 16px;
-    color: var(--text-color-secondary);
-    cursor: pointer;
-    z-index: 0;
-    transition: all .3s ease;
+  &__section-info {
+    width: 300px;
+    margin: 30px 60px 0 0;
+  }
+  
+  &__section-title {
+    font-size: 28px;
     
-    &.active {
+    span {
+      margin-right: 10px;
       color: var(--color-primary);
-      
-      &::after {
-        opacity: 1;
-        transform: scale3d(1, 1, 1);
-      }
-    }
-    
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 50%;
-      z-index: -1;
-      opacity: 0;
-      background: var(--color-primary-light);
-      transform: scale3d(0, 1, 1);
-      transition: all .3s ease;
     }
   }
   
-  &__nav-divider {
-    margin: 0 20px;
-    font-size: 12px;
-    color: var(--text-color-muted);
+  &__section-desc {
+    margin-top: 15px;
+    line-height: 2;
+    color: var(--text-color-secondary);
   }
   
   &__widget {
+    flex: 1;
     position: relative;
     height: 517px;
     padding: 0 15px;
@@ -174,6 +133,27 @@ const nav = [{
     height: 502px;
     border: 1px solid var(--bg-color-dark);
     background: white;
+  }
+}
+
+@media screen and (max-width: $tablet-width) {
+  .landing-demo {
+    &__section-info {
+      margin-right: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: #{$tablet-width - 1}) {
+  .landing-demo {
+    &__section {
+      display: block;
+    }
+    
+    &__section-info {
+      width: 100%;
+      margin: 0 0 20px;
+    }
   }
 }
 

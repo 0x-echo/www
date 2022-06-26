@@ -119,7 +119,7 @@ export default {
     &,
     &.is-reverse {
       flex-direction: column-reverse; 
-      align-items: flex-start;
+      align-items: center;
     }
     
     &__content {
@@ -130,7 +130,7 @@ export default {
       width: 50%;
       max-width: 200px;
       height: auto;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
   }
 }
