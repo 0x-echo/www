@@ -54,7 +54,7 @@ const nav = [{
   value: 'comment,like,dislike,tip',
   desc: 'Let people leave their feedback, ask questions, offer their own point of view.'
 }, {
-  label: 'Like',
+  label: 'Reaction',
   value: 'like',
   desc: 'Increase visitors’ engagement. Collect their reactions.'
 }, {
