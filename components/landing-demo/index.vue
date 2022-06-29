@@ -60,7 +60,7 @@ const nav = [{
 }, {
   label: 'Tip',
   value: 'tip',
-  desc: 'Accept supports from visitors.'
+  desc: 'Accept supports from visitors without having to code.'
 }]
 </script>
 
