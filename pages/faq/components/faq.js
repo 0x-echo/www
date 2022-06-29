@@ -37,14 +37,17 @@ Tipping is completely free. But as you know, sending transaction will consume so
 For login, you can use any chain that MetaMask supported and Phantom(Solana).
 For tipping, you can use eth/polygon. And more chains will be supported soon.
 
-#How to set my screen name?
+#How to update my screen name?
 Screen name is synchronized from your address' reverse records.
 Currently we support the following DID: .bit and ens.
 You can set your wallet's reverse record on .bit or ens, and then update profile by clicking the dropdown menu: Refresh my profile.
 
-#How to set my avatar?
+#How to update my avatar?
 Like screen name, it's synchronized from your did's records.
 If you are using ens, it will cost gas fee to set or update avatar.
+
+#What is Liking Power?
+Liking Power is the total value of all liking addresses.
 
 #How is spam filtered?
 We have a built-in spam filter. It’s being improved as data grows. 

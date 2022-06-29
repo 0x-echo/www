@@ -50,7 +50,7 @@ import { ElSwitch } from 'element-plus'
 let darkTheme = ref(false)
 
 const nav = [{
-  label: 'Full Version',
+  label: 'Comment,
   value: 'comment,like,dislike,tip',
   desc: 'Let people leave their feedback, ask questions, offer their own point of view.'
 }, {
