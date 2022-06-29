@@ -58,11 +58,11 @@
               class="chat-footer__menu-item"
               v-for="link in item.list"
               :key="link.value">
-              <a 
+              <a
                 class="chat-footer__menu-link"
                 :href="link.value"
                 :target="link.isExternal ? '_blank' : ''"
-                :title="link.value">
+                :title="link.disabled ? 'comming soon' : link.value">
                 {{ link.label }}
               </a>
             </li>
@@ -107,10 +107,13 @@ const links = [{
   }, {
     label: 'Careers',
     value: '/careers'
-  }, {
-    label: 'Blog',
-    value: '/blog'
-  }]
+  }, 
+  // {
+  //   label: 'Blog',
+  //   value: '',
+  //   disabled: true
+  // }
+  ]
 }, {
   label: 'Dev Center',
   list: [{
