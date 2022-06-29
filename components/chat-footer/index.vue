@@ -76,12 +76,22 @@
           class="chat-footer__copyright">
           © 2022 ECHO All rights reserved.
         </p>
-      
-        <router-link
-          title="Privacy Policy"
-          to="privacy">
-          Privacy Policy
-        </router-link>
+
+        <div>
+          <router-link
+            class="chat-footer__statement-link"
+            title="Terms of Service"
+            to="terms-of-service">
+            Terms of Service
+          </router-link>
+
+          <router-link
+            class="chat-footer__statement-link"
+            title="Privacy Policy"
+            to="privacy">
+            Privacy Policy
+          </router-link>
+        </div>
       </div>
     </div>
   </footer>
@@ -227,6 +237,12 @@ const links = [{
       &:hover {
         color: white;
       }
+    }
+  }
+
+  &__statement-link {
+    & + & {
+      margin-left: 10px;
     }
   }
 }
