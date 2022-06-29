@@ -52,15 +52,15 @@ let darkTheme = ref(false)
 const nav = [{
   label: 'Full Version',
   value: 'comment,like,dislike,tip',
-  desc: 'ECHO supports EVM chains and Solana. And will support most of the main chains in the future.'
+  desc: 'Let people leave their feedback, ask questions, offer their own point of view.'
 }, {
   label: 'Like',
   value: 'like',
-  desc: 'ECHO supports EVM chains and Solana. And will support most of the main chains in the future.'
+  desc: 'Increase visitors’ engagement. Collect their reactions.'
 }, {
   label: 'Tip',
   value: 'tip',
-  desc: 'ECHO supports EVM chains and Solana. And will support most of the main chains in the future.'
+  desc: 'Accept supports from visitors.'
 }]
 </script>
 
