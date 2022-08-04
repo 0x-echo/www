@@ -72,7 +72,7 @@ To access the Websites or some of the resources it offers, you may be asked to p
 
 <script setup>
 useHead({
-  title: 'Terms of Service | ECHO | We value your opinions'
+  title: 'Terms of Service | ECHO | Long live our opinion'
 })
 </script>
 

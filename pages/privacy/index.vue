@@ -44,7 +44,7 @@
 
 <script setup>
 useHead({
-  title: 'Privacy Policy | ECHO | We value your opinions'
+  title: 'Privacy Policy | ECHO | Long live our opinion'
 })
 </script>
 

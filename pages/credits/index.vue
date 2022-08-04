@@ -14,7 +14,7 @@
 import CreditItem from './components/credit-item'
 
 useHead({
-  title: 'Credits | ECHO | We value your opinions'
+  title: 'Credits | ECHO | Long live our opinion'
 })
 
 const list = [{

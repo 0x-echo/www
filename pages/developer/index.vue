@@ -49,7 +49,7 @@
 import { ElDrawer } from 'element-plus'
 import DeveloperNav from './components/developer-nav'
 useHead({
-  title: 'Developer | ECHO | We value your opinions'
+  title: 'Developer | ECHO | Long live our opinion'
 })
 const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
 let developerDrawerVisible = ref(false)

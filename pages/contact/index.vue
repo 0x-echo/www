@@ -8,7 +8,7 @@
 
 <script setup>
 useHead({
-  title: 'Contact | ECHO | We value your opinions'
+  title: 'Contact | ECHO | Long live our opinion'
 })
 </script>
 

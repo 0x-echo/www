@@ -24,7 +24,7 @@
           
           <p
             class="chat-footer__slogan">
-            We value your opinions.
+            Long live our opinion.
           </p>
           
           <div
