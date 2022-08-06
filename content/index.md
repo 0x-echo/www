@@ -2,7 +2,7 @@
 
 ### What is ECHO
 
-ECHO is a product to help collecting comments, reactions and receiving tips. The data willbe permanently stored on Arweave.
+ECHO is a product to help collecting comments, reactions and receiving tips. The data will be permanently stored on Arweave.
 
 Websites owners and authors can easily embed ECHO widget into their pages.
 

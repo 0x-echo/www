@@ -154,9 +154,6 @@ const links = [{
   background: var(--bg-color-dark);
   color: white;
   
-  &__container {
-  }
-  
   &__top {
     display: flex;
     flex-wrap: wrap;

@@ -170,9 +170,9 @@
             
             <el-form-item
               label="Wallet Address"
-              prop="wallet_address">
+              prop="receiver">
               <el-input
-                v-model="form.wallet_address"
+                v-model="form.receiver"
                 placeholder="Enter your .bit or .eth">
               </el-input>
               
@@ -229,7 +229,7 @@ const form = reactive({
   modules: [],
   theme: 'light',
   dark_bg_color: '',
-  wallet_address: '',
+  receiver: '',
   like: 'normal',
   dislike: 'normal'
 })
@@ -252,7 +252,7 @@ const rules = reactive({
     required: true,
     trigger: 'change'
   }],
-  wallet_address: [{
+  receiver: [{
     required: true,
     trigger: 'blur'
   }]
