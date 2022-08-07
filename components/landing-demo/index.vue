@@ -35,7 +35,7 @@
           class="landing-demo__widget">
           <iframe
             class="landing-demo__iframe" 
-            :src="`https://embed.0xecho.com/?show-comment-dislike=true&has-v-padding=true&has-h-padding=true&modules=${item.value}&color-theme=${darkTheme ? 'dark' : 'light'}&target_uri=https%3A%2F%2F0xecho.com&dark-theme-color=%23141414&width=720&display=iframe&receiver=0xecho.bit`" 
+            :src="`https://embed.0xecho.com/?show-comment-dislike=true&has-v-padding=true&has-h-padding=true&modules=${item.value}&color-theme=${darkTheme ? 'dark' : 'light'}&target_uri=https%3A%2F%2F0xecho.com&dark-theme-color=%23141414&width=720&display=iframe&receiver=0xecho.bit&desc=${encodeURIComponent('Long Live Our Opinion.')}`" 
             frameborder="0">
           </iframe>
         </div>
