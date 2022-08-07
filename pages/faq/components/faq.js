@@ -15,13 +15,14 @@ Definitely!
 #Can I delete my comments?
 Yes and No.
 
-You can delete your comment before it is saved to Arweave. 
+You can delete your comment before it is sent to Arweave. 
 
 If someone comments on your comment, you cannot delete it(to preserve the discussion context).
 
 #Will ECHO possibly delete comments?
 We don't judge on comments.
 But we use algorithm to detect spam comments and will no save them to Arweave.
+And once comment is sent to Arweave, we cannot edit or erase it.
 
 #Will you delete accounts?
 User logins with wallet, and we cannot delete user's wallet.

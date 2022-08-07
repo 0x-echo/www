@@ -16,16 +16,18 @@ We use `iframe` to embed ECHO widget.
 | name  |  type | desc | required?  | default  |  
 |---|---|---|---|---|
 | target_uri  | string  | the URI that receives comments and reactions. | required  |   |   |
-| modules | string | the modules you need, splitting by `,`. option ['comment', 'like', 'like-lite', 'dislike', 'dislike-lite', 'tip'] | required | | |
-| has_v_padding | boolean | whether show vertical padding  |  |false |   
-| has_h_padding  | boolean  | whether show horizonal padding  |  | false  |   
-| show_comment_dislike | boolean | whether show comment dislike button |  | true | 
-| did | string | the did whose records contains screen name, avatar and address(for receiving tips) |  | |
-| rpc_url | string | ECHO gateway url | | |
+| modules | string | specify the modules you need, splitting by `,`. Avaiable modules: ['comment', 'like', 'like-lite', 'dislike', 'dislike-lite', 'tip'] | required | | |
+| has_v_padding | boolean | whether to show vertical padding  |  |false |   
+| has_h_padding  | boolean  | whether to show horizonal padding  |  | false  |   
+| show_comment_dislike | boolean | whether to show comment dislike button |  | true | 
+| receiver | string | the did(.bit or .eth) whose records contains screen name, avatar and address(for receiving tips). |  | |
+| rpc_url | string | ECHO gateway url  | | `https://node1.0xecho.com`. Use `https://sandbox.0xecho.com` for test purpose.|
 
-### For Mirror entry
 
-You can get a permanent link after publishing or saving draft, and it's the `target_uri` widget requires.
+## Integrations
+### Mirror
+
+You can get a permanent link after publishing or saving draft, and it's the `target_uri` ECHO widget requires.
 
 Mirror supports embedding a iframe block. It simply requires to append `&display=iframe` to ECHO's query parameter.
 
@@ -38,6 +40,6 @@ For more details, please refer to [Editor](https://mirror.xyz/dashboard/guide/ed
 
 ### schema
 
-ECHO implementes a decentralized comment protocol to save data on Arweave. Anyone can follow the protocol to post comments.
+ECHO implementes a decentralized protocol to save data on Arweave. Anyone can follow the protocol to post data and the data will be indexed by ECHO indexer.
 
 [WIP]
