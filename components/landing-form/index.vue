@@ -22,7 +22,7 @@
               alt="Preview"> 
             
             <div>
-              It's Preview
+              Preview
             </div>
           </div>
           
@@ -169,7 +169,7 @@
             </el-form-item>
             
             <el-form-item
-              label="Wallet Address"
+              label="Receiver"
               prop="receiver">
               <el-input
                 v-model="form.receiver"
@@ -254,7 +254,7 @@ const rules = reactive({
   }],
   receiver: [{
     required: true,
-    trigger: 'blur'
+    trigger: 'change'
   }]
 })
 
@@ -341,7 +341,8 @@ const formGenURL = computed(() => {
     'has-h-padding': 'true',
     modules: allModules.join(','),
     'target_uri': form.uri || 'preview-demo',
-    'color-theme': form.theme
+    'color-theme': form.theme,
+    receiver: form.receiver
   }
   if (form.uri_type === 'Mirror entry') {
     Object.assign(params, {
