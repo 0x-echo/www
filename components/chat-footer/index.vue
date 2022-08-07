@@ -81,7 +81,7 @@
           <router-link
             class="chat-footer__statement-link"
             title="Terms of Service"
-            to="terms-of-service">
+            to="tos">
             Terms of Service
           </router-link>
 

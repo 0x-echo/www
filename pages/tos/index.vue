@@ -3,7 +3,7 @@
     subtitle=""
     title="Terms of Service">
     <div class="statement-page__content"><p><strong><em>PLEASE READ THESE TERMS OF USE BEFORE USING THE WEBSITES.</em></strong> </p>
-<p>Acceptance of the Terms of Use These terms of use are entered into by and between you and <a href="https://0xecho.com" target="_blank">ECHO</a> ("<a href="https://0xecho.com" target="_blank">ECHO</a>", "we" or "us"). The following terms and conditions, together with any documents they expressly incorporate by reference (collectively, these "Terms of Use"), govern your access to and use of <a href="http://about3.me" target="_blank">about3.me</a>, including any content, functionality and services offered on or through <a href="http://about3.me" target="_blank">about3.me</a> (together, the "Website").</p>
+<p>Acceptance of the Terms of Use These terms of use are entered into by and between you and <a href="https://0xecho.com" target="_blank">ECHO</a> ("<a href="https://0xecho.com" target="_blank">ECHO</a>", "we" or "us"). The following terms and conditions, together with any documents they expressly incorporate by reference (collectively, these "Terms of Use"), govern your access to and use of <a href="http://0xecho.com" target="_blank">0xecho.com</a>, including any content, functionality and services offered on or through <a href="http://about3.me" target="_blank">about3.me</a> (together, the "Website").</p>
 <p>Please read the Terms of Use carefully before you start to use the Websites. By using the Websites or by clicking to accept or agree to the Terms of Use when this option is made available to you, you accept and agree to be bound and abide by these Terms of Use in addition to our Privacy Policy, incorporated herein by reference.</p>
 <p>If you do not to agree to these Terms of Use or the Privacy Policy, you must not access or use the Websites.</p>
 <h3 id="whomayusethewebsites">Who May Use the Websites</h3>
@@ -66,7 +66,7 @@ To access the Websites or some of the resources it offers, you may be asked to p
 <h3 id="entireagreement">Entire Agreement</h3>
 <p>The Terms of Use, our Privacy Policy and terms of conditions for the registration of events constitute the sole and entire agreement between you and <a href="https://0xecho.com" target="_blank">ECHO</a> with respect to the Websites and supersede all prior and contemporaneous understandings, agreements, representations and warranties, both written and oral, with respect to the Websites.</p>
 <h3 id="yourcommentsandconcerns">Your Comments and Concerns</h3>
-<p>This Websites is operated by <a href="https://0xecho.com" target="_blank">ECHO</a>. All other feedback, comments, requests for technical support and other communications relating to the Websites should be directed to: <a href="mailto:we@ECHO">we@ECHO</a>.</p></div>
+<p>This Websites is operated by <a href="https://0xecho.com" target="_blank">ECHO</a>. All other feedback, comments, requests for technical support and other communications relating to the Websites should be directed to: <a href="mailto:we@0xecho.com">we@ECHO</a>.</p></div>
   </template-doc>
 </template>
 
