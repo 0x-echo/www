@@ -178,8 +178,17 @@
               
               <div
                 class="landing-form__tip">
-                To provide your basic information or receive tips
+                To provide your avatar, display name and address for receiving tips
               </div>
+            </el-form-item>
+
+            <el-form-item
+              label="description"
+              prop="desc">
+              <el-input
+                v-model="form.desc"
+                placeholder="description shown below name">
+              </el-input>
             </el-form-item>
           </el-form>
           
@@ -231,7 +240,8 @@ const form = reactive({
   dark_bg_color: '',
   receiver: '',
   like: 'normal',
-  dislike: 'normal'
+  dislike: 'normal',
+  desc: ''
 })
 
 const rules = reactive({
@@ -342,7 +352,8 @@ const formGenURL = computed(() => {
     modules: allModules.join(','),
     'target_uri': form.uri || 'preview-demo',
     'color-theme': form.theme,
-    receiver: form.receiver
+    receiver: form.receiver,
+    desc: form.desc
   }
   if (form.uri_type === 'Mirror entry') {
     Object.assign(params, {
@@ -361,7 +372,7 @@ const formCode = computed(() => {
   if (form.uri_type === 'Mirror entry') {
     return formGenURL.value
   } else {
-    return `<iframe class="landing-form__preview-iframe" src="${formGenURL.value}" frameborder="0"></iframe>`
+    return `<iframe src="${formGenURL.value}" frameborder="0"></iframe>`
   }
 })
 
