@@ -157,7 +157,8 @@ const close = () => {
 }
 
 let loadingService
-const getLoading = (text) => {
+const getLoading = (text) => {loadingService
+  loadingService && loadingService.close()
   loadingService = ElLoading.service({
     target: '.dialog-claim',
     text
@@ -188,6 +189,8 @@ const startCheck = () => {
 const claim = async () => {
   try {
     await formRef.value.validate()
+    isLoading.value = true
+    getLoading('Loading...')
     try {
       const rs = await $fetch(config.public.API + '/api/v1/modules/subdid/claim', {
         params: {
@@ -198,10 +201,11 @@ const claim = async () => {
       })
       console.log(rs)
       if (rs.error === 0) {
-        isLoading.value = true
         getLoading('It takes about 3 mins')
         startCheck()
       } else {
+        isLoading.value = false
+        loadingService && loadingService.close()
       }
     } catch (e) {
       console.log('got error', e, e.response._data)
@@ -212,15 +216,25 @@ const claim = async () => {
           isLoading.value = true
           getLoading('It takes about 3 mins')
           startCheck()
+        } else if (data.data && data.data.minted_by === form.address.toLowerCase() && 
+          (data.data.status === 'registered')) {
+          isLoading.value = false
+          isDone.value = true
+          emits('on-claimed', id)
+          loadingService.close()
         } else {
           ElMessage.error({
             message: data.msg
           })
+          isLoading.value = false
+          loadingService.close()
         }
       } else {
         ElMessage.error({
           message: e.message
         })
+        isLoading.value = false
+        loadingService.close()
       }
     }
     // isLoading.value = true
