@@ -73,7 +73,7 @@
       v-if="!isLoading && isDone">
       <img
         class="dialog-claim__result-visual" 
-        src="/assets/claim-success.svg" 
+        src="../../assets/claim-success.svg" 
         alt="Claim Successfully!">
       
       <p
