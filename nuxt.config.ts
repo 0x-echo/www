@@ -1,6 +1,12 @@
 import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      API: process.env.NODE_ENV === 'development' ? 'http://localhost:9000' : 'https://node1.0xecho.com',
+      DID_PARENT: process.env.NODE_ENV === 'development' ? 'imac.bit' : '0xecho.bit'
+    }
+  },
   modules: [
     '@nuxt/content'
   ],

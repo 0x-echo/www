@@ -30,12 +30,6 @@
     --el-button-hover-border-color: var(--color-primary-light);
     --el-button-hover-text-color: var(--color-primary);
     
-    .dark & {
-      --el-button-hover-bg-color: rgba(255, 255, 255, .25);
-      --el-button-hover-border-color: rgba(255, 255, 255, .25);
-      --el-button-hover-text-color: white;
-    }
-    
     &,
     &:focus:not(.el-button:hover) {
       border-color: var(--bg-color);
@@ -84,12 +78,37 @@
       margin-left: 20px;
     }
   }
+  
+  &--text {
+    height: auto;
+    padding: 0;
+    border: 0;
+    line-height: 1.5;
+    
+    &:focus:not(.el-button:hover) {
+      background-color: transparent;
+      color: var(--color-primary);
+    }
+    
+    &:hover,
+    &:focus {
+      color: var(--color-primary-dark);
+    }
+  }
 }
 
 .el-input,
 .el-textarea {
   --el-input-placeholder-color: var(--text-color-muted);
   --el-input-border-color: var(--border-color);
+}
+
+.el-input-group {
+  &__append,
+  &__prepend {
+    background-color: var(--bg-color);
+    color: var(--text-color-secondary);
+  }
 }
 
 .el-popover {
@@ -112,6 +131,14 @@
   &__body {
     padding: 30px 35px 50px;
     color: var(--text-color-primary);
+  }
+  
+  .el-loading-mask {
+    border-radius: var(--border-radius-large);
+  }
+  
+  .el-loading-text {
+    margin-top: 10px;
   }
 }
 
@@ -187,7 +214,7 @@
     }
     
     &__body {
-      padding: 20px 20px 30px; 
+      padding: 20px 20px 40px; 
     }
   }
 }

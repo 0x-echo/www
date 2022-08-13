@@ -59,6 +59,7 @@ let developerDrawerVisible = ref(false)
 .developer-page {
   display: flex;
   max-width: 1160px;
+  min-height: 100vh;
   padding-top: 180px;
   padding-bottom: 160px;
   font-family: 'Inter', sans-serif;

@@ -48,14 +48,6 @@ const features = [{
   desc: 'Besides ECHO official gateway, users can use any other gateway to read and post comments. Our indexer will continuously aggregate data from Arweave.',
   image: 'feature-decentralized'
 }]
-
-onMounted(() => {
-  document.body.classList.add('dark')
-})
-
-onUnmounted(() => {
-  document.body.classList.remove('dark')
-})
 </script>
 
 <style lang="scss">

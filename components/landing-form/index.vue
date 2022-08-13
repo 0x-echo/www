@@ -169,8 +169,25 @@
             </el-form-item>
             
             <el-form-item
-              label="Receiver"
               prop="receiver">
+              <template
+                #label>
+                <span>
+                  Receiver
+                </span>
+                
+                <span
+                  class="landing-form__claim-divider">
+                  -
+                </span>
+                
+                <el-button
+                  type="text"
+                  @click="claimDialogVisible = true">
+                  Claim a free 0xecho.bit sub-account
+                </el-button>
+              </template>
+              
               <el-input
                 v-model="form.receiver"
                 placeholder="Enter your .bit or .eth">
@@ -220,12 +237,18 @@
         </div>
       </div>
     </div>
+    
+    <dialog-claim
+      @on-claimed="onClaimed"
+      v-model="claimDialogVisible">
+    </dialog-claim>
   </section>
 </template>
 
 <script setup>
 import { ElButton, ElCheckbox, ElCheckboxGroup, ElForm, ElFormItem, ElMessage, ElInput, ElPopover, ElOption, ElRadio, ElRadioGroup, ElSelect } from 'element-plus'
 import ActionBar from './action-bar'
+import DialogClaim from './dialog-claim'
 import qs from 'query-string'
 
 const showResult = ref(false)
@@ -243,6 +266,10 @@ const form = reactive({
   dislike: 'normal',
   desc: ''
 })
+
+const onClaimed = (val) => {
+  form.receiver = val
+}
 
 const rules = reactive({
   uri_type: [{
@@ -404,6 +431,8 @@ const selectMode = (value, option) => {
   instance.refs[`${value}ModePopover`][0].hide()
 }
 
+let claimDialogVisible = ref(false)
+
 const reset = () => {
   showResult.value = false
   formRef.value.resetFields()
@@ -482,6 +511,11 @@ const submit = async () => {
   
   &__widget-checkbox {
     width: 120px;
+    transition: all .3s ease;
+    
+    &:hover:not(.is-checked) {
+      border-color: var(--color-primary);
+    }
     
     .is-error & {
       border-color: var(--color-danger);
@@ -563,6 +597,10 @@ const submit = async () => {
     &.active {
       background: var(--menu-item-bg-color);
     }
+  }
+  
+  &__claim-divider {
+    margin: 0 5px;
   }
   
   &__dark-color {
