@@ -82,6 +82,9 @@ const nav = [{
 }, {
   label: 'Developer',
   value: '/developer'
+}, {
+  label: 'Changelog',
+  value: '/changelog'
 }]
 
 const userMenu = [{
