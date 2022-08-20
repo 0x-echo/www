@@ -32,14 +32,14 @@ useHead({
 })
 
 const features = [{
-  strongTitle: 'Omni chain',
+  strongTitle: 'Multi-chain',
   title: ' login and tip',
   desc: 'ECHO supports EVM chains and Solana. And will support most of the main chains in the future.',
   image: 'feature-wallet'
 }, {
   strongTitle: 'Permanent storage',
   title: ' with Arweave',
-  desc: 'ECHO stores comments and reactions to Arweave. No one can delete or rewrite the archive.',
+  desc: 'ECHO stores comments and reactions to Arweave. It is censorship-resistant. No one can erase or modify the archive.',
   image: 'feature-storage',
   reverse: true
 }, {

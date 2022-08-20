@@ -20,7 +20,7 @@ const logs = [{
     label: 'Feature',
     type: 'success',
     list: [{
-      content: 'The comment editor supports Markdown syntax now(except Headline).'
+      content: 'The comment editor supports Markdown syntax now.'
     }]
   }]
 }]
