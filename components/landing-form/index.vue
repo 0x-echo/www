@@ -313,10 +313,16 @@ const uriTypeOptions = [{
   tip: 'tx/{{chainName}}/{{chainId}}/{{txId}}'
 }, {
   value: 'IPFS file',
-  tip: 'file/ipfs/{{CID}}/{{path}}'
+  tip: 'dweb/ipfs/{{CID}}/{{path}}'
 }, {
   value: 'IPNS file',
-  tip: 'file/ipns/{{ipns}}/{{path}}'
+  tip: 'dweb/ipns/{{ipns}}/{{path}}'
+}, {
+  value: 'media-isbn',
+  tip: 'media/isbn/{{isbn}}'
+},  {
+  value: 'media-imdb',
+  tip: 'media/imdb/{{imdb}}'
 }, {
   value: 'URL',
   tip: 'A URL should starts with https://'
