@@ -318,11 +318,11 @@ const uriTypeOptions = [{
   value: 'IPNS file',
   tip: 'dweb/ipns/{{ipns}}/{{path}}'
 }, {
-  value: 'media-isbn',
-  tip: 'media/isbn/{{isbn}}'
+  value: 'isbn',
+  tip: 'database/isbn/{{isbn}}'
 },  {
-  value: 'media-imdb',
-  tip: 'media/imdb/{{imdb}}'
+  value: 'imdb',
+  tip: 'database/imdb/{{imdb}}'
 }, {
   value: 'URL',
   tip: 'A URL should starts with https://'
