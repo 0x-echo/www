@@ -155,7 +155,7 @@
                 </el-radio>
               </el-radio-group>
               
-              <div
+              <!-- <div
                 class="landing-form__dark-color"
                 v-if="form.theme !== 'light'">
                 <el-input
@@ -165,7 +165,7 @@
                     Dark Bg Color #
                   </template>
                 </el-input>
-              </div>
+              </div> -->
             </el-form-item>
             
             <el-form-item
@@ -390,7 +390,7 @@ const formGenURL = computed(() => {
   }
   if (form.uri_type === 'Mirror entry') {
     Object.assign(params, {
-      'dark-theme-color': '#141414',
+      // 'dark-theme-color': '#141414',
       'height': 800,
       'display': 'iframe'
     })
