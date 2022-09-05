@@ -298,7 +298,7 @@ const rules = reactive({
 // options
 const uriTypeOptions = [{
   value: 'Mirror entry',
-  tip: 'Copy your Mirror entry Permalink after publishing or saving draft.'
+  tip: `Copy your Mirror entry's Permalink after publishing or saving draft.`
 }, {
   value: 'NFT Item',
   tip: 'nft/{{chainName}}/{{chainId}}/{{contractAddress}}/{{tokenId}}'
@@ -391,19 +391,17 @@ const formGenURL = computed(() => {
   if (form.uri_type === 'Mirror entry') {
     Object.assign(params, {
       // 'dark-theme-color': '#141414',
-      'height': 800,
-      'display': 'iframe'
     })
   }
 
-  return `https://embed.0xecho.com/?` + qs.stringify(params)
+  return `https://embed.0xecho.com.ipns.page/?` + qs.stringify(params)
   
   // `show-comment-dislike=true&has-v-padding=true&has-h-padding=true&modules=${form.modules.join(',')}&color-theme=light&target_uri=https%3A%2F%2Fmirror.xyz%2Fthirdchat.eth%2F8cCUKVDKXGco4-O6JRSlX5_zZkmb7C0YwCurcIVyZ2g&rpc_url=https%3A%2F%2Flocal-dev.third.chat%2F&dark-theme-color=%23141414&width=720&display=iframe`
 })
 
 const formCode = computed(() => {
   if (form.uri_type === 'Mirror entry') {
-    return formGenURL.value
+    return formGenURL.value + '&height=800&display=iframe'
   } else {
     return `<iframe src="${formGenURL.value}" frameborder="0"></iframe>`
   }
