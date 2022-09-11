@@ -203,7 +203,7 @@ const getWidget = () => {
   }
 }
 
-@media screen and (max-width: #{$tablet-width - 1}) {
+@media screen and (max-width: #{$small-desktop-width - 1}) {
   .chat-header {
     &__left {
       flex: 0 0 auto;
