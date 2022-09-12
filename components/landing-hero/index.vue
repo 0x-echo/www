@@ -3,6 +3,23 @@
     class="landing-hero"
     ref="landingHero"
     data-color-theme="dark">
+    <h5
+      class="landing-hero__subtitle">
+      <a
+        class="landing-hero__gitcoin"
+        href="https://gitcoin.co/grants/7554/echo-long-live-our-opinion"
+        target="_blank"
+        title="Support ECHO on GitCoin">
+        <span>
+          Support ECHO on GitCoin
+        </span>
+        
+        <i
+          class="ri-arrow-right-up-line">
+        </i>
+      </a>
+    </h5>
+    
     <canvas
       class="landing-hero__canvas"
       id="heroCanvas">
@@ -167,6 +184,30 @@ const onResize = () => {
   padding: 250px 0 150px;
   text-align: center;
   z-index: 1;
+  
+  &__subtitle {
+    margin-bottom: 10px;
+  }
+  
+  &__gitcoin {
+    display: inline-flex;
+    border-radius: 4px;
+    padding: 2px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color-primary);
+    background: #15EBB7;
+    transition: all .3s ease;
+    
+    &:hover {
+      color: var(--text-color-primary);
+      background: #12d9a8;
+    }
+    
+    .ri-arrow-right-up-line {
+      margin-left: 3px;
+    }
+  }
   
   &__canvas {
     position: absolute;
