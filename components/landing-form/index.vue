@@ -291,7 +291,7 @@ const rules = reactive({
   }],
   receiver: [{
     required: true,
-    trigger: 'change'
+    trigger: 'blur'
   }]
 })
 
