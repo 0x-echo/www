@@ -1,0 +1,1 @@
+export const EMBED_DOMAIN = 'https://embed.0xecho.com.ipns.page'

@@ -30,7 +30,7 @@
           <iframe
             class="landing-form__preview-iframe"
             v-if="form.modules.length"
-            :src="formGenURL" 
+            :src="processURL(formGenURL)" 
             frameborder="0">
           </iframe>
         </div>
@@ -250,6 +250,7 @@ import { ElButton, ElCheckbox, ElCheckboxGroup, ElForm, ElFormItem, ElMessage, E
 import ActionBar from './action-bar'
 import DialogClaim from './dialog-claim'
 import qs from 'query-string'
+import { EMBED_DOMAIN } from '../../config'
 
 const showResult = ref(false)
 
@@ -269,6 +270,13 @@ const form = reactive({
 
 const onClaimed = (val) => {
   form.receiver = val
+}
+
+const processURL = (url) => {
+  if (url.includes('dark')) {
+    url += '&dark-theme-color=' + encodeURIComponent('#0d0f17')
+  }
+  return url
 }
 
 const rules = reactive({
@@ -394,7 +402,7 @@ const formGenURL = computed(() => {
     })
   }
 
-  return `https://embed.0xecho.com.ipns.page/?` + qs.stringify(params)
+  return `${EMBED_DOMAIN}?` + qs.stringify(params)
   
   // `show-comment-dislike=true&has-v-padding=true&has-h-padding=true&modules=${form.modules.join(',')}&color-theme=light&target_uri=https%3A%2F%2Fmirror.xyz%2Fthirdchat.eth%2F8cCUKVDKXGco4-O6JRSlX5_zZkmb7C0YwCurcIVyZ2g&rpc_url=https%3A%2F%2Flocal-dev.third.chat%2F&dark-theme-color=%23141414&width=720&display=iframe`
 })
