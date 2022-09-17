@@ -33,6 +33,16 @@
       </h1>
       
       <div
+        class="landing-hero__keyword-list">
+        <span
+          class="landing-hero__keyword-item"
+          v-for="item in keywords"
+          :key="item">
+          {{ item }}.
+        </span>
+      </div>
+      
+      <div
         class="landing-hero__action-bar">
         <el-button
           class="el-button--xlarge"
@@ -59,6 +69,13 @@ import * as THREE from 'three'
 let typewriter = ref(null)
 const titleKeyword = ref(null)
 let landingHero = ref(null)
+
+const keywords = [
+  'Decentralized', 
+  'Permissionless',
+  'Censorship-resistant',
+  'Permanent'
+]
 
 onMounted(() => {
   typewriter = new Typewriter(titleKeyword.value, {
@@ -230,6 +247,23 @@ const onResize = () => {
   
   &__title-keyword {
     color: #ffeb3b;
+  }
+  
+  &__keyword-list {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+    opacity: .6;
+  }
+  
+  &__keyword-item {
+    margin-right: 15px;
+    
+    &:last-of-type {
+      margin-right: 0;
+    }
   }
   
   &__action-bar {
