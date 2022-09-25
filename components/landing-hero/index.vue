@@ -7,7 +7,7 @@
       class="landing-hero__subtitle">
       <span
         class="landing-hero__subtitle-text">
-        The first decentralized comment protocol
+        The first decentralized engagement plugin
       </span>
     </h5>
     
