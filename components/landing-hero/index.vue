@@ -70,7 +70,7 @@ const keywords = [
 
 onMounted(() => {
   typewriter = new Typewriter(titleKeyword.value, {
-    strings: ['Things', 'NFT', 'Article', 'Transaction', 'Address', 'Opinion', 'Contract'],
+    strings: ['Thing', 'NFT', 'Article', 'Podcast', 'Transaction', 'Address', 'Opinion', 'Contract'],
     loop: true,
     autoStart: true,
     pauseFor: 800,
