@@ -157,7 +157,7 @@ const close = () => {
 }
 
 let loadingService
-const getLoading = (text) => {loadingService
+const getLoading = (text) => {
   loadingService && loadingService.close()
   loadingService = ElLoading.service({
     target: '.dialog-claim',
