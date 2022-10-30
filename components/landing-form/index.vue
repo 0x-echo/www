@@ -309,16 +309,16 @@ const uriTypeOptions = [{
   tip: `Copy your Mirror entry's Permalink after publishing or saving draft.`
 }, {
   value: 'NFT Item',
-  tip: 'nft/{{chainName}}/{{chainId}}/{{contractAddress}}/{{tokenId}}'
+  tip: 'nft/{{SLIP-0044 coin type}}/{{contractAddress}}/{{tokenId}}'
 }, {
   value: 'Address',
-  tip: 'address/{{chainName}}/{{chainId}}/{{address}}'
+  tip: 'address/{{SLIP-0044 coin type}}/{{address}}'
 }, {
   value: 'Contract',
-  tip: 'contract/{{chainName}}/{{chainId}}/{{contract address}}'
+  tip: 'contract/{{SLIP-0044 coin type}}/{{contract address}}'
 }, {
   value: 'Transaction',
-  tip: 'tx/{{chainName}}/{{chainId}}/{{txId}}'
+  tip: 'tx/{{SLIP-0044 coin type}}/{{txId}}'
 }, {
   value: 'IPFS file',
   tip: 'dweb/ipfs/{{CID}}/{{path}}'
@@ -333,7 +333,7 @@ const uriTypeOptions = [{
   tip: 'database/imdb/{{imdb}}'
 }, {
   value: 'URL',
-  tip: 'A URL should starts with https://'
+  tip: 'A URL should start with https://'
 }]
 
 const formTip = computed(() => {
