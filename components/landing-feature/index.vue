@@ -5,7 +5,7 @@
     <div
       class="container landing-feature__container">
       <landing-section-header
-        subtitle="A smart solution for your need"
+        subtitle="A Smart Solution for Your Need"
         title="Key Features">
       </landing-section-header>
       

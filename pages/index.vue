@@ -33,18 +33,18 @@ useHead({
 
 const features = [{
   strongTitle: 'Multi-chain',
-  title: ' login and tip',
+  title: ' Login and Tip',
   desc: 'ECHO supports EVM chains and Solana. And will support most of the main chains in the future.',
   image: 'feature-wallet'
 }, {
-  strongTitle: 'Permanent storage',
-  title: ' with Arweave',
+  strongTitle: 'Permanent Storage',
+  title: ' With Arweave',
   desc: 'ECHO stores comments and reactions to Arweave. It is censorship-resistant. No one can erase or modify the archive.',
   image: 'feature-storage',
   reverse: true
 }, {
   strongTitle: 'Decentralized',
-  title: ' comment protocol',
+  title: ' Comment Protocol',
   desc: 'Besides ECHO official gateway, users can use any other gateway to read and post comments. Our indexer will continuously aggregate data from Arweave.',
   image: 'feature-decentralized'
 }]

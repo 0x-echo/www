@@ -6,7 +6,7 @@
     <div
       class="container">
       <landing-section-header
-        subtitle="easy and hassle-free"
+        subtitle="Easy and Hassle-Free"
         title="Get My Widget">
       </landing-section-header>
       
@@ -200,11 +200,11 @@
             </el-form-item>
 
             <el-form-item
-              label="description"
+              label="Description"
               prop="desc">
               <el-input
                 v-model="form.desc"
-                placeholder="description shown below name">
+                placeholder="Description shown below name">
               </el-input>
             </el-form-item>
           </el-form>

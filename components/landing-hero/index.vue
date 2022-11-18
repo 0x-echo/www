@@ -7,7 +7,7 @@
       class="landing-hero__subtitle">
       <span
         class="landing-hero__subtitle-text">
-        The first decentralized engagement protocol
+        The First Decentralized Social Engagement Protocol
       </span>
     </h5>
     

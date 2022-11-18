@@ -66,15 +66,15 @@ import { ElButton } from 'element-plus'
 
 const links = [{
   icon: 'ri-code-s-slash-line',
-  title: 'Buidl things with our simple guides',
+  title: 'Buidl Things With Our Simple Guides',
   link: '/developer',
   link_label: 'Check out Docs',
   isExternal: false
 }, {
   icon: 'ri-discord-line',
-  title: 'Join our Discord to keep updated',
+  title: 'Join Our Discord to Keep Updated',
   link: 'https://discord.gg/KFxyaw9Wdj',
-  link_label: 'Jump in community',
+  link_label: 'Jump in Community',
   isExternal: true
 }]
 </script>
