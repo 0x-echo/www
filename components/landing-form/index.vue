@@ -307,31 +307,34 @@ const rules = reactive({
 const uriTypeOptions = [{
   value: 'Mirror entry',
   tip: `Copy your Mirror entry's Permalink after publishing or saving draft.`
-}, {
-  value: 'NFT Item',
-  tip: 'nft/{{SLIP-0044 coin type}}/{{contractAddress}}/{{tokenId}}'
-}, {
-  value: 'Address',
-  tip: 'address/{{SLIP-0044 coin type}}/{{address}}'
-}, {
-  value: 'Contract',
-  tip: 'contract/{{SLIP-0044 coin type}}/{{contract address}}'
-}, {
-  value: 'Transaction',
-  tip: 'tx/{{SLIP-0044 coin type}}/{{txId}}'
-}, {
-  value: 'IPFS file',
-  tip: 'dweb/ipfs/{{CID}}/{{path}}'
-}, {
-  value: 'IPNS file',
-  tip: 'dweb/ipns/{{ipns}}/{{path}}'
-}, {
-  value: 'isbn',
-  tip: 'database/isbn/{{isbn}}'
-},  {
-  value: 'imdb',
-  tip: 'database/imdb/{{imdb}}'
-}, {
+}, 
+// {
+//   value: 'NFT Item',
+//   tip: 'nft/{{SLIP-0044 coin type}}/{{contractAddress}}/{{tokenId}}'
+// }, {
+//   value: 'Address',
+//   tip: 'address/{{SLIP-0044 coin type}}/{{address}}'
+// }, {
+//   value: 'Contract',
+//   tip: 'contract/{{SLIP-0044 coin type}}/{{contract address}}'
+// }, {
+//   value: 'Transaction',
+//   tip: 'tx/{{SLIP-0044 coin type}}/{{txId}}'
+// }, {
+//   value: 'IPFS file',
+//   tip: 'dweb/ipfs/{{CID}}/{{path}}'
+// }, {
+//   value: 'IPNS file',
+//   tip: 'dweb/ipns/{{ipns}}/{{path}}'
+// }, {
+//   value: 'isbn',
+//   tip: 'database/isbn/{{isbn}}'
+// },  {
+//   value: 'imdb',
+//   tip: 'database/imdb/{{imdb}}'
+// }, 
+
+{
   value: 'URL',
   tip: 'A URL should start with https://'
 }]
