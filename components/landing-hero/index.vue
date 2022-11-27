@@ -7,7 +7,7 @@
       class="landing-hero__subtitle">
       <span
         class="landing-hero__subtitle-text">
-        The First Decentralized Social Engagement Protocol
+        The First Decentralized <br class="landing-hero__subtitle-br">Social Engagement Protocol
       </span>
     </h5>
     
@@ -194,6 +194,7 @@ const onResize = () => {
   z-index: 1;
   
   &__subtitle {
+    padding: 0 10px;
     margin-bottom: 10px;
   }
   
@@ -205,6 +206,10 @@ const onResize = () => {
     font-weight: 600;
     color: var(--text-color-primary);
     background: #15EBB7;
+  }
+  
+  &__subtitle-br {
+    display: none;
   }
   
   &__canvas {
@@ -280,6 +285,10 @@ const onResize = () => {
   .landing-hero {
     &__title {
       font-size: 13vw;
+    }
+    
+    &__subtitle-br {
+      display: inline-block;
     }
   }
 }
