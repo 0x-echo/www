@@ -145,6 +145,9 @@ const links = [{
   }, {
     label: 'FAQ',
     value: '/faq'
+  }, {
+    label: 'Media Kit',
+    value: '/media-kit'
   }]
 }]
 </script>
