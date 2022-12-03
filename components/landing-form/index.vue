@@ -49,7 +49,31 @@
             <el-form-item
               label="Target URI Type"
               prop="uri_type">
-              <el-select 
+              <el-radio-group 
+                v-model="form.uri_type">
+                <el-radio 
+                  v-for="item in uriTypeOptions"
+                  :key="item.value"
+                  :label="item.value" 
+                  border>
+                  {{ item.value }}
+                </el-radio>
+              </el-radio-group>
+              
+              <!-- <a 
+                class="landing-form__uri-more"
+                href=""
+                target="_blank">
+                <span>
+                  More
+                </span>
+                
+                <i
+                  class="ri-arrow-right-up-line">
+                </i>
+              </a> -->
+              
+              <!-- <el-select 
                 v-model="form.uri_type" 
                 placeholder="Select">
                 <el-option
@@ -57,7 +81,7 @@
                   :key="item.value"
                   :label="item.value"
                   :value="item.value" />
-              </el-select>
+              </el-select> -->
             </el-form-item>
             
             <el-form-item
@@ -169,6 +193,7 @@
             </el-form-item>
             
             <el-form-item
+              v-if="form.modules.filter(item => { return item === 'tip'}).length"
               prop="receiver">
               <template
                 #label>
@@ -426,16 +451,28 @@ const modeOptions = [{
   value: 'lite'
 }]
 
-const themeOptions = [{
-  label: 'Light',
-  value: 'light'
-}, {
-  label: 'Dark',
-  value: 'dark'
-}, {
-  label: 'Auto',
-  value: 'auto'
-}]
+const themeOptions = computed(() => {
+  if (form.uri_type === 'Mirror entry') {
+    return [{
+      label: 'Light',
+      value: 'light'
+    }, {
+      label: 'Dark',
+      value: 'dark'
+    }]
+  } else {
+    return [{
+      label: 'Light',
+      value: 'light'
+    }, {
+      label: 'Dark',
+      value: 'dark'
+    }, {
+      label: 'Auto',
+      value: 'auto'
+    }]
+  }
+})
 
 const instance = getCurrentInstance()
 const likeModePopover = ref(null) 
@@ -518,6 +555,12 @@ const submit = async () => {
     font-size: 12px;
     line-height: 1.5;
     color: var(--text-color-muted);
+  }
+  
+  &__uri-more {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
   }
   
   &__widget-group {
