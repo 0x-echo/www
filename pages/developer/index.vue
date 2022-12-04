@@ -27,6 +27,41 @@
     
       <content-renderer 
         :value="data" />
+
+        <h2>ECHO Button</h2>
+
+        <h3>Installing with package manager </h3>
+
+        <div v-html="installCode"></div>
+
+        <h3>Using CDN</h3>
+
+        <div v-html="installCDNCode"></div>
+
+        <h3>Usage</h3>
+
+        <div v-html="code"></div>
+
+        <h3>Always Show Popover</h3>
+        <div class="echo-button-box">
+          <div id="echo-button-light"></div>
+
+          <div class="echo-button-dark-box">
+            <div id="echo-button-dark"></div>
+          </div>
+        </div>
+
+        <h3>Show Popover on hover</h3>
+        <div class="echo-button-box echo-button-box-2">
+          <div id="echo-button-light-2"></div>
+
+          <div class="echo-button-dark-box">
+            <div id="echo-button-dark-2"></div>
+          </div>
+        </div>
+
+       
+
     </main>
     
     <el-drawer
@@ -48,14 +83,104 @@
 <script setup>
 import { ElDrawer } from 'element-plus'
 import DeveloperNav from './components/developer-nav'
+import EchoButton from '@0xecho/button'
+import hljs from '@0xecho/highlight.js/es/common'
+
 useHead({
   title: 'Developer | ECHO | Long live our opinion'
 })
 const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
 let developerDrawerVisible = ref(false)
+
+const installCode = '<pre class="hljs"><code>' + hljs.highlight(`
+  npm install @0xecho/button
+
+  // or
+
+  yarn add @0xecho/button
+  `, { language: 'shell', ignoreIllegals: true }).value +
+               '</code></pre>';
+
+const installCDNCode = '<pre class="hljs"><code>' + hljs.highlight(`https://cdn.jsdelivr.net/npm/@0xecho/button/dist/button.min.js
+
+  or
+
+  https://unpkg.com/@0xecho/button/dist/button.min.js`,
+
+   { language: 'html', ignoreIllegals: true }).value + '</code></pre>';
+              console.log(installCDNCode)
+
+// maxDisplayLikers: 5, // max display likers on popover, default: 5 
+const code = '<pre class="hljs"><code>' + hljs.highlight(`import EchoButton from '@0xecho/button'
+  
+  new EchoButton({
+     targetUri: 'https://0xecho.com', // commenting target, required
+     alwaysShowPopover: true, // whether always show popover, default: false
+     partnerName: '', // if spcified, partner name will be shown on popover
+     numberType: 'power' // button display number type, power(default) or count,
+     theme: 'light' // dark or light(default)
+  }).mount('#echo-button-light')`, { language: 'js', ignoreIllegals: true }).value +
+               '</code></pre>';
+
+onMounted(() => {
+  new EchoButton({
+    targetUri: 'https://0xecho.com',
+    maxDisplayLikers: 5,
+    alwaysShowPopover: true,
+    popoverAutoFlip: false
+  }).mount('#echo-button-light')
+
+  new EchoButton({
+    targetUri: 'https://0xecho.com',
+    maxDisplayLikers: 5,
+    alwaysShowPopover: true,
+    theme: 'dark',
+    partnerName: 'Planet',
+    popoverAutoFlip: false,
+    numberType: 'count'
+  }).mount('#echo-button-dark')
+
+  new EchoButton({
+    targetUri: 'https://0xecho.com',
+    maxDisplayLikers: 5,
+  }).mount('#echo-button-light-2')
+
+  new EchoButton({
+    targetUri: 'https://0xecho.com',
+    maxDisplayLikers: 5,
+    theme: 'dark',
+    numberType: 'count'
+  }).mount('#echo-button-dark-2')
+})
 </script>
 
 <style lang="scss">
+.echo-button-box {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  display: flex;
+  text-align: center;
+
+  div {
+    flex: 1;
+  }
+}
+
+.echo-button-box-2 {
+  margin-top: 120px;
+}
+
+#echo-button-light,
+#echo-button-dark {
+  display: inline-block;
+  margin-top: 200px;
+  margin-bottom: 20px;
+}
+
+.echo-button-dark-box {
+  background-color: #000;
+}
+
 .developer-page {
   display: flex;
   max-width: 1160px;
