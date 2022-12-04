@@ -102,6 +102,15 @@ let developerDrawerVisible = ref(false)
     pre {
       margin-bottom: 20px;
     }
+
+    pre {
+      padding: 10px;
+
+      code {
+        white-space: break-spaces;
+      }
+    }
+
     
     p {
       color: var(--text-color-secondary);
