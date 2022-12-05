@@ -8,7 +8,7 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.3",
+    "nuxt": "3.0.0-rc.12",
     "sass": "^1.51.0"
   },
   "dependencies": {
@@ -19,6 +19,7 @@
     "gsap": "^3.10.4",
     "jump.js": "^1.0.2",
     "particles.js": "^2.0.0",
+    "query-string": "^7.1.3",
     "remixicon": "^2.5.0",
     "three": "^0.141.0",
     "typewriter-effect": "^2.18.2"
