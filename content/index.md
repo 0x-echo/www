@@ -35,6 +35,26 @@ If you want to set the block size, you can use `height` and `width`. For example
 
 For more details, please refer to [Editor](https://mirror.xyz/dashboard/guide/editor).
 
+### Planet
+
+Right click on your planet ->  Custom Code -> Body End.
+
+Then enable the option: custom code before `</body>`.
+
+Copy the following code and paste into the textarea.
+
+  ``` html
+  {% if current_item_type == "blog" %}
+  <iframe 
+    frameborder="0"
+    style="display:block;width:calc(800px - env(safe-area-inset-left) - env(safe-area-inset-left));height:600px;margin: 0 auto;"
+    src="https://embed.0xecho.com.ipns.page/?modules=comment,like,tip&target_uri=dweb/ipns/{{ planet_ipns }}/{{ article.id }}&receiver=0xecho.bit"></iframe>
+  {% endif %}
+  ```
+
+Right click on your planet -> Develop -> Rebuild.
+
+Done.
 
 ## Comment Protocol
 

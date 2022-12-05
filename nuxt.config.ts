@@ -53,7 +53,8 @@ export default defineNuxtConfig({
     '@/styles/_element-plus.scss',
     '@/styles/_base.scss',
     '@/styles/_reset.scss',
-    '@/styles/themes/_default.scss'
+    '@/styles/themes/_default.scss',
+    '@/styles/highlight/github.scss'
   ],
   vite: {
     css: {
