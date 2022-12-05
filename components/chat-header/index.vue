@@ -117,7 +117,7 @@ const getWidget = () => {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9;
+  z-index: 1999;
   width: 100%;
   height: 84px;
   background: rgba(white, .8);
