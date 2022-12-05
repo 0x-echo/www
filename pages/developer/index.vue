@@ -28,40 +28,37 @@
       <content-renderer 
         :value="data" />
 
-        <h2>ECHO Button</h2>
+      <h2>ECHO Button</h2>
 
-        <h3>Installing with package manager </h3>
+      <h3>Installing with package manager </h3>
 
-        <div v-html="installCode"></div>
+      <div v-html="installCode"></div>
 
-        <h3>Using CDN</h3>
+      <h3>Using CDN</h3>
 
-        <div v-html="installCDNCode"></div>
+      <div v-html="installCDNCode"></div>
 
-        <h3>Usage</h3>
+      <h3>Usage</h3>
 
-        <div v-html="code"></div>
+      <div v-html="code"></div>
 
-        <h3>Always Show Popover</h3>
-        <div class="echo-button-box">
-          <div id="echo-button-light"></div>
+      <h3>Always Show Popover</h3>
+      <div class="echo-button-box">
+        <div id="echo-button-light"></div>
 
-          <div class="echo-button-dark-box">
-            <div id="echo-button-dark"></div>
-          </div>
+        <div class="echo-button-dark-box">
+          <div id="echo-button-dark"></div>
         </div>
+      </div>
 
-        <h3>Show Popover on hover</h3>
-        <div class="echo-button-box echo-button-box-2">
-          <div id="echo-button-light-2"></div>
+      <h3>Show Popover on hover</h3>
+      <div class="echo-button-box echo-button-box-2">
+        <div id="echo-button-light-2"></div>
 
-          <div class="echo-button-dark-box">
-            <div id="echo-button-dark-2"></div>
-          </div>
+        <div class="echo-button-dark-box">
+          <div id="echo-button-dark-2"></div>
         </div>
-
-       
-
+      </div>
     </main>
     
     <el-drawer
@@ -89,7 +86,7 @@ import hljs from '@0xecho/highlight.js/es/common'
 useHead({
   title: 'Developer | ECHO | Long live our opinion'
 })
-const { data } = await useAsyncData('dev', () => queryContent('/').findOne())
+
 let developerDrawerVisible = ref(false)
 
 const installCode = '<pre class="hljs"><code>' + hljs.highlight(`
@@ -122,7 +119,18 @@ const code = '<pre class="hljs"><code>' + hljs.highlight(`import EchoButton from
   }).mount('#echo-button-light')`, { language: 'js', ignoreIllegals: true }).value +
                '</code></pre>';
 
-onMounted(() => {
+let data = reactive({
+  body: {
+    toc: {
+      links: []
+    }
+  }
+})
+
+onMounted(async () => {
+  const rs = await queryContent('/').findOne()
+  Object.assign(data, rs)
+  
   new EchoButton({
     targetUri: 'https://0xecho.com',
     maxDisplayLikers: 5,
