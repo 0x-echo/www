@@ -71,6 +71,10 @@ const menu = [{
   icon: 'ri-code-s-slash-line',
   label: 'Developer',
   value: '/developer'
+}, {
+  icon: 'ri-file-text-line',
+  label: 'Changelog',
+  value: '/changelog'
 }]
 
 const getWidget = () => {
