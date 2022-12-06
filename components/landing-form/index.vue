@@ -215,7 +215,7 @@
               
               <el-input
                 v-model="form.receiver"
-                placeholder="Enter your .bit or .eth">
+                placeholder="Enter your .bit, .eth or wallet address">
               </el-input>
               
               <div
