@@ -2,14 +2,17 @@
 
 ### What is ECHO
 
-ECHO is a product to help collecting comments, reactions and receiving tips. The data will be permanently stored on Arweave.
+ 
+ECHO is the first decentralized social engagement protocol based on Arweave. Our goal is to provide the fundamental infrastructure of Web3 social by introducing the first comment widget that can be deployed on any Web3 website with permanent data storage, so that users can speak up for themselves in a decentralized, permissionless, and censorship-resistant environment. It is our conviction that every person deserves to be heard, and we strive to create the right tool to make that happen. “Long live our opinion”, as our slogan goes.
 
-Websites owners and authors can easily embed ECHO widget into their pages.
+More importantly, as we are providing a multi-chain, multi-platform, and multi-disciplinary solution, ECHO will energize the social mobility in an aggregated manner to address the current social segregation issue in Web3. And our protocol-based data structure of social activities both on-chain and off-chain will be the cornerstone of the future Web3 social paradigm.
 
 ## Widget
 
 
-We use `iframe` to embed ECHO widget.
+We use `iframe` to embed ECHO widget. 
+
+Our iframe domain is: `https://embed.0xecho.com.ipns.page/`
 
 ### Query parameters
 
@@ -20,7 +23,7 @@ We use `iframe` to embed ECHO widget.
 | has_v_padding | boolean | whether to show vertical padding  |  |false |   
 | has_h_padding  | boolean  | whether to show horizonal padding  |  | false  |   
 | show_comment_dislike | boolean | whether to show comment dislike button |  | true | 
-| receiver | string | the did(.bit or .eth) whose records contains screen name, avatar and address(for receiving tips). |  | |
+| receiver | string | .bit, .eth or wallet address for receiving tips |  | |
 | rpc_url | string | ECHO gateway url  | | `https://node1.0xecho.com`. Use `https://sandbox.0xecho.com` for test purpose.|
 
 
