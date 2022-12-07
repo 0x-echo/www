@@ -58,8 +58,44 @@ Done.
 
 ## Comment Protocol
 
-### schema
+### target uri schema
 
-ECHO implementes a decentralized protocol to save data on Arweave. Anyone can follow the protocol to post data and the data will be indexed by ECHO indexer.
+#### https:// 
 
-[WIP]
+`https://{{path}}`, for all web2 content.
+
+#### dweb
+
+##### ipfs
+
+`dweb/ipfs/{{CID}}`
+
+##### ipns
+
+`dweb/ipns/{{path}}`
+
+##### ar
+
+`dweb/ar/{{tx id}}`
+
+#### NFT
+
+`nft/{{slip-0044 coin type}}/{{contract_address}}/{{token_id}}`
+
+#### Contract
+
+`contract/{{slip-0044 coin type}}/{{contract_address}}`
+
+#### Address
+
+`address/{{slip-0044 coin type}}/{{address}}`
+
+#### Apps
+
+##### Mirror
+
+`dapp/mirror/{{ori_content_digest}}`
+
+##### Voice
+
+`dapp/voice/{{id}}`
