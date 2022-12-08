@@ -60,9 +60,9 @@
                 </el-radio>
               </el-radio-group>
               
-              <!-- <a 
+              <a 
                 class="landing-form__uri-more"
-                href=""
+                href="https://github.com/0x-echo/target-uri-schema"
                 target="_blank">
                 <span>
                   More
@@ -71,7 +71,7 @@
                 <i
                   class="ri-arrow-right-up-line">
                 </i>
-              </a> -->
+              </a>
               
               <!-- <el-select 
                 v-model="form.uri_type" 
