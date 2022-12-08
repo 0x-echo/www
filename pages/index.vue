@@ -10,6 +10,9 @@
     <landing-demo>
     </landing-demo>
     
+    <landing-button>
+    </landing-button>
+    
     <landing-form>
     </landing-form>
     

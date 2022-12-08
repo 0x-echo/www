@@ -28,35 +28,79 @@
       <content-renderer 
         :value="data" />
 
-      <h2>ECHO Button</h2>
+      <h2
+        id="#echo-button">
+        ECHO Button
+      </h2>
 
-      <h3>Installing with package manager </h3>
+      <h3
+        id="package-manager">
+        Installing with package manager
+      </h3>
 
-      <div v-html="installCode"></div>
+      <div 
+        v-html="installCode">
+      </div>
 
-      <h3>Using CDN</h3>
+      <h3
+        id="cdn">
+        Using CDN
+      </h3>
 
-      <div v-html="installCDNCode"></div>
+      <div 
+        v-html="installCDNCode">
+      </div>
 
-      <h3>Usage</h3>
+      <h3
+        id="usage">
+        Usage
+      </h3>
 
-      <div v-html="code"></div>
+      <div 
+        v-html="code">
+      </div>
 
-      <h3>Always Show Popover</h3>
-      <div class="echo-button-box">
-        <div id="echo-button-light"></div>
+      <h3
+        id="always-show-popover">
+        Always Show Popover
+      </h3>
+      
+      <div 
+        class="developer-page__button-box">
+        <div
+          class="developer-page__button-box-item">
+          <div 
+            id="echo-button-light">
+          </div>
+        </div>
 
-        <div class="echo-button-dark-box">
-          <div id="echo-button-dark"></div>
+        <div 
+          class="developer-page__button-box-item is-dark">
+          <div 
+            id="echo-button-dark">
+          </div>
         </div>
       </div>
 
-      <h3>Show Popover on hover</h3>
-      <div class="echo-button-box echo-button-box-2">
-        <div id="echo-button-light-2"></div>
+      <h3
+        id="show-popover-on-hover">
+        Show Popover on hover
+      </h3>
+      
+      <div 
+        class="developer-page__button-box">
+        <div
+          class="developer-page__button-box-item">
+          <div 
+            id="echo-button-light-2">
+          </div>
+        </div>
 
-        <div class="echo-button-dark-box">
-          <div id="echo-button-dark-2"></div>
+        <div 
+          class="developer-page__button-box-item is-dark">
+          <div 
+            id="echo-button-dark-2">
+          </div>
         </div>
       </div>
     </main>
@@ -143,7 +187,7 @@ onMounted(async () => {
     maxDisplayLikers: 5,
     alwaysShowPopover: true,
     theme: 'dark',
-    partnerName: 'Planet',
+    partnerName: 'Partner',
     popoverAutoFlip: false,
     numberType: 'count'
   }).mount('#echo-button-dark')
@@ -163,32 +207,6 @@ onMounted(async () => {
 </script>
 
 <style lang="scss">
-.echo-button-box {
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  display: flex;
-  text-align: center;
-
-  div {
-    flex: 1;
-  }
-}
-
-.echo-button-box-2 {
-  margin-top: 120px;
-}
-
-#echo-button-light,
-#echo-button-dark {
-  display: inline-block;
-  margin-top: 200px;
-  margin-bottom: 20px;
-}
-
-.echo-button-dark-box {
-  background-color: #000;
-}
-
 .developer-page {
   display: flex;
   max-width: 1160px;
@@ -341,6 +359,22 @@ onMounted(async () => {
       padding-right: 50px;
     }
   }
+  
+  &__button-box {
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  &__button-box-item {
+    width: 50%;
+    padding: 240px 0 60px;
+    text-align: center;
+    
+    &.is-dark {
+      background: var(--bg-color-dark);
+    }
+  }
 }
 @media screen and (max-width: 960px) {
   .developer-page {
@@ -354,6 +388,14 @@ onMounted(async () => {
     
     &__nav {
       display: flex;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .developer-page {
+    &__button-box-item {
+      width: 100%;
     }
   }
 }
