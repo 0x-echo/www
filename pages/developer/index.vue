@@ -90,14 +90,14 @@
       <div 
         class="developer-page__button-box">
         <div
-          class="developer-page__button-box-item">
+          class="developer-page__button-box-item show-on-hover">
           <div 
             id="echo-button-light-2">
           </div>
         </div>
 
         <div 
-          class="developer-page__button-box-item is-dark">
+          class="developer-page__button-box-item is-dark show-on-hover">
           <div 
             id="echo-button-dark-2">
           </div>
@@ -367,12 +367,38 @@ onMounted(async () => {
   }
   
   &__button-box-item {
+    position: relative;
     width: 50%;
     padding: 240px 0 60px;
     text-align: center;
+    overflow: hidden;
     
     &.is-dark {
       background: var(--bg-color-dark);
+    }
+    
+    &.show-on-hover {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: 60%;
+        height: 60%;
+        background-image: url('@/assets/echo-logo.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: .05;
+      }
+      
+      &.is-dark {
+        &::after {
+          background-image: url('@/assets/echo-logo-white.svg');
+        }
+      }
     }
   }
 }
