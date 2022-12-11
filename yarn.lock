@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@0xecho/button@0.0.10":
-  version "0.0.10"
-  resolved "https://registry.npmmirror.com/@0xecho/button/-/button-0.0.10.tgz#0ac2e17836d8b1fddd8c5cdff14fdab1bd49ff56"
-  integrity sha512-akAcqFjFhiOqfRvSExTdEBrOH3wQTg5Ble7w4ajPZK2KXLyb6siwtwzgR3CQp9uCXovvqKKZYfZfLPBubnIkDw==
+"@0xecho/button@0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@0xecho/button/-/button-0.0.13.tgz#c68a784599de0d294ea6b3cc61f05f1ca3e8977f"
+  integrity sha512-1PGcA30jxm7FAiYiAAGPuvIrOKhshMXJ1LU9/oOlFMV92VzLiO7JvTzDX+nUcHCPLqv8Ear7ZB+8QBmijCfWpA==
   dependencies:
     "@popperjs/core" "^2.11.6"
     axios "^1.2.0"
