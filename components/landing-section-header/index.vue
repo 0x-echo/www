@@ -17,6 +17,10 @@
         {{ subtitle }}
       </p>
     </slot>
+    
+    <slot
+      name="bottom">
+    </slot>
   </div>
 </template>
 

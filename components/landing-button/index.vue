@@ -74,7 +74,7 @@ onMounted(() => {
 
 <style lang="scss">
 .landing-button {
-  padding: 100px 0 60px;
+  padding: 100px 0;
   
   &__container {
     max-width: 1024px;

@@ -501,7 +501,7 @@ const submit = async () => {
 
 <style lang="scss">
 .landing-form {
-  padding-top: 120px;
+  padding-top: 100px;
   
   &__content {
     display: flex;
