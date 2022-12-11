@@ -13,6 +13,9 @@
     <landing-button>
     </landing-button>
     
+    <landing-extension>
+    </landing-extension>
+    
     <landing-form>
     </landing-form>
     
