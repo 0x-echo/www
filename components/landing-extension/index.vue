@@ -199,20 +199,7 @@ const list = [{
   &__visual {
     flex: 1;
     display: flex;
-    justify-content: center;
-    position: relative;
-    z-index: 0;
-    
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      // background: var(--color-primary-light);
-      z-index: -1;
-    }
+    justify-content: flex-end;
   }
   
   &__visual-image {
