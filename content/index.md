@@ -23,7 +23,9 @@ Our iframe domain is: `https://embed.0xecho.com.ipns.page/`
 | has_v_padding | boolean | whether to show vertical padding  |  |false |   
 | has_h_padding  | boolean  | whether to show horizonal padding  |  | false  |   
 | show_comment_dislike | boolean | whether to show comment dislike button |  | true | 
+| dark-theme-color | string | set background color for dark theme | | transparent |
 | receiver | string | .bit, .eth or wallet address for receiving tips |  | |
+| from_uri | string | from where comment is posted | | |
 | rpc_url | string | ECHO gateway url  | | `https://node1.0xecho.com`. Use `https://sandbox.0xecho.com` for test purpose.|
 
 
