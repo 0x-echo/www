@@ -6,7 +6,7 @@
     <div
       class="container landing-demo__container">
       <landing-section-header
-        title="Live Demo">
+        title="ECHO Widget">
         <el-switch
           class="landing-demo__theme-switch"
           v-model="darkTheme"
