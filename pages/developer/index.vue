@@ -154,13 +154,16 @@ const installCDNCode = '<pre class="hljs"><code>' + hljs.highlight(`https://cdn.
 // maxDisplayLikers: 5, // max display likers on popover, default: 5 
 const code = '<pre class="hljs"><code>' + hljs.highlight(`import EchoButton from '@0xecho/button'
   
-  new EchoButton({
+  const echo = new EchoButton({
      targetUri: 'https://0xecho.com', // commenting target, required
      alwaysShowPopover: true, // whether always show popover, default: false
-     partnerName: '', // if spcified, partner name will be shown on popover
+     partnerName: '', // if specified, partner name will be shown on popover
      numberType: 'power' // button display number type, power(default) or count,
      theme: 'light' // dark or light(default)
-  }).mount('#echo-button-light')`, { language: 'js', ignoreIllegals: true }).value +
+  }).mount('#echo-button-light')
+  
+  echo.destroy()
+  `, { language: 'js', ignoreIllegals: true }).value +
                '</code></pre>';
 
 let data = reactive({
