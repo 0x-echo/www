@@ -16,6 +16,9 @@
     <landing-extension>
     </landing-extension>
     
+    <landing-partner>
+    </landing-partner>
+    
     <landing-form>
     </landing-form>
     
