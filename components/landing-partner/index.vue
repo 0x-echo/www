@@ -101,15 +101,6 @@ const list = [{
   logo: ArconnectLogo,
   value: 'arconnect',
   label: 'ArConnect'
-}, {
-  link: 'https://orangexyz.mirror.xyz/',
-  logo: OrangexyzLogo,
-  value: 'orangexyz'
-}, {
-  link: 'https://guoyu.mirror.xyz/',
-  logo: GuoyuLogo,
-  value: 'guoyu',
-  label: '郭宇'
 }]
 </script>
 
