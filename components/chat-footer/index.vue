@@ -74,7 +74,7 @@
         class="chat-footer__bottom">
         <p
           class="chat-footer__copyright">
-          © 2022 ECHO All rights reserved.
+          © {{ copyrightYear }} ECHO All rights reserved.
         </p>
 
         <div>
@@ -150,6 +150,13 @@ const links = [{
     value: '/media-kit'
   }]
 }]
+
+let copyrightYear = ''
+
+onMounted(() => {
+  const date = new Date()
+  copyrightYear = date.getFullYear()
+})
 </script>
 
 <style lang="scss">
