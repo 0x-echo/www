@@ -29,7 +29,8 @@
           prop="id">
           <el-input
             v-model="form.id"
-            placeholder="4 to 9 characters(letters and numbers)">
+            placeholder="4 to 9 characters(letters and numbers)"
+            @input="forceLowerCase">
             <template 
               #append>.{{ config.public.DID_PARENT }}
             </template>
@@ -154,6 +155,10 @@ const close = () => {
   form.address = ''
   isLoading.value = false
   isDone.value = false
+}
+
+const forceLowerCase = (value) => {
+  form.id = value.toLowerCase()
 }
 
 let loadingService
