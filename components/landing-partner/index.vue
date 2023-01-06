@@ -73,7 +73,7 @@ const list = [{
   link: 'https://permadao.notion.site/PermaDAO-4c0bd73f5a1c4410ad72a32e1718ebb6',
   logo: PermadaoLogo,
   value: 'permaDao',
-  label: 'PermaDao'
+  label: 'PermaDAO'
 }, {
   link: 'https://mask.io/',
   logo: MasknetworkLogo,
