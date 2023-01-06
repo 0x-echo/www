@@ -6,7 +6,7 @@
       class="container landing-partner__container">
       <landing-section-header
         subtitle=""
-        title="ECHO Partners & Friends">
+        title="ECHO Partners">
       </landing-section-header>
       
       <div
@@ -23,8 +23,7 @@
             :alt="item.value">
             
           <span
-            class="landing-partner__item-label"
-            v-if="item.label">
+            class="landing-partner__item-label">
             {{ item.label }}
           </span>
         </a>
@@ -34,45 +33,52 @@
 </template>
 
 <script setup>
-import ArweaveLogo from '@/assets/partners/arweave-with-text.svg'
+import ArweaveLogo from '@/assets/partners/arweave.svg'
 import ArconnectLogo from '@/assets/partners/arconnect.png'
 import BressLogo from '@/assets/partners/bress.png'
 import Cc0Logo from '@/assets/partners/cc0.svg'
-import EverpayLogo from '@/assets/partners/everpay.png'
-import EverlandLogo from '@/assets/partners/4everland.svg'
-import DotbitLogo from '@/assets/partners/dotbit.svg'
+import EverpayLogo from '@/assets/partners/everpay.svg'
+import EverlandLogo from '@/assets/partners/4everland.png'
+import DotbitLogo from '@/assets/partners/dotbit.png'
 import GuoyuLogo from '@/assets/partners/guoyu.jpeg'
-import Mail3Logo from '@/assets/partners/mail3.png'
-import MasknetworkLogo from '@/assets/partners/masknetwork.png'
+import Mail3Logo from '@/assets/partners/mail3.svg'
+import MasknetworkLogo from '@/assets/partners/masknetwork.svg'
 import MirrorLogo from '@/assets/partners/mirror.png'
 import PermadaoLogo from '@/assets/partners/permadao.png'
+import PermafactsLogo from '@/assets/partners/permafacts.png'
 import PlanetLogo from '@/assets/partners/planet.png'
 import OrangexyzLogo from '@/assets/partners/orangexyz.png'
 
 const list = [{
   link: 'https://www.arweave.org/',
   logo: ArweaveLogo,
-  value: 'arweave'
+  value: 'arweave',
+  label: "Arweave"
 }, {
   link: 'https://www.did.id/',
   logo: DotbitLogo,
-  value: 'dotbit'
+  value: 'dotbit',
+  label: '.bit'
 }, {
   link: 'https://everpay.io/',
   logo: EverpayLogo,
-  value: 'everpay'
+  value: 'everpay',
+  label: 'Everpay'
 }, {
   link: 'https://mirror.xyz/',
   logo: MirrorLogo,
-  value: 'mirror'
+  value: 'mirror',
+  label: 'Mirror'
 }, {
   link: 'https://permadao.notion.site/PermaDAO-4c0bd73f5a1c4410ad72a32e1718ebb6',
   logo: PermadaoLogo,
-  value: 'permaDao'
+  value: 'permaDao',
+  label: 'PermaDao'
 }, {
   link: 'https://mask.io/',
   logo: MasknetworkLogo,
-  value: 'mask network'
+  value: 'mask network',
+  label: 'Mask Network'
 }, {
   link: 'https://planetable.xyz/',
   logo: PlanetLogo,
@@ -81,11 +87,13 @@ const list = [{
 }, {
   link: 'https://www.4everland.org/',
   logo: EverlandLogo,
-  value: '4everland'
+  value: '4everland',
+  label: '4EVERLAND'
 }, {
   link: 'https://mail3.me/',
   logo: Mail3Logo,
-  value: 'mail3'
+  value: 'mail3',
+  label: 'Mail3'
 }, {
   link: 'https://bress.xyz/',
   logo: BressLogo,
@@ -101,6 +109,11 @@ const list = [{
   logo: ArconnectLogo,
   value: 'arconnect',
   label: 'ArConnect'
+}, {
+  link: 'https://permafacts.arweave.dev/',
+  logo: PermafactsLogo,
+  value: 'permafacts',
+  label: 'Permafacts'
 }]
 </script>
 
@@ -115,12 +128,13 @@ const list = [{
   
   &__content {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 24px;
   }
   
   &__item {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -133,13 +147,9 @@ const list = [{
     }
     
     img {
-      height: 32px;
+      height: 48px;
       max-width: 100%;
       object-fit: contain;
-      
-      &.arconnect-logo {
-        margin-top: -3px;
-      }
       
       &.guoyu-logo {
         border-radius: 50%;
@@ -148,17 +158,18 @@ const list = [{
   }
   
   &__item-label {
-    margin-left: 10px;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-color-primary);
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-color-secondary);
+    text-align: center;
   }
 }
 
 @media screen and (max-width: #{$small-desktop-width - 1}) {
   .landing-partner {
     &__content {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
 }
@@ -166,7 +177,7 @@ const list = [{
 @media screen and (max-width: #{$tablet-width - 1}) {
   .landing-partner {
     &__content {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 16px;
     }
     
@@ -174,20 +185,16 @@ const list = [{
       padding: 16px;
       
       img {
-        height: 28px;
+        height: 36px;
       }
-    }
-    
-    &__item-label {
-      font-size: 16px;
     }
   }
 }
 
-@media screen and (max-width: #{$small-mobile-width - 1}) {
+@media screen and (max-width: #{$mobile-width}) {
   .landing-partner {
-    &__item-label {
-      font-size: 14px;
+    &__content {
+      grid-template-columns: 1fr 1fr;
     }
   }
 }
