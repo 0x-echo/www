@@ -44,6 +44,7 @@ import GuoyuLogo from '@/assets/partners/guoyu.jpeg'
 import Mail3Logo from '@/assets/partners/mail3.svg'
 import MasknetworkLogo from '@/assets/partners/masknetwork.svg'
 import MirrorLogo from '@/assets/partners/mirror.png'
+import mogulsdaoLogo from '@/assets/partners/mogulsdao.png'
 import PermadaoLogo from '@/assets/partners/permadao.png'
 import PermafactsLogo from '@/assets/partners/permafacts.png'
 import PlanetLogo from '@/assets/partners/planet.png'
@@ -114,6 +115,11 @@ const list = [{
   logo: PermafactsLogo,
   value: 'permafacts',
   label: 'Permafacts'
+}, {
+  link: 'https://magic-wand.arweave.dev/',
+  logo: mogulsdaoLogo,
+  value: 'mogulsdao',
+  label: 'MogulsDAO'
 }]
 </script>
 
