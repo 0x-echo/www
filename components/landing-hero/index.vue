@@ -35,18 +35,25 @@
       
       <div
         class="landing-hero__action-bar">
+        <a
+          class="el-button el-button--primary el-button--xlarge"
+          href="https://grant-explorer.gitcoin.co/#/round/1/0xd95a1969c41112cee9a2c931e849bcef36a16f4c/0x0f648ff5caf73611e70ebaaa9df9bf0dc81f5a633af3996672c6a5e44df791b1-0xd95a1969c41112cee9a2c931e849bcef36a16f4c"
+          target="_blank"
+          title="Support on GitCoin">
+          Support on GitCoin
+        </a>
+        
         <el-button
-          class="el-button--xlarge"
-          type="primary"
+          class="el-button--xlarge landing-page__demo-button"
           @click="$jumpTo('#landing-form', -40)">
           Get It for Free
         </el-button>
         
-        <el-button
+        <!-- <el-button
           class="el-button--xlarge landing-page__demo-button"
           @click="$jumpTo('#landing-demo')">
           Check Demo
-        </el-button>
+        </el-button> -->
       </div>
     </div>
   </section>
