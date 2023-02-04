@@ -75,9 +75,9 @@
 
 <script setup>
 import { ElButton } from 'element-plus'
-import ExtensionAggregation from '@/assets/extension-aggregation.svg'
-import ExtensionComment from '@/assets/extension-comment.svg'
-import ExtensionPopup from '@/assets/extension-popup.svg'
+import ExtensionAggregation from '@/assets/extension-aggregation.png'
+import ExtensionComment from '@/assets/extension-comment.png'
+import ExtensionPopup from '@/assets/extension-popup.png'
 let active = ref('popup')
 
 const visualMap = {
