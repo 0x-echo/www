@@ -76,11 +76,6 @@ const list = [{
   value: 'permaDao',
   label: 'PermaDAO'
 }, {
-  link: 'https://mask.io/',
-  logo: MasknetworkLogo,
-  value: 'mask network',
-  label: 'Mask Network'
-}, {
   link: 'https://planetable.xyz/',
   logo: PlanetLogo,
   value: 'planet',
