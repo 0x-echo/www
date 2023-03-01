@@ -84,6 +84,7 @@ onMounted(() => {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     margin-top: 10px;
     font-size: 16px;
     color: var(--text-color-muted);
