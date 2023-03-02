@@ -61,7 +61,7 @@ const features = [{
 
 <style lang="scss">
 .landing-page {    
-  &__demo-button {
+  &__sub-button {
     &,
     &:focus:not(.el-button:hover) {
       background: transparent;

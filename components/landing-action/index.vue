@@ -24,7 +24,7 @@
         </el-button>
         
         <el-button
-          class="el-button--xlarge landing-page__demo-button"
+          class="el-button--xlarge landing-page__sub-button"
           @click="$jumpTo('#landing-demo')">
           Check Demo
         </el-button>
